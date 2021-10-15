@@ -3,12 +3,16 @@
 
 namespace myengine
 {
-	std::shared_ptr<Component> Entity::addComponent()
+	std::shared_ptr<Core> Entity::getCore()
 	{
-		std::shared_ptr<Component> component = std::make_shared<Component>();
+		return core.lock();
+	}
 
-		components.push_back(component);
-
-		return component;
+	void Entity::tick()
+	{
+		for (size_t ci = 0; ci < components.size(); ci++)
+		{
+			components.at(ci)->tick();
+		}
 	}
 }

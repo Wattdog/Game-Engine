@@ -1,3 +1,5 @@
+#include <memory>
+
 namespace myengine
 {
 	struct Core;
@@ -6,8 +8,12 @@ namespace myengine
 	struct Component
 	{
 		public:
-
+			std::shared_ptr<Core> getCore();
+			std::shared_ptr<Entity> getEntity();
+			virtual void onTick();
 		private:
-
+			friend struct myengine::Entity;
+			std::weak_ptr<Entity> entity;
+			void tick();
 	};
 }
