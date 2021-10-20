@@ -14,12 +14,16 @@ namespace myengine
 			template <typename T>
 			std::shared_ptr<T> addComponent()
 			{
+				// Creates a shared pointer for the component
 				std::shared_ptr<T> component = std::make_shared<T>();
 
+				// It will then assign the shared pointer to a weak pointer
 				component->entity = self;
 
+				// Adds the shared pointer to the component vector
 				components.push_back(component);
 
+				// It then returns the shared pointer 
 				return component;
 			}
 

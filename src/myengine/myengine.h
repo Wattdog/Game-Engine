@@ -4,5 +4,6 @@
 #include <myengine/Core.h>
 #include <myengine/Entity.h>
 #include <myengine/Component.h>
+#include <myengine/Screen.h>
 
 #endif
