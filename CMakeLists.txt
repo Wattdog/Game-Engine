@@ -14,6 +14,7 @@ if(MSVC)
 
 	link_directories(
 		${CMAKE_SOURCE_DIR}/sdk/SDL2/lib/x86
+		${CMAKE_SOURCE_DIR}/sdk/glew/lib/Release/Win32
 	)
 else()
 	# Linux, Emscripten, macOS equivalents
@@ -39,9 +40,11 @@ add_library(myengine
    src/myengine/Environment.h
 )
 
+target_link_libraries(myengine SDL2 glew32 OpenGL32)
+
 add_executable(game
    src/game/main.cpp
    src/game/test.cpp
 )
 
-target_link_libraries(game myengine SDL2)
+target_link_libraries(game myengine)

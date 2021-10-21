@@ -1,8 +1,6 @@
 #include <memory>
 #include <vector>
 #include <SDL.h>
-#include <GL/glew.h>
-#include <glm/glm.hpp>
 
 namespace myengine
 {

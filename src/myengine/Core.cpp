@@ -1,6 +1,8 @@
 #include "Core.h"
 #include "Entity.h"
 #include "Screen.h"
+#include <GL/glew.h>
+#include <glm/glm.hpp>
 
 namespace myengine
 {
@@ -39,10 +41,12 @@ namespace myengine
 
 		// Checks to see if glew has been initialized 
 		// If it hasn't been initialized it will then throw an exception
-		/*if (glewInit() != GLEW_OK)
+		if (glewInit() != GLEW_OK)
 		{
 			throw std::exception();
-		}*/
+		}
+
+		glClearColor(1, 0, 0, 1);
 
 		// Sets the running bool variable to true
 		rtn->running = true;
