@@ -1,6 +1,7 @@
 #include "Component.h"
 #include "Entity.h"
 #include "Core.h"
+#include "Environment.h"
 
 namespace myengine
 {
@@ -16,6 +17,11 @@ namespace myengine
 		return entity.lock();
 	}
 
+	std::shared_ptr<Environment> Component::getEnvironment()
+	{
+		return getCore()->getEnvironment();
+	}
+
 	void Component::tick()
 	{
 		// Runs the onTick function
@@ -26,5 +32,15 @@ namespace myengine
 	{
 
 	}
+
+	void Component::onDisplay()
+	{
+		
+	}
 	
+	void Component::onInit()
+	{
+		
+	}
+
 }

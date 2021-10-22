@@ -1,6 +1,7 @@
 #include "Core.h"
 #include "Entity.h"
 #include "Screen.h"
+#include "Environment.h"
 #include <GL/glew.h>
 #include <glm/glm.hpp>
 
@@ -19,6 +20,8 @@ namespace myengine
 		// This will allow the shared pointer to acess functions from the
 		// screen header file
 		rtn->screen = std::make_shared<Screen>();
+
+		rtn->environment = std::make_shared<Environment>();
 
 		// This will check to see if the SDL video library has been initialized
 		// If it hasn't been initialized it will then throw an exception
@@ -70,6 +73,11 @@ namespace myengine
 
 		// It will then return the shared pointer
 		return entity;
+	}
+
+	std::shared_ptr<Environment> Core::getEnvironment()
+	{
+		return environment;
 	}
 
 	void Core::start()

@@ -5,5 +5,7 @@
 #include <myengine/Entity.h>
 #include <myengine/Component.h>
 #include <myengine/Screen.h>
+#include <myengine/Environment.h>
+#include <myengine/Keyboard.h>
 
 #endif
