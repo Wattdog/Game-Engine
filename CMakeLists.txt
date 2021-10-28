@@ -32,12 +32,16 @@ add_library(myengine
    src/myengine/Component.cpp
    src/myengine/Keyboard.cpp
    src/myengine/Environment.cpp
+   src/myengine/Screen.cpp
+   src/myengine/TriangleRenderer.cpp
    src/myengine/Core.h
    src/myengine/myengine.h
    src/myengine/Entity.h
    src/myengine/Component.h
    src/myengine/Keyboard.h
    src/myengine/Environment.h
+   src/myengine/Screen.h
+   src/myengine/TriangleRenderer.h
 )
 
 target_link_libraries(myengine SDL2 glew32 OpenGL32)
