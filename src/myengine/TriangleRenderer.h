@@ -1,9 +1,10 @@
+#include "Component.h"
 #include <iostream>
 #include <GL/glew.h>
 
 namespace myengine
 {
-	struct TriangleRenderer
+	struct TriangleRenderer : Component
 	{
 		public:
 			~TriangleRenderer();

@@ -2,6 +2,7 @@
 #include "Entity.h"
 #include "Core.h"
 #include "Environment.h"
+#include "Keyboard.h"
 
 namespace myengine
 {
@@ -20,6 +21,11 @@ namespace myengine
 	std::shared_ptr<Environment> Component::getEnvironment()
 	{
 		return getCore()->getEnvironment();
+	}
+
+	std::shared_ptr<Keyboard> Component::getKeyboard()
+	{
+		return getCore()->getKeyboard();
 	}
 
 	void Component::tick()
@@ -41,6 +47,12 @@ namespace myengine
 	void Component::onInit()
 	{
 		
+	}
+
+	void Component::display()
+	{
+		// Runs the onTick function
+		onDisplay();
 	}
 
 }

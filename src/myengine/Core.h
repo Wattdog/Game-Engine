@@ -7,6 +7,7 @@ namespace myengine
 	struct Entity;
 	struct Screen;
 	struct Environment;
+	struct Keyboard;
 
 	struct Core
 	{
@@ -14,6 +15,7 @@ namespace myengine
 		static std::shared_ptr<Core> initialize();
 		std::shared_ptr<Entity> addEntity();
 		std::shared_ptr<Environment> getEnvironment();
+		std::shared_ptr<Keyboard> getKeyboard();
 		void start();
 		void stop();
 	private:
@@ -21,6 +23,7 @@ namespace myengine
 		std::vector<std::shared_ptr<Entity> > entities;
 		std::shared_ptr<Environment> environment;
 		std::shared_ptr<Screen> screen;
+		std::shared_ptr<Keyboard> keyboard;
 		std::weak_ptr<Core> self;
 		SDL_Window* window;
 	};

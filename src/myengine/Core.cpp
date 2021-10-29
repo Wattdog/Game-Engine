@@ -2,6 +2,7 @@
 #include "Entity.h"
 #include "Screen.h"
 #include "Environment.h"
+#include "Keyboard.h"
 #include <GL/glew.h>
 #include <glm/glm.hpp>
 
@@ -20,7 +21,7 @@ namespace myengine
 		// This will allow the shared pointer to acess functions from the
 		// screen header file
 		rtn->screen = std::make_shared<Screen>();
-
+		rtn->keyboard = std::make_shared<Keyboard>();
 		rtn->environment = std::make_shared<Environment>();
 
 		// This will check to see if the SDL video library has been initialized
@@ -33,7 +34,7 @@ namespace myengine
 		// Creates an SDL window and also get the width and height of the screen
 		rtn->window = SDL_CreateWindow("My Engine",
 			SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
-			800, 400, SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL);
+			800, 800, SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL);
 
 		// Checks to see if an OpenGL context has been created for the window
 		// If it hasn't been created it will then throw an exception
@@ -80,18 +81,44 @@ namespace myengine
 		return environment;
 	}
 
+	std::shared_ptr<Keyboard> Core::getKeyboard()
+	{
+		return keyboard;
+	}
+
 	void Core::start()
 	{
 		// It will first check to see if the running bool 
 		// variable is true
 		while (running)
 		{
+			SDL_Event incomingEvent;
+
+			while (SDL_PollEvent(&incomingEvent))
+			{
+				switch (incomingEvent.type)
+				{
+					case SDL_QUIT:
+						stop();
+						break;
+				}
+			}
+
 			// It will then run a for loop checking each entity in the
 			// entities vector and then run the tick function 
 			for (size_t ei = 0; ei < entities.size(); ++ei)
 			{
 				entities.at(ei)->tick();
 			}
+
+			glClear(GL_COLOR_BUFFER_BIT);
+			
+			for (size_t ei = 0; ei < entities.size(); ++ei)
+			{
+				entities.at(ei)->display();
+			}
+
+			SDL_GL_SwapWindow(window);
 		}
 	}
 

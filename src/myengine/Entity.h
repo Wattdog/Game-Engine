@@ -22,6 +22,7 @@ namespace myengine
 
 				// Adds the shared pointer to the component vector
 				components.push_back(component);
+				component->onInit();
 
 				// It then returns the shared pointer 
 				return component;
@@ -38,6 +39,7 @@ namespace myengine
 
 				// Adds the shared pointer to the component vector
 				components.push_back(component);
+				component->onInit();
 
 				// It then returns the shared pointer 
 				return component;
@@ -62,5 +64,6 @@ namespace myengine
 			std::weak_ptr<Core> core;
 			std::weak_ptr<Entity> self;
 			void tick();
+			void display();
 	};
 }

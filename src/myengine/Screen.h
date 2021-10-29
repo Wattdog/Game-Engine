@@ -3,8 +3,10 @@ namespace myengine
 	struct Screen
 	{
 		public:
-
+			int getWidth();
+			int getHeight();
 		private:
-			int dummy;
+			int width;
+			int height;
 	};
 }

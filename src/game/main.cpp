@@ -1,5 +1,6 @@
 #include <iostream>
 #include <myengine/myengine.h>
+#include <myengine/TriangleRenderer.h>
 
 using namespace myengine;
 
@@ -21,11 +22,12 @@ int main()
    //std::shared_ptr<Environment> environment = 
 
    std::shared_ptr<Entity> entity = core->addEntity();
-   std::shared_ptr<Component> component = entity->addComponent<EngineStopper>();
+   //std::shared_ptr<Component> component = entity->addComponent<EngineStopper>();
+   std::shared_ptr<TriangleRenderer> triangleRenderer = entity->addComponent<TriangleRenderer>();
 
    std::cout << entity->getCore() << std::endl;
-   std::cout << component->getCore() << std::endl;
-   std::cout << component->getEntity() << std::endl;
+   //std::cout << component->getCore() << std::endl;
+   //std::cout << component->getEntity() << std::endl;
 
    core->start();
 
