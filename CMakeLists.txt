@@ -25,6 +25,19 @@ if (MSVC)
 	add_definitions(-DSDL_MAIN_HANDLED)
 endif()
 
+add_library(renderer
+   src/renderer/renderer.cpp
+   src/renderer/ShaderProgram.cpp
+   src/renderer/VertexArray.cpp
+   src/renderer/VertexBuffer.cpp
+   src/renderer/renderer.h
+   src/renderer/ShaderProgram.h
+   src/renderer/VertexArray.h
+   src/renderer/VertexBuffer.h
+)
+
+target_link_libraries(renderer glew32 OpenGL32)
+
 add_library(myengine
    src/myengine/Core.cpp
    src/myengine/myengine.cpp
