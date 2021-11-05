@@ -7,6 +7,7 @@ namespace myengine
 	struct Entity;
 	struct Environment;
 	struct Keyboard;
+	struct Transform;
 
 	struct Component
 	{
@@ -15,6 +16,7 @@ namespace myengine
 			std::shared_ptr<Entity> getEntity();
 			std::shared_ptr<Environment> getEnvironment();
 			std::shared_ptr<Keyboard> getKeyboard();
+			std::shared_ptr<Transform> getTransform();
 			virtual void onTick();
 			virtual void onDisplay();
 			virtual void onInit();

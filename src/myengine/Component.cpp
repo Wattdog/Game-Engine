@@ -3,6 +3,7 @@
 #include "Core.h"
 #include "Environment.h"
 #include "Keyboard.h"
+#include "Transform.h"
 
 namespace myengine
 {
@@ -26,6 +27,11 @@ namespace myengine
 	std::shared_ptr<Keyboard> Component::getKeyboard()
 	{
 		return getCore()->getKeyboard();
+	}
+
+	std::shared_ptr<Transform> Component::getTransform()
+	{
+		return getCore()->getTransform();
 	}
 
 	void Component::tick()

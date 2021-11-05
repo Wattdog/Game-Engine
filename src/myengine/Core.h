@@ -17,6 +17,7 @@ namespace myengine
 		std::shared_ptr<Entity> addEntity();
 		std::shared_ptr<Environment> getEnvironment();
 		std::shared_ptr<Keyboard> getKeyboard();
+		std::shared_ptr<Transform> getTransform();
 		void start();
 		void stop();
 	private:

@@ -24,6 +24,8 @@ namespace myengine
 
 		shaderProgram = std::make_shared<renderer::ShaderProgram>();
 
+		//shaderProgram->setUniform("u_Model", transform->getModel());
+
 		std::cout << "Displaying..." << std::endl;
 	}
 
@@ -36,7 +38,7 @@ namespace myengine
 	{
 		/*if (getKeyboard()->isKeyDown(SDLK_UP))
 		{
-			
+			getTransform()->setPosition(glm::vec3(0, 0.5f, 0));
 		}*/
 	}
 }

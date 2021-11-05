@@ -1,6 +1,8 @@
 #include "ShaderProgram.h"
 #include "VertexArray.h"
 
+#include <glm/ext.hpp>
+
 namespace renderer
 {
 	ShaderProgram::ShaderProgram()
@@ -59,6 +61,9 @@ namespace renderer
 			throw std::exception();
 		}
 
+		//GLint modelLoc = glGetUniformLocation(id, "u_Model");
+		//GLint projectionLoc = glGetUniformLocation(id, "u_Projection");
+
 		glDetachShader(id, vertexShaderId);
 		glDeleteShader(vertexShaderId);
 		glDetachShader(id, fragShaderId);
@@ -81,9 +86,11 @@ namespace renderer
 		glUseProgram(0);
 	}
 
-	void ShaderProgram::setUniform(glm::vec4 uniform)
+	void ShaderProgram::setUniform(std::string name, glm::mat4 uniform)
 	{
 		glUseProgram(id);
+		GLint loc = glGetUniformLocation(id, name.c_str());
+		glUniformMatrix4fv(loc, 1, GL_FALSE, glm::value_ptr(uniform));
 		glUseProgram(0);
 	}
 

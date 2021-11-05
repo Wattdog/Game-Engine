@@ -89,6 +89,11 @@ namespace myengine
 		return keyboard;
 	}
 
+	std::shared_ptr<Transform> Core::getTransform()
+	{
+		return transform;
+	}
+
 	void Core::start()
 	{
 		// It will first check to see if the running bool 
