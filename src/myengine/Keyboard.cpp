@@ -2,18 +2,24 @@
 
 namespace myengine
 {
-	bool Keyboard::getKey(int keyCode)
+	bool Keyboard::isKeyDown(int keyCode)
 	{
 		return true;
 	}
 
-	bool Keyboard::getKeyDown(int keyCode)
+	bool Keyboard::isKeyUp(int keyCode)
 	{
 		return true;
 	}
 
-	bool Keyboard::getKeyUp(int keyCode)
+	void Keyboard::removeKey(SDL_Keycode key)
 	{
-		return true;
+		for (int i = 0; i < keys.size(); i++)
+		{
+			if (i == key)
+			{
+				
+			}
+		}
 	}
 }

@@ -8,6 +8,7 @@ namespace myengine
 	struct Screen;
 	struct Environment;
 	struct Keyboard;
+	struct Transform;
 
 	struct Core
 	{
@@ -24,6 +25,7 @@ namespace myengine
 		std::shared_ptr<Environment> environment;
 		std::shared_ptr<Screen> screen;
 		std::shared_ptr<Keyboard> keyboard;
+		std::shared_ptr<Transform> transform;
 		std::weak_ptr<Core> self;
 		SDL_Window* window;
 	};

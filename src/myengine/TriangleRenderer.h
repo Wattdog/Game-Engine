@@ -13,8 +13,10 @@ namespace myengine
 			void onInit();
 		private:
 			void onDisplay();
+			void onTick();
 			GLuint programId;
 			GLuint vboId;
+			std::shared_ptr<renderer::VertexBuffer> vbo;
 			GLuint vaoId;
 	};
 }

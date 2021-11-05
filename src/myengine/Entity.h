@@ -5,6 +5,7 @@ namespace myengine
 {
 	struct Component;
 	struct Core;
+	struct Transform;
 
 	struct Entity
 	{
@@ -62,6 +63,7 @@ namespace myengine
 			friend struct myengine::Core;
 			std::vector<std::shared_ptr<Component>> components;
 			std::weak_ptr<Core> core;
+			std::weak_ptr<Transform> transform;
 			std::weak_ptr<Entity> self;
 			void tick();
 			void display();

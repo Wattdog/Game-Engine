@@ -6,10 +6,11 @@ namespace myengine
 	struct Keyboard
 	{
 		public:
-			bool getKey(int keyCode);
-			bool getKeyDown(int keyCode);
-			bool getKeyUp(int keyCode);
+			bool isKeyDown(int keyCode);
+			bool isKeyUp(int keyCode);
+			void removeKey(SDL_Keycode key);
+			std::vector<int> keys;
 		private:
-			std::vector<int> keyCodes;
+			
 	};
 }

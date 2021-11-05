@@ -7,5 +7,6 @@
 #include <myengine/Screen.h>
 #include <myengine/Environment.h>
 #include <myengine/Keyboard.h>
+#include <myengine/Transform.h>
 
 #endif

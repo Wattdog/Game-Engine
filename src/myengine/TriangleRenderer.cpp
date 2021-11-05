@@ -12,6 +12,11 @@ namespace myengine
 	{
 		std::cout << "Initializing..." << std::endl;
 
+		vbo = std::make_shared<renderer::VertexBuffer>();
+		vbo->add(glm::vec3(0.0f, 0.5f, 0.0f));
+		vbo->add(glm::vec3(-0.5f, -0.5f, 0.0f));
+		vbo->add(glm::vec3(0.5f, -0.5f, 0.0f));
+
 		vaoId = 0;
 
 		glGenVertexArrays(1, &vaoId);
@@ -29,7 +34,7 @@ namespace myengine
 			0.5f, -0.5f, 0.0f
 		};
 
-		vboId = 0;
+		/*vboId = 0;
 
 		glGenBuffers(1, &vboId);
 
@@ -40,7 +45,9 @@ namespace myengine
 
 		glBindBuffer(GL_ARRAY_BUFFER, vboId);
 
-		glBufferData(GL_ARRAY_BUFFER, sizeof(positions), positions, GL_STATIC_DRAW);
+		glBufferData(GL_ARRAY_BUFFER, sizeof(positions), positions, GL_STATIC_DRAW);*/
+
+		glBindBuffer(GL_ARRAY_BUFFER, vbo->getId());
 
 		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE,
 			3 * sizeof(float), (void*)0);
@@ -120,5 +127,13 @@ namespace myengine
 
 		glBindVertexArray(0);
 		glUseProgram(0);
+	}
+
+	void TriangleRenderer::onTick()
+	{
+		/*if (getKeyboard()->isKeyDown(SDLK_UP))
+		{
+			
+		}*/
 	}
 }

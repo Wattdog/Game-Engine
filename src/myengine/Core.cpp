@@ -3,6 +3,7 @@
 #include "Screen.h"
 #include "Environment.h"
 #include "Keyboard.h"
+#include "Transform.h"
 #include <GL/glew.h>
 #include <glm/glm.hpp>
 
@@ -23,6 +24,7 @@ namespace myengine
 		rtn->screen = std::make_shared<Screen>();
 		rtn->keyboard = std::make_shared<Keyboard>();
 		rtn->environment = std::make_shared<Environment>();
+		rtn->transform = std::make_shared<Transform>();
 
 		// This will check to see if the SDL video library has been initialized
 		// If it hasn't been initialized it will then throw an exception
@@ -68,6 +70,7 @@ namespace myengine
 		// and the reassigned to itself
 		entity->core = self;
 		entity->self = entity;
+		entity->transform = entity->addComponent<Transform>();
 
 		// The shared pointer is then added to the entities vector
 		entities.push_back(entity);
@@ -96,11 +99,17 @@ namespace myengine
 
 			while (SDL_PollEvent(&incomingEvent))
 			{
-				switch (incomingEvent.type)
+				if (incomingEvent.type == SDL_QUIT)
 				{
-					case SDL_QUIT:
-						stop();
-						break;
+					stop();
+				}
+				else if (incomingEvent.type == SDL_KEYDOWN)
+				{
+					keyboard->keys.push_back(incomingEvent.key.keysym.sym);
+				}
+				else if (incomingEvent.type == SDL_KEYUP)
+				{
+					keyboard->removeKey(incomingEvent.key.keysym.sym);
 				}
 			}
 
