@@ -70,7 +70,7 @@ namespace renderer
 		glDeleteProgram(id);
 	}
 
-	void ShaderProgram::draw(VertexArray* vertexArray)
+	void ShaderProgram::draw(std::shared_ptr<VertexArray> vertexArray)
 	{
 		glUseProgram(id);
 		glBindVertexArray(vertexArray->getId());

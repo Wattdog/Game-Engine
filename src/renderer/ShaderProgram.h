@@ -4,6 +4,7 @@
 
 #include <vector>
 #include <iostream>
+#include <memory>
 
 namespace renderer
 {
@@ -14,7 +15,7 @@ namespace renderer
 		public:
 			ShaderProgram();
 			~ShaderProgram();
-			void draw(VertexArray* vertexArray);
+			void draw(std::shared_ptr<VertexArray> vertexArray);
 			void setUniform(glm::vec4 uniform);
 			void setUniform(float uniform);
 			GLuint getId();

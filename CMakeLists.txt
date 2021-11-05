@@ -47,6 +47,7 @@ add_library(myengine
    src/myengine/Environment.cpp
    src/myengine/Screen.cpp
    src/myengine/TriangleRenderer.cpp
+   src/myengine/Transform.cpp
    src/myengine/Core.h
    src/myengine/myengine.h
    src/myengine/Entity.h
@@ -55,9 +56,10 @@ add_library(myengine
    src/myengine/Environment.h
    src/myengine/Screen.h
    src/myengine/TriangleRenderer.h
+   src/myengine/Transform.h
 )
 
-target_link_libraries(myengine SDL2 glew32 OpenGL32)
+target_link_libraries(myengine renderer SDL2)
 
 add_executable(game
    src/game/main.cpp
