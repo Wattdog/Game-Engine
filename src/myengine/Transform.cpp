@@ -6,4 +6,9 @@ namespace myengine
 	{
 		return glm::mat4();
 	}
+
+	void Transform::setPosition(glm::vec3 pos)
+	{
+		position = pos;
+	}
 }
