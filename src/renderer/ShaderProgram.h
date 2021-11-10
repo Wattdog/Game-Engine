@@ -6,6 +6,7 @@
 #include <iostream>
 #include <memory>
 #include <string>
+#include <fstream>
 
 namespace renderer
 {
@@ -14,7 +15,7 @@ namespace renderer
 	struct ShaderProgram
 	{
 		public:
-			ShaderProgram();
+			ShaderProgram(std::string vert, std::string frag);
 			~ShaderProgram();
 			void draw(std::shared_ptr<VertexArray> vertexArray);
 			void setUniform(std::string name, glm::mat4 uniform);

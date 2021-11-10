@@ -22,7 +22,7 @@ namespace myengine
 		vao->setBuffer(0, vbo);
 		vao->getId();
 
-		shaderProgram = std::make_shared<renderer::ShaderProgram>();
+		shaderProgram = std::make_shared<renderer::ShaderProgram>("src/renderer/vertShader.txt", "src/renderer/fragShader.txt");
 
 		//shaderProgram->setUniform("u_Model", transform->getModel());
 

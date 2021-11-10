@@ -5,17 +5,54 @@
 
 namespace renderer
 {
-	ShaderProgram::ShaderProgram()
+	ShaderProgram::ShaderProgram(std::string vert, std::string frag)
 	{
+		std::ifstream vertFile(vert);
+		std::string vShaderText;
+
+		if (vertFile.is_open())
+		{
+			std::string temp;
+
+			while (std::getline(vertFile, temp))
+			{
+				vShaderText += temp;
+				vShaderText.push_back('\n');
+			}
+
+			vertFile.close();
+		}
+
+		std::ifstream fragFile(frag);
+		std::string fShaderText;
+
+		if (fragFile.is_open())
+		{
+			std::string temp;
+
+			while (std::getline(fragFile, temp))
+			{
+				fShaderText += temp;
+				fShaderText.push_back('\n');
+			}
+
+			fragFile.close();
+		}
+
+		//const GLchar* vertShaderSrc = vShaderText.c_str();
 		const GLchar* vertShaderSrc =
 			"attribute vec3 in_Position;               " \
 			"                                          " \
+			"uniform mat4 u_Projection;                " \
+			"uniform mat4 u_Model;                     " \
+			"                                          " \
 			"void main()                               " \
 			"{                                         " \
-			"   gl_Position = vec4(in_Position, 1.0);  " \
+			"   gl_Position = u_Projection * u_Model * vec4(in_Position, 1.0);  " \
 			"}                                         ";
 
-		const GLchar* fragShaderSrc =
+		//const GLchar* fragShaderSrc = fShaderText.c_str();
+		const GLchar* fragShaderSrc = 
 			"void main()                               " \
 			"{                                         " \
 			"   gl_FragColor = vec4(0, 0, 1, 1);        " \
@@ -68,6 +105,19 @@ namespace renderer
 		glDeleteShader(vertexShaderId);
 		glDetachShader(id, fragShaderId);
 		glDeleteShader(fragShaderId);
+
+		GLuint modelLoc = glGetUniformLocation(id, "u_Model");
+		GLuint projectionLoc = glGetUniformLocation(id, "u_Projection");
+
+		if (modelLoc == -1)
+		{
+			throw std::exception();
+		}
+
+		if (projectionLoc == -1)
+		{
+			throw std::exception();
+		}
 	}
 
 	ShaderProgram::~ShaderProgram()

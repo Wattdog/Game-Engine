@@ -14,7 +14,6 @@ namespace myengine
 		private:
 			void onDisplay();
 			void onTick();
-			GLuint programId;
 			std::shared_ptr<renderer::ShaderProgram> shaderProgram;
 			std::shared_ptr<renderer::VertexBuffer> vbo;
 			std::shared_ptr<renderer::VertexArray> vao;
