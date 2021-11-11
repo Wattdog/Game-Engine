@@ -10,8 +10,10 @@ namespace renderer
 		std::ifstream vertFile(vert);
 		std::string vShaderText;
 
-		if (vertFile.is_open())
+		if (!vertFile.is_open())
 		{
+			throw std::exception();
+		}
 			std::string temp;
 
 			while (std::getline(vertFile, temp))
@@ -20,15 +22,15 @@ namespace renderer
 				vShaderText.push_back('\n');
 			}
 
-			vertFile.close();
-		}
+		vertFile.close();
 
 		std::ifstream fragFile(frag);
 		std::string fShaderText;
 
-		if (fragFile.is_open())
+		if (!fragFile.is_open())
 		{
-			std::string temp;
+			throw std::exception();
+		}
 
 			while (std::getline(fragFile, temp))
 			{
@@ -37,26 +39,22 @@ namespace renderer
 			}
 
 			fragFile.close();
-		}
 
-		//const GLchar* vertShaderSrc = vShaderText.c_str();
-		const GLchar* vertShaderSrc =
+		const GLchar* vertShaderSrc = vShaderText.c_str();
+		/*const GLchar* vertShaderSrc =
 			"attribute vec3 in_Position;               " \
-			"                                          " \
-			"uniform mat4 u_Projection;                " \
-			"uniform mat4 u_Model;                     " \
 			"                                          " \
 			"void main()                               " \
 			"{                                         " \
-			"   gl_Position = u_Projection * u_Model * vec4(in_Position, 1.0);  " \
-			"}                                         ";
+			"   gl_Position = vec4(in_Position, 1.0);  " \
+			"}                                         ";*/
 
-		//const GLchar* fragShaderSrc = fShaderText.c_str();
-		const GLchar* fragShaderSrc = 
+		const GLchar* fragShaderSrc = fShaderText.c_str();
+		/*const GLchar* fragShaderSrc = 
 			"void main()                               " \
 			"{                                         " \
 			"   gl_FragColor = vec4(0, 0, 1, 1);        " \
-			"}                                         ";
+			"}                                         ";*/
 
 		GLuint vertexShaderId = glCreateShader(GL_VERTEX_SHADER);
 		glShaderSource(vertexShaderId, 1, &vertShaderSrc, NULL);
@@ -106,7 +104,7 @@ namespace renderer
 		glDetachShader(id, fragShaderId);
 		glDeleteShader(fragShaderId);
 
-		GLuint modelLoc = glGetUniformLocation(id, "u_Model");
+		/*GLuint modelLoc = glGetUniformLocation(id, "u_Model");
 		GLuint projectionLoc = glGetUniformLocation(id, "u_Projection");
 
 		if (modelLoc == -1)
@@ -117,7 +115,7 @@ namespace renderer
 		if (projectionLoc == -1)
 		{
 			throw std::exception();
-		}
+		}*/
 	}
 
 	ShaderProgram::~ShaderProgram()
