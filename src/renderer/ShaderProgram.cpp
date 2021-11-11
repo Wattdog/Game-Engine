@@ -12,15 +12,16 @@ namespace renderer
 
 		if (!vertFile.is_open())
 		{
+			std::cout << "Cannot open vertex shader file" << std::endl;
 			throw std::exception();
 		}
 			std::string temp;
 
-			while (std::getline(vertFile, temp))
-			{
-				vShaderText += temp;
-				vShaderText.push_back('\n');
-			}
+		while (std::getline(vertFile, temp))
+		{
+			vShaderText += temp;
+			vShaderText.push_back('\n');
+		}
 
 		vertFile.close();
 
@@ -29,32 +30,21 @@ namespace renderer
 
 		if (!fragFile.is_open())
 		{
+			std::cout << "Cannot open fragment shader file" << std::endl;
 			throw std::exception();
 		}
 
-			while (std::getline(fragFile, temp))
-			{
-				fShaderText += temp;
-				fShaderText.push_back('\n');
-			}
+		while (std::getline(fragFile, temp))
+		{
+			fShaderText += temp;
+			fShaderText.push_back('\n');
+		}
 
-			fragFile.close();
+		fragFile.close();
 
 		const GLchar* vertShaderSrc = vShaderText.c_str();
-		/*const GLchar* vertShaderSrc =
-			"attribute vec3 in_Position;               " \
-			"                                          " \
-			"void main()                               " \
-			"{                                         " \
-			"   gl_Position = vec4(in_Position, 1.0);  " \
-			"}                                         ";*/
 
 		const GLchar* fragShaderSrc = fShaderText.c_str();
-		/*const GLchar* fragShaderSrc = 
-			"void main()                               " \
-			"{                                         " \
-			"   gl_FragColor = vec4(0, 0, 1, 1);        " \
-			"}                                         ";*/
 
 		GLuint vertexShaderId = glCreateShader(GL_VERTEX_SHADER);
 		glShaderSource(vertexShaderId, 1, &vertShaderSrc, NULL);
@@ -96,15 +86,12 @@ namespace renderer
 			throw std::exception();
 		}
 
-		//GLint modelLoc = glGetUniformLocation(id, "u_Model");
-		//GLint projectionLoc = glGetUniformLocation(id, "u_Projection");
-
 		glDetachShader(id, vertexShaderId);
 		glDeleteShader(vertexShaderId);
 		glDetachShader(id, fragShaderId);
 		glDeleteShader(fragShaderId);
 
-		/*GLuint modelLoc = glGetUniformLocation(id, "u_Model");
+		GLuint modelLoc = glGetUniformLocation(id, "u_Model");
 		GLuint projectionLoc = glGetUniformLocation(id, "u_Projection");
 
 		if (modelLoc == -1)
@@ -115,7 +102,7 @@ namespace renderer
 		if (projectionLoc == -1)
 		{
 			throw std::exception();
-		}*/
+		}
 	}
 
 	ShaderProgram::~ShaderProgram()
