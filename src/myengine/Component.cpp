@@ -40,6 +40,18 @@ namespace myengine
 		onTick();
 	}
 
+	void Component::display()
+	{
+		// Runs the onTick function
+		onDisplay();
+	}
+
+	void Component::play()
+	{
+		// Runs the onTick function
+		onPlay();
+	}
+
 	void Component::onTick()
 	{
 
@@ -49,16 +61,14 @@ namespace myengine
 	{
 		
 	}
-	
+
+	void Component::onPlay()
+	{
+
+	}
+
 	void Component::onInit()
 	{
 		
 	}
-
-	void Component::display()
-	{
-		// Runs the onTick function
-		onDisplay();
-	}
-
 }

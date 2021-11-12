@@ -91,18 +91,13 @@ namespace renderer
 		glDetachShader(id, fragShaderId);
 		glDeleteShader(fragShaderId);
 
-		GLuint modelLoc = glGetUniformLocation(id, "u_Model");
-		GLuint projectionLoc = glGetUniformLocation(id, "u_Projection");
+		glm::mat4 projection = glm::perspective(glm::radians(45.0f), (float)800 / (float)800, 0.1f, 100.0f);
 
-		if (modelLoc == -1)
-		{
-			throw std::exception();
-		}
+		glm::mat4 model(1.0f);
+		model = glm::translate(model, glm::vec3(0, 0, -2.5f));
 
-		if (projectionLoc == -1)
-		{
-			throw std::exception();
-		}
+		setUniform("u_Model", model);
+		setUniform("u_Projection", projection);
 	}
 
 	ShaderProgram::~ShaderProgram()

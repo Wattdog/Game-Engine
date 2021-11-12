@@ -4,6 +4,7 @@
 #include "Environment.h"
 #include "Keyboard.h"
 #include "Transform.h"
+#include "Sound.h"
 #include <GL/glew.h>
 #include <glm/glm.hpp>
 
@@ -25,6 +26,10 @@ namespace myengine
 		rtn->keyboard = std::make_shared<Keyboard>();
 		rtn->environment = std::make_shared<Environment>();
 		rtn->transform = std::make_shared<Transform>();
+		rtn->sound = std::make_shared<Sound>();
+
+		rtn->screen->setWidth(800);
+		rtn->screen->setHeight(800);
 
 		// This will check to see if the SDL video library has been initialized
 		// If it hasn't been initialized it will then throw an exception
@@ -36,7 +41,8 @@ namespace myengine
 		// Creates an SDL window and also get the width and height of the screen
 		rtn->window = SDL_CreateWindow("My Engine",
 			SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
-			800, 800, SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL);
+			rtn->screen->getWidth(), rtn->screen->getHeight(), 
+			SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL);
 
 		// Checks to see if an OpenGL context has been created for the window
 		// If it hasn't been created it will then throw an exception
@@ -51,6 +57,40 @@ namespace myengine
 		{
 			throw std::exception();
 		}
+
+		rtn->device = alcOpenDevice(NULL);
+
+		if (!rtn->device)
+		{
+			throw std::exception("Failed to open audio device");
+		}
+
+		rtn->context = alcCreateContext(rtn->device, NULL);
+
+		if (!rtn->context)
+		{
+			alcCloseDevice(rtn->device);
+			throw std::exception("Failed to make audio current");
+		}
+
+		if (!alcMakeContextCurrent(rtn->context))
+		{
+			alcDestroyContext(rtn->context);
+			alcCloseDevice(rtn->device);
+			throw std::exception("Failed to make context current");
+		}
+
+		ALenum format = 0;
+		ALsizei freq = 0;
+		std::vector<char> bufferData;
+
+		ALuint id = 0;
+
+		alGenBuffers(1, &id);
+
+		//rtn->sound->loadOgg(path + ".ogg", bufferData, format, freq);
+
+		//alBufferData(id, format, &bufferData.at(0), static_cast<ALsizei>(bufferData.size()), freq);
 
 		glClearColor(1, 0, 0, 1);
 
@@ -130,6 +170,11 @@ namespace myengine
 			for (size_t ei = 0; ei < entities.size(); ++ei)
 			{
 				entities.at(ei)->display();
+			}
+
+			for (size_t ei = 0; ei < entities.size(); ++ei)
+			{
+				entities.at(ei)->play();
 			}
 
 			SDL_GL_SwapWindow(window);

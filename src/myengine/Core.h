@@ -1,6 +1,8 @@
 #include <memory>
 #include <vector>
 #include <SDL.h>
+#include <AL/al.h>
+#include <AL/alc.h>
 
 namespace myengine
 {
@@ -9,6 +11,7 @@ namespace myengine
 	struct Environment;
 	struct Keyboard;
 	struct Transform;
+	struct Sound;
 
 	struct Core
 	{
@@ -27,7 +30,10 @@ namespace myengine
 		std::shared_ptr<Screen> screen;
 		std::shared_ptr<Keyboard> keyboard;
 		std::shared_ptr<Transform> transform;
+		std::shared_ptr<Sound> sound;
 		std::weak_ptr<Core> self;
 		SDL_Window* window;
+		ALCdevice* device;
+		ALCcontext* context;
 	};
 }
