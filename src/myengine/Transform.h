@@ -1,6 +1,7 @@
 #include "Component.h"
 
 #include <glm/glm.hpp>
+#include <glm/ext.hpp>
 
 namespace myengine
 {

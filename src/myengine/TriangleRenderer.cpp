@@ -1,4 +1,5 @@
 #include "TriangleRenderer.h"
+#include "Transform.h"
 #include <vector>
 
 namespace myengine
@@ -24,21 +25,23 @@ namespace myengine
 
 		shaderProgram = std::make_shared<renderer::ShaderProgram>("../Assets/Shaders/vertShader.txt", "../Assets/Shaders/fragShader.txt");
 
-		//shaderProgram->setUniform("u_Model", transform->getModel());
+		getTransform()->setPosition(glm::vec3(0, 0, -2.5f));
 
 		std::cout << "Displaying..." << std::endl;
 	}
 
 	void TriangleRenderer::onDisplay()
 	{
+		shaderProgram->setUniform("u_Model", getTransform()->getModel());
+
 		shaderProgram->draw(vao);
 	}
 
 	void TriangleRenderer::onTick()
 	{
-		/*if (getKeyboard()->isKeyDown(SDLK_UP))
+		if (getKeyboard()->isKeyDown(SDLK_UP))
 		{
 			getTransform()->setPosition(glm::vec3(0, 0.5f, 0));
-		}*/
+		}
 	}
 }
