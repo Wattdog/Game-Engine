@@ -1,5 +1,7 @@
 #include "TriangleRenderer.h"
 #include "Transform.h"
+#include "Keyboard.h"
+#include "Environment.h"
 #include <vector>
 
 namespace myengine
@@ -31,7 +33,7 @@ namespace myengine
 	}
 
 	void TriangleRenderer::onDisplay()
-	{
+	{	
 		shaderProgram->setUniform("u_Model", getTransform()->getModel());
 
 		shaderProgram->draw(vao);
@@ -39,9 +41,31 @@ namespace myengine
 
 	void TriangleRenderer::onTick()
 	{
+		float xPos = 0.0f;
+		float yPos = 0.0f;
+
 		if (getKeyboard()->isKeyDown(SDLK_UP))
 		{
-			getTransform()->setPosition(glm::vec3(0, 0.5f, 0));
+			yPos += 0.1f;
+			getTransform()->setPosition(glm::vec3(xPos, yPos, -2.5f));
+		}
+
+		if (getKeyboard()->isKeyDown(SDLK_DOWN))
+		{
+			yPos -= 0.1f;
+			getTransform()->setPosition(glm::vec3(xPos, yPos, -2.5f));
+		}
+		
+		if (getKeyboard()->isKeyDown(SDLK_RIGHT))
+		{
+			xPos += 0.1f;
+			getTransform()->setPosition(glm::vec3(xPos, yPos, -2.5f));
+		}
+		
+		if (getKeyboard()->isKeyDown(SDLK_LEFT))
+		{
+			xPos -= 0.1f;
+			getTransform()->setPosition(glm::vec3(xPos, yPos, -2.5f));
 		}
 	}
 }
