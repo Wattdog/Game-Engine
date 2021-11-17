@@ -59,6 +59,7 @@ namespace myengine
 			}
 
 			std::shared_ptr<Core> getCore();
+			std::shared_ptr<Transform> getTransform();
 		private:
 			friend struct myengine::Core;
 			std::vector<std::shared_ptr<Component>> components;

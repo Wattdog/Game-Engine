@@ -31,7 +31,7 @@ namespace myengine
 
 	std::shared_ptr<Transform> Component::getTransform()
 	{
-		return getCore()->getTransform();
+		return getEntity()->getTransform();
 	}
 
 	void Component::tick()

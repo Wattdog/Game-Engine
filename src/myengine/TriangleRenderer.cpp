@@ -46,7 +46,7 @@ namespace myengine
 
 		if (getKeyboard()->isKeyDown(SDLK_UP))
 		{
-			yPos += 0.1f;
+			yPos += 0.5f;
 			getTransform()->setPosition(glm::vec3(xPos, yPos, -2.5f));
 		}
 

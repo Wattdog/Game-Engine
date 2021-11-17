@@ -4,21 +4,30 @@ namespace myengine
 {
 	bool Keyboard::isKeyDown(int keyCode)
 	{
-		return true;
+		for (int i = 0; i < keys.size(); i++)
+		{
+			if (keys.at(i) == keyCode)
+			{
+				return true;
+			}
+		}
+
+		return false;
 	}
 
 	bool Keyboard::isKeyUp(int keyCode)
 	{
-		return true;
+		return false;
 	}
 
 	void Keyboard::removeKey(SDL_Keycode key)
 	{
 		for (int i = 0; i < keys.size(); i++)
 		{
-			if (i == key)
+			if (keys.at(i) == key)
 			{
-				
+				keys.erase(keys.begin() + i);
+				i--;
 			}
 		}
 	}

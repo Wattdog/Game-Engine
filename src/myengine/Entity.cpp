@@ -10,6 +10,11 @@ namespace myengine
 		return core.lock();
 	}
 
+	std::shared_ptr<Transform> Entity::getTransform()
+	{
+		return transform.lock();
+	}
+
 	void Entity::tick()
 	{
 		// Runs a for loop to check each component which has 

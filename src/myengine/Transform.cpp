@@ -2,6 +2,10 @@
 
 namespace myengine 
 {
+	Transform::Transform()
+	{
+		position = glm::vec3(0, 0, 0);
+	}
 	glm::mat4 Transform::getModel()
 	{
 		glm::mat4 model(1.0f);

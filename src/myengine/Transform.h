@@ -8,6 +8,7 @@ namespace myengine
 	struct Transform : Component
 	{
 		public:
+			Transform();
 			glm::mat4 getModel();
 			void setPosition(glm::vec3 pos);
 		private:

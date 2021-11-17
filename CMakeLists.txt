@@ -10,11 +10,13 @@ if(MSVC)
 	include_directories(
 		sdk/SDL2/include # For SDL.h
 		sdk/glew/include # For glew.h
+		sdk/openal/include # For glew.h
 	)
 
 	link_directories(
 		${CMAKE_SOURCE_DIR}/sdk/SDL2/lib/x86
 		${CMAKE_SOURCE_DIR}/sdk/glew/lib/Release/Win32
+		${CMAKE_SOURCE_DIR}/sdk/openal/libs/Win32
 	)
 else()
 	# Linux, Emscripten, macOS equivalents
@@ -59,7 +61,7 @@ add_library(myengine
    src/myengine/Transform.h
 )
 
-target_link_libraries(myengine renderer SDL2)
+target_link_libraries(myengine renderer SDL2 openal32)
 
 add_executable(game
    src/game/main.cpp
