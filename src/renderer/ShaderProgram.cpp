@@ -1,5 +1,7 @@
 #include "ShaderProgram.h"
 #include "VertexArray.h"
+#include "Sampler.h"
+#include "Texture.h"
 
 #include <glm/ext.hpp>
 
@@ -106,7 +108,27 @@ namespace renderer
 		glUseProgram(id);
 		glBindVertexArray(vertexArray->getId());
 
+		for (size_t i = 0; i < samplers.size(); i++)
+		{
+			glActiveTexture(GL_TEXTURE0 + i);
+
+			if (samplers.at(i).texture)
+			{
+				glBindTexture(GL_TEXTURE_2D, samplers.at(i).texture->getId());
+			}
+			else
+			{
+				glBindTexture(GL_TEXTURE_2D, 0);
+			}
+		}
+
 		glDrawArrays(GL_TRIANGLES, 0, vertexArray->getVertCount());
+
+		for (size_t i = 0; i < samplers.size(); i++)
+		{
+			glActiveTexture(GL_TEXTURE0 + i);
+			glBindTexture(GL_TEXTURE_2D, 0);
+		}
 
 		glBindVertexArray(0);
 		glUseProgram(0);
@@ -117,6 +139,15 @@ namespace renderer
 		glUseProgram(id);
 		GLint loc = glGetUniformLocation(id, name.c_str());
 		glUniformMatrix4fv(loc, 1, GL_FALSE, glm::value_ptr(uniform));
+		glUseProgram(0);
+	}
+
+	void ShaderProgram::setUniform(std::string name, std::shared_ptr<Texture> texture)
+	{
+		glUseProgram(id);
+		glUniform1i(glGetUniformLocation(id, name.c_str()), 0);
+		glActiveTexture(GL_TEXTURE0);
+		glBindTexture(GL_TEXTURE_2D, texture->getId());
 		glUseProgram(0);
 	}
 

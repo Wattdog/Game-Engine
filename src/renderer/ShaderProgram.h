@@ -11,6 +11,8 @@
 namespace renderer
 {
 	struct VertexArray;
+	struct Sampler;
+	struct Texture;
 
 	struct ShaderProgram
 	{
@@ -19,9 +21,11 @@ namespace renderer
 			~ShaderProgram();
 			void draw(std::shared_ptr<VertexArray> vertexArray);
 			void setUniform(std::string name, glm::mat4 uniform);
+			void setUniform(std::string name, std::shared_ptr<Texture> texture);
 			void setUniform(float uniform);
 			GLuint getId();
 		private:
 			GLuint id;
+			std::vector<Sampler> samplers;
 	};
 }

@@ -8,6 +8,7 @@
 #include <myengine/Environment.h>
 #include <myengine/Keyboard.h>
 #include <myengine/Transform.h>
+#include <myengine/TriangleRenderer.h>
 #include <myengine/Sound.h>
 
 #endif

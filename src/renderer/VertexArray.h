@@ -2,6 +2,7 @@
 
 #include <vector>
 #include <memory>
+#include <string>
 
 namespace renderer
 {
@@ -10,14 +11,15 @@ namespace renderer
 	struct VertexArray
 	{
 		public:
+			VertexArray(std::string path);
 			VertexArray();
 			void setBuffer(int location, std::shared_ptr<VertexBuffer> buffer);
-			int getVertCount();
+			size_t getVertCount();
 			GLuint getId();
 		private:
 			GLuint id;
 			std::vector<std::shared_ptr<VertexBuffer> > buffers;
-			int vertCount;
+			size_t vertCount;
 			bool dirty;
 	};
 }

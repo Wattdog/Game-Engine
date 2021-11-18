@@ -1,6 +1,5 @@
 #include <iostream>
 #include <myengine/myengine.h>
-#include <myengine/TriangleRenderer.h>
 
 using namespace myengine;
 

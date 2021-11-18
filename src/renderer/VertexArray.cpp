@@ -1,8 +1,19 @@
 #include "VertexArray.h"
 #include "VertexBuffer.h"
 
+#include "bugl.h"
+
 namespace renderer
 {
+	VertexArray::VertexArray(std::string path)
+	{
+		vertCount = 0;
+
+		id = buLoadModel(path, &vertCount);
+
+		dirty = false;
+	}
+
 	VertexArray::VertexArray()
 	{
 		glGenVertexArrays(1, &id);
@@ -23,7 +34,7 @@ namespace renderer
 		dirty = true;
 	}
 
-	int VertexArray::getVertCount()
+	size_t VertexArray::getVertCount()
 	{
 		return vertCount;
 	}
