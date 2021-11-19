@@ -18,6 +18,8 @@ if(MSVC)
 		${CMAKE_SOURCE_DIR}/sdk/glew/lib/Release/Win32
 		${CMAKE_SOURCE_DIR}/sdk/openal/libs/Win32
 	)
+
+	set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /SAFESEH:NO")
 else()
 	# Linux, Emscripten, macOS equivalents
 endif()
@@ -32,10 +34,15 @@ add_library(renderer
    src/renderer/ShaderProgram.cpp
    src/renderer/VertexArray.cpp
    src/renderer/VertexBuffer.cpp
+   src/renderer/Texture.cpp
    src/renderer/renderer.h
    src/renderer/ShaderProgram.h
    src/renderer/VertexArray.h
    src/renderer/VertexBuffer.h
+   src/renderer/Texture.h
+   src/renderer/Sampler.h
+   src/renderer/bugl.h
+   src/renderer/stb_image.h
 )
 
 target_link_libraries(renderer glew32 OpenGL32)
@@ -50,6 +57,7 @@ add_library(myengine
    src/myengine/Screen.cpp
    src/myengine/TriangleRenderer.cpp
    src/myengine/Transform.cpp
+   src/myengine/Model.cpp
    src/myengine/Core.h
    src/myengine/myengine.h
    src/myengine/Entity.h
@@ -59,6 +67,7 @@ add_library(myengine
    src/myengine/Screen.h
    src/myengine/TriangleRenderer.h
    src/myengine/Transform.h
+   src/myengine/Model.h
 )
 
 target_link_libraries(myengine renderer SDL2 openal32)

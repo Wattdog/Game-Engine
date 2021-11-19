@@ -2,15 +2,33 @@
 
 namespace myengine
 {
+	Environment::Environment()
+	{
+		dt = 0;
+		last = SDL_GetTicks();
+	}
+
 	float Environment::getDeltaTime()
 	{
-		float idealTime = 1.0f / 80.0f;
+		return dt;
+
+		/*float idealTime = 1.0f / 80.0f;
 
 		if (idealTime > dt)
 		{
 			SDL_Delay((idealTime - dt) * 1000.0f);
 		}
 
-		return dt;
+		return dt;*/
+	}
+
+	void Environment::tick()
+	{
+		float current = SDL_GetTicks();
+		float diff = current - last;
+
+		dt = diff / 1000.0f;
+
+		last = current;
 	}
 }

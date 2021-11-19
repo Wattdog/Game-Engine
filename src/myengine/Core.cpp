@@ -158,6 +158,8 @@ namespace myengine
 				}
 			}
 
+			environment->tick();
+
 			// It will then run a for loop checking each entity in the
 			// entities vector and then run the tick function 
 			for (size_t ei = 0; ei < entities.size(); ++ei)

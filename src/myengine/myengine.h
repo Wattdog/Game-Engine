@@ -9,6 +9,7 @@
 #include <myengine/Keyboard.h>
 #include <myengine/Transform.h>
 #include <myengine/TriangleRenderer.h>
+#include <myengine/Model.h>
 #include <myengine/Sound.h>
 
 #endif

@@ -12,6 +12,8 @@ namespace myengine
 		size_t samples = stb_vorbis_decode_filename(fileName.c_str(),
 			&channels, &sampleRate, &output);
 
+		samples = samples - samples % 4;
+
 		if (samples == -1)
 		{
 			throw std::exception(std::string("Failed to open file '" + fileName + "' for decoding").c_str());

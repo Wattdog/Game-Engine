@@ -1,28 +1,24 @@
-#include "TriangleRenderer.h"
+#include "Model.h"
 #include "Transform.h"
 #include "Keyboard.h"
 #include "Environment.h"
-#include <vector>
 
 namespace myengine
 {
-	TriangleRenderer::~TriangleRenderer()
+	Model::~Model()
 	{
 
 	}
 
-	void TriangleRenderer::onInit()
+	void Model::onInit()
 	{
 		std::cout << "Initializing..." << std::endl;
 
 		vbo = std::make_shared<renderer::VertexBuffer>();
-		vbo->add(glm::vec3(0.0f, 0.5f, 0.0f));
-		vbo->add(glm::vec3(-0.5f, -0.5f, 0.0f));
-		vbo->add(glm::vec3(0.5f, -0.5f, 0.0f));
 
-		vao = std::make_shared<renderer::VertexArray>();
+		vao = std::make_shared<renderer::VertexArray>("../Assets/Models/teapot3.obj");
 
-		vao->setBuffer(0, vbo);
+		//vao->setBuffer(0, vbo);
 		vao->getId();
 
 		shaderProgram = std::make_shared<renderer::ShaderProgram>("../Assets/Shaders/vertShader.txt", "../Assets/Shaders/fragShader.txt");
@@ -32,14 +28,14 @@ namespace myengine
 		std::cout << "Displaying..." << std::endl;
 	}
 
-	void TriangleRenderer::onDisplay()
-	{	
+	void Model::onDisplay()
+	{
 		shaderProgram->setUniform("u_Model", getTransform()->getModel());
 
 		shaderProgram->draw(vao);
 	}
 
-	void TriangleRenderer::onTick()
+	void Model::onTick()
 	{
 		if (getKeyboard()->isKeyDown(SDLK_UP))
 		{
@@ -50,15 +46,16 @@ namespace myengine
 		{
 			getTransform()->move(glm::vec3(0, 0, 1.5f) * getEnvironment()->getDeltaTime());
 		}
-		
+
 		if (getKeyboard()->isKeyDown(SDLK_RIGHT))
 		{
 			getTransform()->move(glm::vec3(1.5f, 0, 0) * getEnvironment()->getDeltaTime());
 		}
-		
+
 		if (getKeyboard()->isKeyDown(SDLK_LEFT))
 		{
 			getTransform()->move(glm::vec3(-1.5f, 0, 0) * getEnvironment()->getDeltaTime());
 		}
 	}
+
 }
