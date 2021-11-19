@@ -17,5 +17,6 @@ namespace myengine
 			std::shared_ptr<renderer::ShaderProgram> shaderProgram;
 			std::shared_ptr<renderer::VertexBuffer> vbo;
 			std::shared_ptr<renderer::VertexArray> vao;
+			std::shared_ptr<renderer::Texture> textureTeaPot;
 	};
 }

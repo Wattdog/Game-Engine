@@ -14,7 +14,16 @@ namespace myengine
 	{
 		std::cout << "Initializing..." << std::endl;
 
+		textureTeaPot = std::make_shared<renderer::Texture>("../Assets/Textures/TeapotColourMap.bmp");
+
 		vbo = std::make_shared<renderer::VertexBuffer>();
+		//vbo->add(glm::vec2(0.0f, 0.0f));
+		//vbo->add(glm::vec2(1.0f, 0.0f));
+		//vbo->add(glm::vec2(1.0f, 1.0f));
+		//vbo->add(glm::vec2(1.0f, 1.0f));
+		//vbo->add(glm::vec2(0.0f, 1.0f));
+		//vbo->add(glm::vec2(0.0f, 0.0f));
+		
 
 		vao = std::make_shared<renderer::VertexArray>("../Assets/Models/teapot3.obj");
 
@@ -56,6 +65,8 @@ namespace myengine
 		{
 			getTransform()->move(glm::vec3(-1.5f, 0, 0) * getEnvironment()->getDeltaTime());
 		}
+
+		//getTransform()->rotate(10.0f);
 	}
 
 }

@@ -79,6 +79,7 @@ namespace renderer
 		glAttachShader(id, fragShaderId);
 
 		glBindAttribLocation(id, 0, "in_Position");
+		glBindAttribLocation(id, 1, "in_Texcoord");
 
 		glLinkProgram(id);
 		glGetProgramiv(id, GL_LINK_STATUS, &success);

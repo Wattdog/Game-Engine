@@ -13,6 +13,7 @@ namespace myengine
 			void setPosition(glm::vec3 pos);
 			void move(float amount);
 			void move(glm::vec3 amount);
+			void rotate(float angle);
 		private:
 			glm::vec3 position;
 			glm::vec3 rotation;

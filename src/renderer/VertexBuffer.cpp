@@ -20,6 +20,15 @@ namespace renderer
 		glDeleteBuffers(1, &id);
 	}
 
+	void VertexBuffer::add(glm::vec2 value)
+	{
+		data.push_back(value.x);
+		data.push_back(value.y);
+
+		components = 2;
+		dirty = true;
+	}
+
 	void VertexBuffer::add(glm::vec3 value)
 	{
 		data.push_back(value.x);
