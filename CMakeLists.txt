@@ -8,15 +8,15 @@ include_directories(
 
 if(MSVC)
 	include_directories(
-		sdk/SDL2/include # For SDL.h
-		sdk/glew/include # For glew.h
-		sdk/openal/include # For glew.h
+		sdk/Include/SDL # For SDL.h
+		sdk/Include # For glew.h
+		sdk/Include # For glew.h
 	)
 
 	link_directories(
-		${CMAKE_SOURCE_DIR}/sdk/SDL2/lib/x86
-		${CMAKE_SOURCE_DIR}/sdk/glew/lib/Release/Win32
-		${CMAKE_SOURCE_DIR}/sdk/openal/libs/Win32
+		${CMAKE_SOURCE_DIR}/sdk/Lib
+		${CMAKE_SOURCE_DIR}/sdk/Lib
+		${CMAKE_SOURCE_DIR}/sdk/Lib
 	)
 
 	set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /SAFESEH:NO")
