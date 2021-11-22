@@ -14,18 +14,18 @@ namespace myengine
 	{
 		std::cout << "Initializing..." << std::endl;
 
-		textureTeaPot = std::make_shared<renderer::Texture>("../Assets/Textures/TeapotColourMap.bmp");
+		textureTeaPot = std::make_shared<renderer::Texture>("../Assets/Textures/Material.png");
 
 		vbo = std::make_shared<renderer::VertexBuffer>();
-		//vbo->add(glm::vec2(0.0f, 0.0f));
-		//vbo->add(glm::vec2(1.0f, 0.0f));
-		//vbo->add(glm::vec2(1.0f, 1.0f));
-		//vbo->add(glm::vec2(1.0f, 1.0f));
-		//vbo->add(glm::vec2(0.0f, 1.0f));
-		//vbo->add(glm::vec2(0.0f, 0.0f));
+		vbo->add(glm::vec2(0.0f, 0.0f));
+		vbo->add(glm::vec2(1.0f, 0.0f));
+		vbo->add(glm::vec2(1.0f, 1.0f));
+		vbo->add(glm::vec2(1.0f, 1.0f));
+		vbo->add(glm::vec2(0.0f, 1.0f));
+		vbo->add(glm::vec2(0.0f, 0.0f));
 		
 
-		vao = std::make_shared<renderer::VertexArray>("../Assets/Models/teapot3.obj");
+		vao = std::make_shared<renderer::VertexArray>("../Assets/Models/monkey/monkey.obj");
 
 		//vao->setBuffer(0, vbo);
 		vao->getId();
@@ -39,6 +39,9 @@ namespace myengine
 
 	void Model::onDisplay()
 	{
+		
+
+		shaderProgram->setUniform("u_Texture", textureTeaPot);
 		shaderProgram->setUniform("u_Model", getTransform()->getModel());
 
 		shaderProgram->draw(vao);

@@ -160,6 +160,10 @@ namespace myengine
 
 			environment->tick();
 
+			glEnable(GL_CULL_FACE);
+
+			glEnable(GL_DEPTH_TEST);
+
 			// It will then run a for loop checking each entity in the
 			// entities vector and then run the tick function 
 			for (size_t ei = 0; ei < entities.size(); ++ei)
@@ -167,7 +171,7 @@ namespace myengine
 				entities.at(ei)->tick();
 			}
 
-			glClear(GL_COLOR_BUFFER_BIT);
+			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 			
 			for (size_t ei = 0; ei < entities.size(); ++ei)
 			{
@@ -178,6 +182,10 @@ namespace myengine
 			{
 				entities.at(ei)->play();
 			}
+
+			glDisable(GL_CULL_FACE);
+
+			glDisable(GL_DEPTH_TEST);
 
 			SDL_GL_SwapWindow(window);
 		}
