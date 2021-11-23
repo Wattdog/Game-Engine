@@ -66,7 +66,7 @@ namespace myengine
 			getTransform()->move(glm::vec3(-1.5f, 0, 0) * getEnvironment()->getDeltaTime());
 		}
 
-		getTransform()->rotate(glm::vec3(1, 1, 1) * 180.0f * getEnvironment()->getDeltaTime());
+		getTransform()->rotate(glm::vec3(1,1,1) * 180.0f * getEnvironment()->getDeltaTime());
 	}
 
 }

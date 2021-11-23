@@ -11,5 +11,7 @@
 #include <myengine/TriangleRenderer.h>
 #include <myengine/Model.h>
 #include <myengine/Sound.h>
+#include <myengine/Resources.h>
+#include <myengine/Resource.h>
 
 #endif
