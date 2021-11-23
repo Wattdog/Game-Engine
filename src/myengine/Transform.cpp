@@ -13,6 +13,9 @@ namespace myengine
 	{
 		glm::mat4 model(1.0f);
 		model = glm::translate(model, position);
+		model = glm::rotate(model, glm::radians(rotation.y), glm::vec3(0, 1, 0));
+		model = glm::rotate(model, glm::radians(rotation.x), glm::vec3(1, 0, 0));
+		model = glm::rotate(model, glm::radians(rotation.z), glm::vec3(0, 0, 1));
 
 		return model;
 	}
@@ -44,9 +47,15 @@ namespace myengine
 
 	void Transform::rotate(float angle)
 	{
-		glm::mat4 model(1.0f);
-		model = glm::rotate(model, glm::radians(angle), glm::vec3(0, 1, 0));
-		glm::vec3 fwd = glm::vec3(model * glm::vec4(0, 0 , 1, 1));
-		rotation += fwd * angle;
+		rotation.y += angle;
+		//glm::mat4 model(1.0f);
+		//model = glm::rotate(model, glm::radians(angle), glm::vec3(0, 1, 0));
+		//glm::vec3 fwd = glm::vec3(model * glm::vec4(0, 0 , 1, 1));
+		//rotation += fwd * angle;
+	}
+
+	void Transform::rotate(glm::vec3 angle)
+	{
+		rotation += angle;
 	}
 }

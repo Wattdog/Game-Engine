@@ -14,6 +14,7 @@ namespace myengine
 			void move(float amount);
 			void move(glm::vec3 amount);
 			void rotate(float angle);
+			void rotate(glm::vec3 angle);
 		private:
 			glm::vec3 position;
 			glm::vec3 rotation;

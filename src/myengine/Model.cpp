@@ -24,7 +24,6 @@ namespace myengine
 		vbo->add(glm::vec2(0.0f, 1.0f));
 		vbo->add(glm::vec2(0.0f, 0.0f));
 		
-
 		vao = std::make_shared<renderer::VertexArray>("../Assets/Models/monkey/monkey.obj");
 
 		//vao->setBuffer(0, vbo);
@@ -32,15 +31,13 @@ namespace myengine
 
 		shaderProgram = std::make_shared<renderer::ShaderProgram>("../Assets/Shaders/vertShader.txt", "../Assets/Shaders/fragShader.txt");
 
-		getTransform()->setPosition(glm::vec3(0, 0, -2.5f));
+		getTransform()->setPosition(glm::vec3(0, 0, -5.0f));
 
 		std::cout << "Displaying..." << std::endl;
 	}
 
 	void Model::onDisplay()
 	{
-		
-
 		shaderProgram->setUniform("u_Texture", textureTeaPot);
 		shaderProgram->setUniform("u_Model", getTransform()->getModel());
 
@@ -69,7 +66,7 @@ namespace myengine
 			getTransform()->move(glm::vec3(-1.5f, 0, 0) * getEnvironment()->getDeltaTime());
 		}
 
-		//getTransform()->rotate(10.0f);
+		getTransform()->rotate(glm::vec3(1, 1, 1) * 180.0f * getEnvironment()->getDeltaTime());
 	}
 
 }
