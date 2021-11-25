@@ -2,6 +2,7 @@
 #include "Transform.h"
 #include "Keyboard.h"
 #include "Environment.h"
+#include "Camera.h"
 
 namespace myengine
 {
@@ -14,7 +15,7 @@ namespace myengine
 	{
 		std::cout << "Initializing..." << std::endl;
 
-		textureTeaPot = std::make_shared<renderer::Texture>("../Assets/Textures/Material.png");
+		textureTeaPot = std::make_shared<renderer::Texture>("../Assets/Textures/TeapotColourMap.bmp");
 
 		vbo = std::make_shared<renderer::VertexBuffer>();
 		vbo->add(glm::vec2(0.0f, 0.0f));
@@ -24,7 +25,7 @@ namespace myengine
 		vbo->add(glm::vec2(0.0f, 1.0f));
 		vbo->add(glm::vec2(0.0f, 0.0f));
 		
-		vao = std::make_shared<renderer::VertexArray>("../Assets/Models/monkey/monkey.obj");
+		vao = std::make_shared<renderer::VertexArray>("../Assets/Models/teapot/teapot3.obj");
 
 		//vao->setBuffer(0, vbo);
 		vao->getId();
@@ -32,7 +33,8 @@ namespace myengine
 		shaderProgram = std::make_shared<renderer::ShaderProgram>("../Assets/Shaders/vertShader.txt", "../Assets/Shaders/fragShader.txt");
 
 		getTransform()->setPosition(glm::vec3(0, 0, -5.0f));
-
+		//getCamera()->setCamPosition(glm::vec3(0, 0, -3.5f));
+		
 		std::cout << "Displaying..." << std::endl;
 	}
 
@@ -40,6 +42,7 @@ namespace myengine
 	{
 		shaderProgram->setUniform("u_Texture", textureTeaPot);
 		shaderProgram->setUniform("u_Model", getTransform()->getModel());
+		//shaderProgram->setUniform("u_View", getCamera()->getView());
 
 		shaderProgram->draw(vao);
 	}
@@ -66,7 +69,7 @@ namespace myengine
 			getTransform()->move(glm::vec3(-1.5f, 0, 0) * getEnvironment()->getDeltaTime());
 		}
 
-		getTransform()->rotate(glm::vec3(1,1,1) * 180.0f * getEnvironment()->getDeltaTime());
+		getTransform()->rotate(glm::vec3(0,1,0) * 180.0f * getEnvironment()->getDeltaTime());
 	}
 
 }

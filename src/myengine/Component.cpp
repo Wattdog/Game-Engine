@@ -4,6 +4,7 @@
 #include "Environment.h"
 #include "Keyboard.h"
 #include "Transform.h"
+#include "Camera.h"
 
 namespace myengine
 {
@@ -32,6 +33,11 @@ namespace myengine
 	std::shared_ptr<Transform> Component::getTransform()
 	{
 		return getEntity()->getTransform();
+	}
+
+	std::shared_ptr<Camera> Component::getCamera()
+	{
+		return getEntity()->getCamera();
 	}
 
 	void Component::tick()

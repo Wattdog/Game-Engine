@@ -48,10 +48,6 @@ namespace myengine
 	void Transform::rotate(float angle)
 	{
 		rotation.y += angle;
-		//glm::mat4 model(1.0f);
-		//model = glm::rotate(model, glm::radians(angle), glm::vec3(0, 1, 0));
-		//glm::vec3 fwd = glm::vec3(model * glm::vec4(0, 0 , 1, 1));
-		//rotation += fwd * angle;
 	}
 
 	void Transform::rotate(glm::vec3 angle)

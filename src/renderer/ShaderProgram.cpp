@@ -96,7 +96,11 @@ namespace renderer
 
 		glm::mat4 projection = glm::perspective(glm::radians(45.0f), (float)800 / (float)800, 0.1f, 100.0f);
 
+		glm::mat4 view(1.0f);
+		view = glm::translate(view, glm::vec3(0.0f,0.0f,-3.5f));
+
 		setUniform("u_Projection", projection);
+		setUniform("u_View", view);
 	}
 
 	ShaderProgram::~ShaderProgram()

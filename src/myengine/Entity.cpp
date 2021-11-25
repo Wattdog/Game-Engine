@@ -1,6 +1,7 @@
 #include "Entity.h"
 #include "Component.h"
 #include "Transform.h"
+#include "Camera.h"
 
 namespace myengine
 {
@@ -13,6 +14,11 @@ namespace myengine
 	std::shared_ptr<Transform> Entity::getTransform()
 	{
 		return transform.lock();
+	}
+
+	std::shared_ptr<Camera> Entity::getCamera()
+	{
+		return view.lock();
 	}
 
 	void Entity::tick()
