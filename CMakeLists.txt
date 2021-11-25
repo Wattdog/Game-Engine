@@ -52,22 +52,26 @@ add_library(myengine
    src/myengine/myengine.cpp
    src/myengine/Entity.cpp
    src/myengine/Component.cpp
+   src/myengine/Camera.cpp
    src/myengine/Keyboard.cpp
    src/myengine/Environment.cpp
    src/myengine/Screen.cpp
    src/myengine/TriangleRenderer.cpp
    src/myengine/Transform.cpp
    src/myengine/Model.cpp
+   src/myengine/Mouse.cpp
    src/myengine/Core.h
    src/myengine/myengine.h
    src/myengine/Entity.h
    src/myengine/Component.h
+   src/myengine/Camera.h
    src/myengine/Keyboard.h
    src/myengine/Environment.h
    src/myengine/Screen.h
    src/myengine/TriangleRenderer.h
    src/myengine/Transform.h
    src/myengine/Model.h
+   src/myengine/Mouse.h
 )
 
 target_link_libraries(myengine renderer SDL2 openal32)
