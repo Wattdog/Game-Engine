@@ -60,6 +60,11 @@ add_library(myengine
    src/myengine/Transform.cpp
    src/myengine/Model.cpp
    src/myengine/Mouse.cpp
+<<<<<<< HEAD
+=======
+   src/myengine/Resources.cpp
+   src/myengine/Resource.cpp
+>>>>>>> 70f56e20877c80fe812bf072b8183215d9d3eafe
    src/myengine/Core.h
    src/myengine/myengine.h
    src/myengine/Entity.h
@@ -72,6 +77,11 @@ add_library(myengine
    src/myengine/Transform.h
    src/myengine/Model.h
    src/myengine/Mouse.h
+<<<<<<< HEAD
+=======
+   src/myengine/Resources.h
+   src/myengine/Resource.h
+>>>>>>> 70f56e20877c80fe812bf072b8183215d9d3eafe
 )
 
 target_link_libraries(myengine renderer SDL2 openal32)
