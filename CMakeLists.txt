@@ -56,15 +56,11 @@ add_library(myengine
    src/myengine/Keyboard.cpp
    src/myengine/Environment.cpp
    src/myengine/Screen.cpp
+   src/myengine/SphereCollider.cpp
    src/myengine/TriangleRenderer.cpp
    src/myengine/Transform.cpp
    src/myengine/Model.cpp
    src/myengine/Mouse.cpp
-<<<<<<< HEAD
-=======
-   src/myengine/Resources.cpp
-   src/myengine/Resource.cpp
->>>>>>> 70f56e20877c80fe812bf072b8183215d9d3eafe
    src/myengine/Core.h
    src/myengine/myengine.h
    src/myengine/Entity.h
@@ -73,15 +69,12 @@ add_library(myengine
    src/myengine/Keyboard.h
    src/myengine/Environment.h
    src/myengine/Screen.h
+   src/myengine/SphereCollider.h
    src/myengine/TriangleRenderer.h
    src/myengine/Transform.h
+   src/myengine/Trigger.h
    src/myengine/Model.h
    src/myengine/Mouse.h
-<<<<<<< HEAD
-=======
-   src/myengine/Resources.h
-   src/myengine/Resource.h
->>>>>>> 70f56e20877c80fe812bf072b8183215d9d3eafe
 )
 
 target_link_libraries(myengine renderer SDL2 openal32)
