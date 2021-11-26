@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: myengine::Keyboard Struct Reference</title>
+<title>My Engine: myengine::Keyboard Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">My Engine
    </div>
   </td>
  </tr>
@@ -76,22 +76,78 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:afa6899f1b9fd760da0f867fbbd91de15"><td class="memItemLeft" align="right" valign="top"><a id="afa6899f1b9fd760da0f867fbbd91de15" name="afa6899f1b9fd760da0f867fbbd91de15"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isKeyDown</b> (int keyCode)</td></tr>
+<tr class="memitem:afa6899f1b9fd760da0f867fbbd91de15"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_keyboard.html#afa6899f1b9fd760da0f867fbbd91de15">isKeyDown</a> (int keyCode)</td></tr>
 <tr class="separator:afa6899f1b9fd760da0f867fbbd91de15"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c26dadbb0549cec34cd8654fdec63d8"><td class="memItemLeft" align="right" valign="top"><a id="a1c26dadbb0549cec34cd8654fdec63d8" name="a1c26dadbb0549cec34cd8654fdec63d8"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isKeyUp</b> (int keyCode)</td></tr>
+<tr class="memitem:a1c26dadbb0549cec34cd8654fdec63d8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_keyboard.html#a1c26dadbb0549cec34cd8654fdec63d8">isKeyUp</a> (int keyCode)</td></tr>
 <tr class="separator:a1c26dadbb0549cec34cd8654fdec63d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa76be254da27966907d23eb836f6e98"><td class="memItemLeft" align="right" valign="top"><a id="aaa76be254da27966907d23eb836f6e98" name="aaa76be254da27966907d23eb836f6e98"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>removeKey</b> (SDL_Keycode key)</td></tr>
+<tr class="memitem:aaa76be254da27966907d23eb836f6e98"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_keyboard.html#aaa76be254da27966907d23eb836f6e98">removeKey</a> (SDL_Keycode key)</td></tr>
 <tr class="separator:aaa76be254da27966907d23eb836f6e98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a7124ece14367de6a7b2d8e9fdcc93ddd"><td class="memItemLeft" align="right" valign="top"><a id="a7124ece14367de6a7b2d8e9fdcc93ddd" name="a7124ece14367de6a7b2d8e9fdcc93ddd"></a>
 std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>keys</b></td></tr>
+<tr class="memdesc:a7124ece14367de6a7b2d8e9fdcc93ddd"><td class="mdescLeft">&#160;</td><td class="mdescRight">A vector used to store the keys which have been pressed. <br /></td></tr>
 <tr class="separator:a7124ece14367de6a7b2d8e9fdcc93ddd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="afa6899f1b9fd760da0f867fbbd91de15" name="afa6899f1b9fd760da0f867fbbd91de15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa6899f1b9fd760da0f867fbbd91de15">&#9670;&nbsp;</a></span>isKeyDown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool myengine::Keyboard::isKeyDown </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>keyCode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Runs a for loop to see if a key has been pressed. If it has it will return true, otherwise it will return false</p>
+
+</div>
+</div>
+<a id="a1c26dadbb0549cec34cd8654fdec63d8" name="a1c26dadbb0549cec34cd8654fdec63d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c26dadbb0549cec34cd8654fdec63d8">&#9670;&nbsp;</a></span>isKeyUp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool myengine::Keyboard::isKeyUp </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>keyCode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Checks to see if a key which has previously been pressed is now not being pressed</p>
+
+</div>
+</div>
+<a id="aaa76be254da27966907d23eb836f6e98" name="aaa76be254da27966907d23eb836f6e98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa76be254da27966907d23eb836f6e98">&#9670;&nbsp;</a></span>removeKey()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myengine::Keyboard::removeKey </td>
+          <td>(</td>
+          <td class="paramtype">SDL_Keycode&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Runs a for loop and will remove any keys which are not being pressed</p>
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following files:<ul>
 <li>src/myengine/<a class="el" href="_keyboard_8h_source.html">Keyboard.h</a></li>
 <li>src/myengine/Keyboard.cpp</li>

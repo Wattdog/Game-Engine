@@ -7,18 +7,22 @@ namespace myengine
 {
 	std::shared_ptr<Core> Entity::getCore()
 	{
-		// Returns the core
+		/// Returns the core
 		return core.lock();
 	}
 
 	std::shared_ptr<Transform> Entity::getTransform()
 	{
+		/// Returns the Transform
+
 		return transform.lock();
 	}
 
 	std::shared_ptr<Camera> Entity::getCamera()
 	{
-		// getCore->getCurrentCamera();
+		/// Returns the Camera
+
+		//getCore()->getCurrentCamera();
 		return view.lock();
 	}
 

@@ -22,6 +22,8 @@ namespace renderer
 
 	void VertexBuffer::add(glm::vec2 value)
 	{
+		/// Adds a glm::vec2 value to the vertex buffer
+
 		data.push_back(value.x);
 		data.push_back(value.y);
 
@@ -31,6 +33,8 @@ namespace renderer
 
 	void VertexBuffer::add(glm::vec3 value)
 	{
+		/// Adds a glm::vec3 value to the vertex buffer
+
 		data.push_back(value.x);
 		data.push_back(value.y);
 		data.push_back(value.z);
@@ -41,6 +45,8 @@ namespace renderer
 
 	void VertexBuffer::add(glm::vec4 value)
 	{
+		/// Adds a glm::vec4 value to the vertex buffer
+
 		data.push_back(value.x);
 		data.push_back(value.y);
 		data.push_back(value.z);
@@ -52,11 +58,18 @@ namespace renderer
 
 	int VertexBuffer::getComponents()
 	{
+		/// Returns the components
+
 		return components;
 	}
 
 	GLuint VertexBuffer::getId()
 	{
+		/**
+		 * Sets up the vertex buffer and
+		 * returns the id
+		 */
+
 		if (dirty)
 		{
 			glBindBuffer(GL_ARRAY_BUFFER, id);

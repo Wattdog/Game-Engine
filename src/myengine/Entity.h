@@ -16,6 +16,8 @@ namespace myengine
 			template <typename T>
 			std::shared_ptr<T> addComponent()
 			{
+				/// Adds a component to an entity
+
 				// Creates a shared pointer for the component
 				std::shared_ptr<T> component = std::make_shared<T>();
 
@@ -33,6 +35,8 @@ namespace myengine
 			template <typename T, typename A>
 			std::shared_ptr<T> addComponent(A a)
 			{
+				/// Adds a component to an entity and assigns a parameter to it
+
 				// Creates a shared pointer for the component
 				std::shared_ptr<T> component = std::make_shared<T>(a);
 
@@ -50,18 +54,20 @@ namespace myengine
 			template <typename T, typename A, typename B>
 			std::shared_ptr<T> addComponent(A a, B b)
 			{
-
+				/// Adds a component to an entity and assigns two parameter to it
 			}
 
 			template <typename T, typename A, typename B, typename C>
 			std::shared_ptr<T> addComponent(A a, B b, C c)
 			{
-
+				/// Adds a component to an entity and assigns three parameter to it
 			}
 
 			template <typename T>
 			std::shared_ptr<T> getComponent()
 			{
+				/// Returns the component 
+
 				return T;
 			}
 

@@ -7,6 +7,8 @@ namespace renderer
 {
 	Texture::Texture(std::string path)
 	{
+		/// Sets up the texture which will be used for the model
+
 		int w = 0;
 		int h = 0;
 
@@ -33,11 +35,15 @@ namespace renderer
 
 	glm::vec2 Texture::getSize()
 	{
+		/// Returns the size of the model
+
 		return size;
 	}
 
 	GLuint Texture::getId()
 	{
+		/// Returns the id of the texture
+
 		return id;
 	}
 }

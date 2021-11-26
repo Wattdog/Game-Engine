@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: src/renderer/ShaderProgram.h Source File</title>
+<title>My Engine: src/renderer/ShaderProgram.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">My Engine
    </div>
   </td>
  </tr>
@@ -88,19 +88,23 @@ $(function() {
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="structrenderer_1_1_shader_program.html">   17</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structrenderer_1_1_shader_program.html">ShaderProgram</a></div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    {</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>            <a class="code hl_struct" href="structrenderer_1_1_shader_program.html">ShaderProgram</a>(std::string vert, std::string frag);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>            <a class="code hl_function" href="structrenderer_1_1_shader_program.html#a130173cbce1379db8bff0d9d37ba8e64">ShaderProgram</a>(std::string vert, std::string frag);</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>            <a class="code hl_struct" href="structrenderer_1_1_shader_program.html">~ShaderProgram</a>();</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            <span class="keywordtype">void</span> draw(std::shared_ptr&lt;VertexArray&gt; vertexArray);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            <span class="keywordtype">void</span> setUniform(std::string name, glm::mat4 uniform);</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            <span class="keywordtype">void</span> setUniform(std::string name, std::shared_ptr&lt;Texture&gt; texture);</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            <span class="keywordtype">void</span> setUniform(<span class="keywordtype">float</span> uniform);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            GLuint getId();</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="structrenderer_1_1_shader_program.html#a8b9aebe61160cdb4353e4602f374d9ee">draw</a>(std::shared_ptr&lt;VertexArray&gt; vertexArray);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="structrenderer_1_1_shader_program.html#ac51c3203efda4fe49ff1a7b604f228da">setUniform</a>(std::string name, glm::mat4 uniform);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="structrenderer_1_1_shader_program.html#ac51c3203efda4fe49ff1a7b604f228da">setUniform</a>(std::string name, std::shared_ptr&lt;Texture&gt; texture);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="structrenderer_1_1_shader_program.html#ac51c3203efda4fe49ff1a7b604f228da">setUniform</a>(<span class="keywordtype">float</span> uniform);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            GLuint <a class="code hl_function" href="structrenderer_1_1_shader_program.html#a5512f3acd30ce542c2cd16e95485faa0">getId</a>();</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keyword">private</span>:</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            GLuint id;</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            std::vector&lt;Sampler&gt; samplers;</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    };</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>}</div>
 <div class="ttc" id="astructrenderer_1_1_shader_program_html"><div class="ttname"><a href="structrenderer_1_1_shader_program.html">renderer::ShaderProgram</a></div><div class="ttdef"><b>Definition:</b> ShaderProgram.h:18</div></div>
+<div class="ttc" id="astructrenderer_1_1_shader_program_html_a130173cbce1379db8bff0d9d37ba8e64"><div class="ttname"><a href="structrenderer_1_1_shader_program.html#a130173cbce1379db8bff0d9d37ba8e64">renderer::ShaderProgram::ShaderProgram</a></div><div class="ttdeci">ShaderProgram(std::string vert, std::string frag)</div><div class="ttdef"><b>Definition:</b> ShaderProgram.cpp:10</div></div>
+<div class="ttc" id="astructrenderer_1_1_shader_program_html_a5512f3acd30ce542c2cd16e95485faa0"><div class="ttname"><a href="structrenderer_1_1_shader_program.html#a5512f3acd30ce542c2cd16e95485faa0">renderer::ShaderProgram::getId</a></div><div class="ttdeci">GLuint getId()</div><div class="ttdef"><b>Definition:</b> ShaderProgram.cpp:179</div></div>
+<div class="ttc" id="astructrenderer_1_1_shader_program_html_a8b9aebe61160cdb4353e4602f374d9ee"><div class="ttname"><a href="structrenderer_1_1_shader_program.html#a8b9aebe61160cdb4353e4602f374d9ee">renderer::ShaderProgram::draw</a></div><div class="ttdeci">void draw(std::shared_ptr&lt; VertexArray &gt; vertexArray)</div><div class="ttdef"><b>Definition:</b> ShaderProgram.cpp:117</div></div>
+<div class="ttc" id="astructrenderer_1_1_shader_program_html_ac51c3203efda4fe49ff1a7b604f228da"><div class="ttname"><a href="structrenderer_1_1_shader_program.html#ac51c3203efda4fe49ff1a7b604f228da">renderer::ShaderProgram::setUniform</a></div><div class="ttdeci">void setUniform(std::string name, glm::mat4 uniform)</div><div class="ttdef"><b>Definition:</b> ShaderProgram.cpp:150</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

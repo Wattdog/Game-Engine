@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: renderer::VertexArray Struct Reference</title>
+<title>My Engine: renderer::VertexArray Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">My Engine
    </div>
   </td>
  </tr>
@@ -75,19 +75,121 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a349633fa29e4bed6e1abdbed7a2fa69a"><td class="memItemLeft" align="right" valign="top"><a id="a349633fa29e4bed6e1abdbed7a2fa69a" name="a349633fa29e4bed6e1abdbed7a2fa69a"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>VertexArray</b> (std::string path)</td></tr>
+<tr class="memitem:a349633fa29e4bed6e1abdbed7a2fa69a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrenderer_1_1_vertex_array.html#a349633fa29e4bed6e1abdbed7a2fa69a">VertexArray</a> (std::string path)</td></tr>
 <tr class="separator:a349633fa29e4bed6e1abdbed7a2fa69a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a910a56047f4ade5c239a46130fbe14e1"><td class="memItemLeft" align="right" valign="top"><a id="a910a56047f4ade5c239a46130fbe14e1" name="a910a56047f4ade5c239a46130fbe14e1"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setBuffer</b> (int location, std::shared_ptr&lt; <a class="el" href="structrenderer_1_1_vertex_buffer.html">VertexBuffer</a> &gt; buffer)</td></tr>
+<tr class="memitem:a65426ac4d793826fc3aa1814be2068df"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrenderer_1_1_vertex_array.html#a65426ac4d793826fc3aa1814be2068df">VertexArray</a> ()</td></tr>
+<tr class="separator:a65426ac4d793826fc3aa1814be2068df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a910a56047f4ade5c239a46130fbe14e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrenderer_1_1_vertex_array.html#a910a56047f4ade5c239a46130fbe14e1">setBuffer</a> (int location, std::shared_ptr&lt; <a class="el" href="structrenderer_1_1_vertex_buffer.html">VertexBuffer</a> &gt; buffer)</td></tr>
 <tr class="separator:a910a56047f4ade5c239a46130fbe14e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab962e6bc09027f111cceb018c542892c"><td class="memItemLeft" align="right" valign="top"><a id="ab962e6bc09027f111cceb018c542892c" name="ab962e6bc09027f111cceb018c542892c"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>getVertCount</b> ()</td></tr>
+<tr class="memitem:ab962e6bc09027f111cceb018c542892c"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrenderer_1_1_vertex_array.html#ab962e6bc09027f111cceb018c542892c">getVertCount</a> ()</td></tr>
 <tr class="separator:ab962e6bc09027f111cceb018c542892c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9982c571397158bd99cc8c5137548c3c"><td class="memItemLeft" align="right" valign="top"><a id="a9982c571397158bd99cc8c5137548c3c" name="a9982c571397158bd99cc8c5137548c3c"></a>
-GLuint&#160;</td><td class="memItemRight" valign="bottom"><b>getId</b> ()</td></tr>
+<tr class="memitem:a9982c571397158bd99cc8c5137548c3c"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrenderer_1_1_vertex_array.html#a9982c571397158bd99cc8c5137548c3c">getId</a> ()</td></tr>
 <tr class="separator:a9982c571397158bd99cc8c5137548c3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a349633fa29e4bed6e1abdbed7a2fa69a" name="a349633fa29e4bed6e1abdbed7a2fa69a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a349633fa29e4bed6e1abdbed7a2fa69a">&#9670;&nbsp;</a></span>VertexArray() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">renderer::VertexArray::VertexArray </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Sets up the vertex array with a path to the model</p>
+
+</div>
+</div>
+<a id="a65426ac4d793826fc3aa1814be2068df" name="a65426ac4d793826fc3aa1814be2068df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65426ac4d793826fc3aa1814be2068df">&#9670;&nbsp;</a></span>VertexArray() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">renderer::VertexArray::VertexArray </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Sets up the vertex array for the triangle</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a9982c571397158bd99cc8c5137548c3c" name="a9982c571397158bd99cc8c5137548c3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9982c571397158bd99cc8c5137548c3c">&#9670;&nbsp;</a></span>getId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLuint renderer::VertexArray::getId </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Sets up the vertex array and returns the id</p>
+
+</div>
+</div>
+<a id="ab962e6bc09027f111cceb018c542892c" name="ab962e6bc09027f111cceb018c542892c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab962e6bc09027f111cceb018c542892c">&#9670;&nbsp;</a></span>getVertCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t renderer::VertexArray::getVertCount </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Returns the vert count</p>
+
+</div>
+</div>
+<a id="a910a56047f4ade5c239a46130fbe14e1" name="a910a56047f4ade5c239a46130fbe14e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a910a56047f4ade5c239a46130fbe14e1">&#9670;&nbsp;</a></span>setBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void renderer::VertexArray::setBuffer </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="structrenderer_1_1_vertex_buffer.html">VertexBuffer</a> &gt;&#160;</td>
+          <td class="paramname"><em>buffer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Sets the buffer count</p>
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following files:<ul>
 <li>src/renderer/<a class="el" href="_vertex_array_8h_source.html">VertexArray.h</a></li>
 <li>src/renderer/VertexArray.cpp</li>

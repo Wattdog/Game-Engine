@@ -8,7 +8,9 @@ namespace renderer
 	struct Sampler
 	{
 		public:
+			/// The id which is used for the sampler
 			GLint id;
+			/// The texture used for the sampler
 			Texture* texture;
 	};
 }

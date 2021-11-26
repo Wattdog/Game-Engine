@@ -7,6 +7,8 @@ namespace renderer
 {
 	VertexArray::VertexArray(std::string path)
 	{
+		/// Sets up the vertex array with a path to the model
+
 		vertCount = 0;
 
 		id = buLoadModel(path, &vertCount);
@@ -16,6 +18,8 @@ namespace renderer
 
 	VertexArray::VertexArray()
 	{
+		/// Sets up the vertex array for the triangle
+
 		glGenVertexArrays(1, &id);
 		vertCount = 6;
 
@@ -30,17 +34,26 @@ namespace renderer
 
 	void VertexArray::setBuffer(int location, std::shared_ptr<VertexBuffer> buffer)
 	{
+		/// Sets the buffer count
+
 		buffers.at(location) = buffer;
 		dirty = true;
 	}
 
 	size_t VertexArray::getVertCount()
 	{
+		/// Returns the vert count
+
 		return vertCount;
 	}
 
 	GLuint VertexArray::getId()
 	{
+		/**
+		 * \brief Sets up the vertex array
+		 * and returns the id
+		 */
+
 		if (dirty)
 		{
 			glBindVertexArray(id);

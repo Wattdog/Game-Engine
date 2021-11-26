@@ -56,6 +56,7 @@ add_library(myengine
    src/myengine/Keyboard.cpp
    src/myengine/Environment.cpp
    src/myengine/Screen.cpp
+   src/myengine/Sound.cpp
    src/myengine/SphereCollider.cpp
    src/myengine/TriangleRenderer.cpp
    src/myengine/Transform.cpp
@@ -69,6 +70,7 @@ add_library(myengine
    src/myengine/Keyboard.h
    src/myengine/Environment.h
    src/myengine/Screen.h
+   src/myengine/Sound.h
    src/myengine/SphereCollider.h
    src/myengine/TriangleRenderer.h
    src/myengine/Transform.h

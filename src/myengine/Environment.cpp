@@ -10,6 +10,8 @@ namespace myengine
 
 	float Environment::getDeltaTime()
 	{
+		/// Returns delta time
+
 		return dt;
 
 		/*float idealTime = 1.0f / 80.0f;
@@ -24,6 +26,8 @@ namespace myengine
 
 	void Environment::tick()
 	{
+		/// Calculates current delta time
+
 		float current = SDL_GetTicks();
 		float diff = current - last;
 

@@ -5,6 +5,11 @@ namespace myengine
 {
 	void Sound::loadOgg(std::string fileName, std::vector<char>& buffer, ALenum& format, ALsizei& freq)
 	{
+		/**
+		 * \brief Loads an ogg file with a provided
+		 * path using the string parameter
+		 */
+
 		int channels = 0;
 		int sampleRate = 0;
 		short* output = NULL;

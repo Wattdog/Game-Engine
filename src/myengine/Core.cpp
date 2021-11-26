@@ -13,14 +13,20 @@ namespace myengine
 {
 	std::shared_ptr<Core> Core::initialize()
 	{
+		/**
+		 * \brief Sets up the entire program
+		 * by intializing everything which is required
+		 * to run the program
+		 */
+
 		// Creates a shared pointer which will be assinged to core
 		std::shared_ptr<Core> rtn = std::make_shared<Core>();
 
 		// It will then return the shared ptr to a weak pointer 
-		// which is assigned to core
+		//which is assigned to core 
 		rtn->self = rtn;
 
-		// Creates a shared pointer which will be assinged to screen
+		// brief Creates a shared pointer which will be assinged to screen.
 		// This will allow the shared pointer to acess functions from the
 		// screen header file
 		rtn->screen = std::make_shared<Screen>();
@@ -104,6 +110,11 @@ namespace myengine
 
 	std::shared_ptr<Entity> Core::addEntity()
 	{
+		/**
+		 * \brief Creates an entity which is then added
+		 * to a vector which is used to store all of the entities
+		 */
+
 		// Creates a shared pointer which will be assinged to entity
 		std::shared_ptr<Entity> entity = std::make_shared<Entity>();
 
@@ -120,18 +131,31 @@ namespace myengine
 		return entity;
 	}
 
+	std::shared_ptr<Camera> Core::getCurrentCamera()
+	{
+		/// Returns the camera from the core
+
+		return camera;
+	}
+
 	std::shared_ptr<Environment> Core::getEnvironment()
 	{
+		/// Returns the environment from the core
+
 		return environment;
 	}
 
 	std::shared_ptr<Keyboard> Core::getKeyboard()
 	{
+		/// Returns the keyboard from the core
+
 		return keyboard;
 	}
 
 	std::shared_ptr<Transform> Core::getTransform()
 	{
+		/// Returns the transform from the core
+
 		return transform;
 	}
 
@@ -147,6 +171,14 @@ namespace myengine
 
 	void Core::start()
 	{
+		/**
+		 * \brief Runs the main game loop.
+		 * From there it will then run tick and display functions
+		 * to show all of the entities created
+		 */
+
+		/// Sets a bool value to true so the game loop can run
+
 		// It will first check to see if the running bool 
 		// variable is true
 		while (running)
@@ -204,6 +236,8 @@ namespace myengine
 
 	void Core::stop()
 	{
+		/// Sets a bool value to false so the game loop can will stop running
+
 		// Sets the running bool variable to false
 		running = false;
 	}
