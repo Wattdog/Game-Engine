@@ -18,6 +18,7 @@ namespace myengine
 
 	std::shared_ptr<Camera> Entity::getCamera()
 	{
+		// getCore->getCurrentCamera();
 		return view.lock();
 	}
 

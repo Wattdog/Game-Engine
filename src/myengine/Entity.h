@@ -59,6 +59,12 @@ namespace myengine
 
 			}
 
+			template <typename T>
+			std::shared_ptr<T> getComponent()
+			{
+				return T;
+			}
+
 			std::shared_ptr<Core> getCore();
 			std::shared_ptr<Transform> getTransform();
 			std::shared_ptr<Camera> getCamera();

@@ -6,10 +6,12 @@
 #include <myengine/Component.h>
 #include <myengine/Camera.h>
 #include <myengine/Screen.h>
+#include <myengine/SphereCollider.h>
 #include <myengine/Environment.h>
 #include <myengine/Keyboard.h>
 #include <myengine/Transform.h>
 #include <myengine/TriangleRenderer.h>
+#include <myengine/Trigger.h>
 #include <myengine/Model.h>
 #include <myengine/Mouse.h>
 #include <myengine/Sound.h>

@@ -5,6 +5,7 @@
 #include "Keyboard.h"
 #include "Transform.h"
 #include "Sound.h"
+#include "SphereCollider.h"
 #include <GL/glew.h>
 #include <glm/glm.hpp>
 
@@ -132,6 +133,16 @@ namespace myengine
 	std::shared_ptr<Transform> Core::getTransform()
 	{
 		return transform;
+	}
+
+	void Core::registerCollider(std::shared_ptr<SphereCollider>())
+	{
+		
+	}
+
+	void Core::unregisterCollider(std::shared_ptr<SphereCollider>())
+	{
+
 	}
 
 	void Core::start()

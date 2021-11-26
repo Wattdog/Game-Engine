@@ -49,27 +49,27 @@ namespace myengine
 
 	void Model::onTick()
 	{
-		if (getKeyboard()->isKeyDown(SDLK_UP))
+		if (getKeyboard()->isKeyDown(SDLK_UP) || getKeyboard()->isKeyDown(SDLK_w))
 		{
 			getTransform()->move(glm::vec3(0, 0, -1.5f) * getEnvironment()->getDeltaTime());
 		}
 
-		if (getKeyboard()->isKeyDown(SDLK_DOWN))
+		if (getKeyboard()->isKeyDown(SDLK_DOWN) || getKeyboard()->isKeyDown(SDLK_s))
 		{
 			getTransform()->move(glm::vec3(0, 0, 1.5f) * getEnvironment()->getDeltaTime());
 		}
 
-		if (getKeyboard()->isKeyDown(SDLK_RIGHT))
+		if (getKeyboard()->isKeyDown(SDLK_RIGHT) || getKeyboard()->isKeyDown(SDLK_d))
 		{
 			getTransform()->move(glm::vec3(1.5f, 0, 0) * getEnvironment()->getDeltaTime());
 		}
 
-		if (getKeyboard()->isKeyDown(SDLK_LEFT))
+		if (getKeyboard()->isKeyDown(SDLK_LEFT) || getKeyboard()->isKeyDown(SDLK_a))
 		{
 			getTransform()->move(glm::vec3(-1.5f, 0, 0) * getEnvironment()->getDeltaTime());
 		}
 
-		getTransform()->rotate(glm::vec3(0,1,0) * 180.0f * getEnvironment()->getDeltaTime());
+		getTransform()->rotate(glm::vec3(0.0f,1.0f,0.0f) * 45.0f * getEnvironment()->getDeltaTime());
 	}
 
 }

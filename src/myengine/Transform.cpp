@@ -28,9 +28,9 @@ namespace myengine
 	void Transform::move(float amount)
 	{
 		glm::mat4 model(1.0f);
-		model = glm::rotate(model, rotation.y, glm::vec3(0, 1, 0));
-		model = glm::rotate(model, rotation.x, glm::vec3(1, 0, 0));
-		model = glm::rotate(model, rotation.z, glm::vec3(0, 0, 1));
+		model = glm::rotate(model, glm::radians(rotation.y), glm::vec3(0, 1, 0));
+		model = glm::rotate(model, glm::radians(rotation.x), glm::vec3(1, 0, 0));
+		model = glm::rotate(model, glm::radians(rotation.z), glm::vec3(0, 0, 1));
 		glm::vec3 fwd = glm::vec3(model * glm::vec4(0,0,1,1));
 		position += fwd * amount;
 	}
@@ -38,9 +38,9 @@ namespace myengine
 	void Transform::move(glm::vec3 amount)
 	{
 		glm::mat4 model(1.0f);
-		model = glm::rotate(model, rotation.y, glm::vec3(0, 1, 0));
-		model = glm::rotate(model, rotation.x, glm::vec3(1, 0, 0));
-		model = glm::rotate(model, rotation.z, glm::vec3(0, 0, 1));
+		model = glm::rotate(model, glm::radians(rotation.y), glm::vec3(0, 1, 0));
+		model = glm::rotate(model, glm::radians(rotation.x), glm::vec3(1, 0, 0));
+		model = glm::rotate(model, glm::radians(rotation.z), glm::vec3(0, 0, 1));
 		glm::vec3 fwd = glm::vec3(model * glm::vec4(amount, 1));
 		position += fwd;
 	}

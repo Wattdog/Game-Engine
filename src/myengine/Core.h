@@ -12,6 +12,7 @@ namespace myengine
 	struct Keyboard;
 	struct Transform;
 	struct Sound;
+	struct SphereCollider;
 
 	struct Core
 	{
@@ -21,6 +22,8 @@ namespace myengine
 		std::shared_ptr<Environment> getEnvironment();
 		std::shared_ptr<Keyboard> getKeyboard();
 		std::shared_ptr<Transform> getTransform();
+		void registerCollider(std::shared_ptr<SphereCollider>());
+		void unregisterCollider(std::shared_ptr<SphereCollider>());
 		void start();
 		void stop();
 	private:
