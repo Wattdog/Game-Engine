@@ -21,6 +21,7 @@ namespace renderer
 			~ShaderProgram();
 			void draw(std::shared_ptr<VertexArray> vertexArray);
 			void setUniform(std::string name, glm::mat4 uniform);
+			void setUniform(std::string name, glm::vec3 uniform);
 			void setUniform(std::string name, std::shared_ptr<Texture> texture);
 			void setUniform(float uniform);
 			GLuint getId();

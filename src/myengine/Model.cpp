@@ -15,7 +15,7 @@ namespace myengine
 	{
 		std::cout << "Initializing..." << std::endl;
 
-		textureTeaPot = std::make_shared<renderer::Texture>("../Assets/Textures/TeapotColourMap.bmp");
+		textureTeaPot = std::make_shared<renderer::Texture>("../Assets/Textures/Whiskers_diffuse.png");
 
 		vbo = std::make_shared<renderer::VertexBuffer>();
 		vbo->add(glm::vec2(0.0f, 0.0f));
@@ -25,7 +25,7 @@ namespace myengine
 		vbo->add(glm::vec2(0.0f, 1.0f));
 		vbo->add(glm::vec2(0.0f, 0.0f));
 		
-		vao = std::make_shared<renderer::VertexArray>("../Assets/Models/teapot/teapot3.obj");
+		vao = std::make_shared<renderer::VertexArray>("../Assets/Models/curuthers/curuthers.obj");
 
 		//vao->setBuffer(0, vbo);
 		vao->getId();

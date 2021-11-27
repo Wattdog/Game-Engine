@@ -157,6 +157,16 @@ namespace renderer
 		glUseProgram(0);
 	}
 
+	void ShaderProgram::setUniform(std::string name, glm::vec3 uniform)
+	{
+		/// Sets the uniform value with the name provided by the string
+
+		glUseProgram(id);
+		GLint loc = glGetUniformLocation(id, name.c_str());
+		glUniformMatrix4fv(loc, 1, GL_FALSE, glm::value_ptr(uniform));
+		glUseProgram(0);
+	}
+
 	void ShaderProgram::setUniform(std::string name, std::shared_ptr<Texture> texture)
 	{
 		/// Sets the uniform for the texture with the name provided by the string
