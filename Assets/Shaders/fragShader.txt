@@ -10,7 +10,7 @@ varying vec3 v_Normal;
 void main()
 {
 	vec3 lightPos = vec3(10, 10, 0);
-	float ambientStrength = 0.1;
+	float ambientStrength = 1;
 	vec3 lightColor = vec3(1,1,1);
 
 	vec3 ambient = ambientStrength * lightColor;
@@ -30,5 +30,5 @@ void main()
 	float specularStrength = 0.5;
 	vec3 specular = specularStrength * spec * lightColor;
 
-	gl_FragColor = vec4(light + diffuse + specular, 1.0) * tex;
+	gl_FragColor = vec4(ambient + diffuse + specular, 1.0) * tex;
 }
