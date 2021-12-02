@@ -10,7 +10,7 @@ varying vec3 v_Normal;
 void main()
 {
 	vec3 lightPos = vec3(10, 10, 0);
-	float ambientStrength = 1;
+	float ambientStrength = 0.1;
 	vec3 lightColor = vec3(1,1,1);
 
 	vec3 ambient = ambientStrength * lightColor;
@@ -18,7 +18,7 @@ void main()
 	vec3 lightDir = normalize(lightPos - v_FragPos);
 
 	float diff = max(dot(norm, lightDir), 0.0);
-	vec3 diffuse = diff * vec3(1,0,0) * lightColor;
+	vec3 diffuse = diff * vec3(1,1,1) * lightColor;
 
 	vec3 light = ambient + diffuse;
 	vec4 tex = texture2D(u_Texture, v_Texcoord);

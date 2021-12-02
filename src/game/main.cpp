@@ -24,6 +24,7 @@ int main()
    //std::shared_ptr<Component> component = entity->addComponent<EngineStopper>();
    //std::shared_ptr<TriangleRenderer> triangleRenderer = entity->addComponent<TriangleRenderer>();
    std::shared_ptr<Model> model = entity->addComponent<Model>();
+   std::shared_ptr<Cube> cube = entity->addComponent<Cube>();
 
    std::cout << entity->getCore() << std::endl;
    //std::cout << component->getCore() << std::endl;

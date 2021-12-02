@@ -5,6 +5,7 @@
 #include <myengine/Entity.h>
 #include <myengine/Component.h>
 #include <myengine/Camera.h>
+#include <myengine/Cube.h>
 #include <myengine/Screen.h>
 #include <myengine/SphereCollider.h>
 #include <myengine/Environment.h>

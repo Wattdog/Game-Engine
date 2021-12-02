@@ -15,7 +15,9 @@ namespace myengine
 	{
 		std::cout << "Initializing..." << std::endl;
 
-		textureTeaPot = std::make_shared<renderer::Texture>("../Assets/Textures/Whiskers_diffuse.png");
+		//texture = std::make_shared<renderer::Texture>("../Assets/Textures/TeapotColourMap.bmp");
+		//texture = std::make_shared<renderer::Texture>("../Assets/Textures/Material.png");
+		texture = std::make_shared<renderer::Texture>("../Assets/Textures/Whiskers_diffuse.png");
 
 		vbo = std::make_shared<renderer::VertexBuffer>();
 		vbo->add(glm::vec2(0.0f, 0.0f));
@@ -25,13 +27,15 @@ namespace myengine
 		vbo->add(glm::vec2(0.0f, 1.0f));
 		vbo->add(glm::vec2(0.0f, 0.0f));
 		
+		//vao = std::make_shared<renderer::VertexArray>("../Assets/Models/teapot/teapot3.obj");
+		//vao = std::make_shared<renderer::VertexArray>("../Assets/Models/monkey/monkey.obj");
 		vao = std::make_shared<renderer::VertexArray>("../Assets/Models/curuthers/curuthers.obj");
 
-		//vao->setBuffer(0, vbo);
 		vao->getId();
 
 		shaderProgram = std::make_shared<renderer::ShaderProgram>("../Assets/Shaders/vertShader.txt", "../Assets/Shaders/fragShader.txt");
 
+		//getTransform()->setPosition(glm::vec3(0, 0, -2.5f));
 		getTransform()->setPosition(glm::vec3(0, 0, -10.0f));
 		//getCamera()->setCamPosition(glm::vec3(0, 0, -3.5f));
 		
@@ -40,7 +44,7 @@ namespace myengine
 
 	void Model::onDisplay()
 	{
-		shaderProgram->setUniform("u_Texture", textureTeaPot);
+		shaderProgram->setUniform("u_Texture", texture);
 		shaderProgram->setUniform("u_Model", getTransform()->getModel());
 		//shaderProgram->setUniform("u_View", getCamera()->getView());
 

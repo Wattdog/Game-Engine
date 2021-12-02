@@ -1,22 +1,22 @@
 #include "Component.h"
 
-#include <renderer/renderer.h>
-#include <iostream>
 #include <GL/glew.h>
+#include <renderer/renderer.h>
+#include <vector>
+#include <iostream>
 
 namespace myengine
 {
-	struct Model : Component
+	struct Cube : Component
 	{
 		public:
-			~Model();
+			~Cube();
 			void onInit();
 		private:
 			void onDisplay();
 			void onTick();
+			int numVertices;
+			GLuint vao;
 			std::shared_ptr<renderer::ShaderProgram> shaderProgram;
-			std::shared_ptr<renderer::VertexBuffer> vbo;
-			std::shared_ptr<renderer::VertexArray> vao;
-			std::shared_ptr<renderer::Texture> texture;
 	};
 }

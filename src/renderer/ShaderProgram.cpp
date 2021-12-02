@@ -62,6 +62,11 @@ namespace renderer
 
 		if (!success)
 		{
+			GLint maxLength = 0;
+			glGetShaderiv(vertexShaderId, GL_INFO_LOG_LENGTH, &maxLength);
+			std::vector<GLchar> errorLog(maxLength);
+			glGetShaderInfoLog(vertexShaderId, maxLength, &maxLength, &errorLog.at(0));
+			std::cout << &errorLog.at(0) << std::endl;
 			throw std::exception();
 		}
 
@@ -107,6 +112,8 @@ namespace renderer
 
 		setUniform("u_Projection", projection);
 		setUniform("u_View", view);
+		setUniform("projMat", projection);
+		setUniform("viewMat", view);
 	}
 
 	ShaderProgram::~ShaderProgram()
@@ -158,6 +165,16 @@ namespace renderer
 	}
 
 	void ShaderProgram::setUniform(std::string name, glm::vec3 uniform)
+	{
+		/// Sets the uniform value with the name provided by the string
+
+		glUseProgram(id);
+		GLint loc = glGetUniformLocation(id, name.c_str());
+		glUniformMatrix4fv(loc, 1, GL_FALSE, glm::value_ptr(uniform));
+		glUseProgram(0);
+	}
+
+	void ShaderProgram::setUniform(std::string name, glm::vec4 uniform)
 	{
 		/// Sets the uniform value with the name provided by the string
 
