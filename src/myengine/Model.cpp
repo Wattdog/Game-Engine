@@ -32,7 +32,7 @@ namespace myengine
 
 		shaderProgram = std::make_shared<renderer::ShaderProgram>("../Assets/Shaders/vertShader.txt", "../Assets/Shaders/fragShader.txt");
 
-		getTransform()->setPosition(glm::vec3(0, 0, -5.0f));
+		getTransform()->setPosition(glm::vec3(0, 0, -10.0f));
 		//getCamera()->setCamPosition(glm::vec3(0, 0, -3.5f));
 		
 		std::cout << "Displaying..." << std::endl;

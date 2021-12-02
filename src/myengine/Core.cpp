@@ -99,7 +99,7 @@ namespace myengine
 
 		//alBufferData(id, format, &bufferData.at(0), static_cast<ALsizei>(bufferData.size()), freq);
 
-		glClearColor(1, 0, 0, 1);
+		glClearColor(0, 0, 0, 1);
 
 		// Sets the running bool variable to true
 		rtn->running = true;
