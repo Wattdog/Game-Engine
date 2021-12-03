@@ -9,6 +9,8 @@
 #include <myengine/Screen.h>
 #include <myengine/SphereCollider.h>
 #include <myengine/Environment.h>
+#include <myengine/Resource.h>
+#include <myengine/Resources.h>
 #include <myengine/Keyboard.h>
 #include <myengine/Transform.h>
 #include <myengine/TriangleRenderer.h>

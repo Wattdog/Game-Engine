@@ -14,6 +14,7 @@ namespace renderer
 			void add(glm::vec3 value);
 			void add(glm::vec4 value);
 			int getComponents();
+			size_t getSize();
 			GLuint getId();
 		private:
 			GLuint id;

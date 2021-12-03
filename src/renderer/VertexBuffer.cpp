@@ -63,6 +63,13 @@ namespace renderer
 		return components;
 	}
 
+	size_t VertexBuffer::getSize()
+	{
+		/// Returns the components
+
+		return data.size();
+	}
+
 	GLuint VertexBuffer::getId()
 	{
 		/**
@@ -74,7 +81,7 @@ namespace renderer
 		{
 			glBindBuffer(GL_ARRAY_BUFFER, id);
 
-			glBufferData(GL_ARRAY_BUFFER, data.size() * sizeof(data.at(0)), &data.at(0), GL_STATIC_DRAW);
+			glBufferData(GL_ARRAY_BUFFER,  sizeof(data.at(0)) * data.size(), &data.at(0), GL_STATIC_DRAW);
 
 			glBindBuffer(GL_ARRAY_BUFFER, 0);
 
