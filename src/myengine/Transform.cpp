@@ -18,6 +18,7 @@ namespace myengine
 		model = glm::rotate(model, glm::radians(rotation.y), glm::vec3(0, 1, 0));
 		model = glm::rotate(model, glm::radians(rotation.x), glm::vec3(1, 0, 0));
 		model = glm::rotate(model, glm::radians(rotation.z), glm::vec3(0, 0, 1));
+		model = glm::scale(model, scale);
 
 		return model;
 	}
@@ -27,6 +28,13 @@ namespace myengine
 		/// Sets the position for the model/triangle
 
 		position = pos;
+	}
+
+	void Transform::setScale(glm::vec3 scal)
+	{
+		/// Sets the position for the model/triangle
+
+		scale = scal;
 	}
 
 	void Transform::move(float amount)

@@ -41,7 +41,6 @@ add_library(renderer
    src/renderer/VertexBuffer.h
    src/renderer/Texture.h
    src/renderer/Sampler.h
-   src/renderer/bugl.h
    src/renderer/bugl2.h
    src/renderer/stb_image.h
 )

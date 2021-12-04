@@ -15,7 +15,6 @@ namespace myengine
 		private:
 			void onDisplay();
 			void onTick();
-			int numVertices;
 			std::shared_ptr<renderer::VertexArray> vao;
 			std::shared_ptr<renderer::VertexBuffer> vbo;
 			std::shared_ptr<renderer::VertexBuffer> normalsVbo;
