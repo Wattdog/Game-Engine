@@ -84,21 +84,25 @@ $(function() {
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>            <a class="code hl_function" href="structrenderer_1_1_vertex_array.html#a65426ac4d793826fc3aa1814be2068df">VertexArray</a>(std::string path);</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>            <a class="code hl_function" href="structrenderer_1_1_vertex_array.html#a65426ac4d793826fc3aa1814be2068df">VertexArray</a>();</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="structrenderer_1_1_vertex_array.html#a910a56047f4ade5c239a46130fbe14e1">setBuffer</a>(<span class="keywordtype">int</span> location, std::shared_ptr&lt;VertexBuffer&gt; buffer);</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>            <span class="keywordtype">size_t</span> <a class="code hl_function" href="structrenderer_1_1_vertex_array.html#ab962e6bc09027f111cceb018c542892c">getVertCount</a>();</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>            GLuint <a class="code hl_function" href="structrenderer_1_1_vertex_array.html#a9982c571397158bd99cc8c5137548c3c">getId</a>();</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>            GLuint id;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>            std::vector&lt;std::shared_ptr&lt;VertexBuffer&gt; &gt; buffers;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            <span class="keywordtype">size_t</span> vertCount;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            <span class="keywordtype">bool</span> dirty;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    };</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>}</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>            <a class="code hl_struct" href="structrenderer_1_1_vertex_array.html">~VertexArray</a>();</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="structrenderer_1_1_vertex_array.html#a910a56047f4ade5c239a46130fbe14e1">setBuffer</a>(<span class="keywordtype">int</span> location, std::shared_ptr&lt;VertexBuffer&gt; buffer);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>            <span class="keywordtype">size_t</span> <a class="code hl_function" href="structrenderer_1_1_vertex_array.html#ab962e6bc09027f111cceb018c542892c">getVertCount</a>();</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>            GLuint <a class="code hl_function" href="structrenderer_1_1_vertex_array.html#a9982c571397158bd99cc8c5137548c3c">getId</a>();</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>            GLuint vaoId;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            GLuint positionsVbo;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            GLuint tcsVbo;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            GLuint normalsVbo;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            std::vector&lt;std::shared_ptr&lt;VertexBuffer&gt; &gt; buffers;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            <span class="keywordtype">size_t</span> vertCount;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            <span class="keywordtype">bool</span> dirty;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    };</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>}</div>
 <div class="ttc" id="astructrenderer_1_1_vertex_array_html"><div class="ttname"><a href="structrenderer_1_1_vertex_array.html">renderer::VertexArray</a></div><div class="ttdef"><b>Definition:</b> VertexArray.h:12</div></div>
-<div class="ttc" id="astructrenderer_1_1_vertex_array_html_a65426ac4d793826fc3aa1814be2068df"><div class="ttname"><a href="structrenderer_1_1_vertex_array.html#a65426ac4d793826fc3aa1814be2068df">renderer::VertexArray::VertexArray</a></div><div class="ttdeci">VertexArray()</div><div class="ttdef"><b>Definition:</b> VertexArray.cpp:19</div></div>
-<div class="ttc" id="astructrenderer_1_1_vertex_array_html_a910a56047f4ade5c239a46130fbe14e1"><div class="ttname"><a href="structrenderer_1_1_vertex_array.html#a910a56047f4ade5c239a46130fbe14e1">renderer::VertexArray::setBuffer</a></div><div class="ttdeci">void setBuffer(int location, std::shared_ptr&lt; VertexBuffer &gt; buffer)</div><div class="ttdef"><b>Definition:</b> VertexArray.cpp:35</div></div>
-<div class="ttc" id="astructrenderer_1_1_vertex_array_html_a9982c571397158bd99cc8c5137548c3c"><div class="ttname"><a href="structrenderer_1_1_vertex_array.html#a9982c571397158bd99cc8c5137548c3c">renderer::VertexArray::getId</a></div><div class="ttdeci">GLuint getId()</div><div class="ttdef"><b>Definition:</b> VertexArray.cpp:50</div></div>
-<div class="ttc" id="astructrenderer_1_1_vertex_array_html_ab962e6bc09027f111cceb018c542892c"><div class="ttname"><a href="structrenderer_1_1_vertex_array.html#ab962e6bc09027f111cceb018c542892c">renderer::VertexArray::getVertCount</a></div><div class="ttdeci">size_t getVertCount()</div><div class="ttdef"><b>Definition:</b> VertexArray.cpp:43</div></div>
+<div class="ttc" id="astructrenderer_1_1_vertex_array_html_a65426ac4d793826fc3aa1814be2068df"><div class="ttname"><a href="structrenderer_1_1_vertex_array.html#a65426ac4d793826fc3aa1814be2068df">renderer::VertexArray::VertexArray</a></div><div class="ttdeci">VertexArray()</div><div class="ttdef"><b>Definition:</b> VertexArray.cpp:36</div></div>
+<div class="ttc" id="astructrenderer_1_1_vertex_array_html_a910a56047f4ade5c239a46130fbe14e1"><div class="ttname"><a href="structrenderer_1_1_vertex_array.html#a910a56047f4ade5c239a46130fbe14e1">renderer::VertexArray::setBuffer</a></div><div class="ttdeci">void setBuffer(int location, std::shared_ptr&lt; VertexBuffer &gt; buffer)</div><div class="ttdef"><b>Definition:</b> VertexArray.cpp:60</div></div>
+<div class="ttc" id="astructrenderer_1_1_vertex_array_html_a9982c571397158bd99cc8c5137548c3c"><div class="ttname"><a href="structrenderer_1_1_vertex_array.html#a9982c571397158bd99cc8c5137548c3c">renderer::VertexArray::getId</a></div><div class="ttdeci">GLuint getId()</div><div class="ttdef"><b>Definition:</b> VertexArray.cpp:81</div></div>
+<div class="ttc" id="astructrenderer_1_1_vertex_array_html_ab962e6bc09027f111cceb018c542892c"><div class="ttname"><a href="structrenderer_1_1_vertex_array.html#ab962e6bc09027f111cceb018c542892c">renderer::VertexArray::getVertCount</a></div><div class="ttdeci">size_t getVertCount()</div><div class="ttdef"><b>Definition:</b> VertexArray.cpp:74</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -81,6 +81,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a8b9aebe61160cdb4353e4602f374d9ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac51c3203efda4fe49ff1a7b604f228da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrenderer_1_1_shader_program.html#ac51c3203efda4fe49ff1a7b604f228da">setUniform</a> (std::string name, glm::mat4 uniform)</td></tr>
 <tr class="separator:ac51c3203efda4fe49ff1a7b604f228da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73957a620a154322eabb22ff99248798"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrenderer_1_1_shader_program.html#a73957a620a154322eabb22ff99248798">setUniform</a> (std::string name, glm::vec3 uniform)</td></tr>
+<tr class="separator:a73957a620a154322eabb22ff99248798"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64981e3f514f0914c2edcee5f8a11ea1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrenderer_1_1_shader_program.html#a64981e3f514f0914c2edcee5f8a11ea1">setUniform</a> (std::string name, glm::vec4 uniform)</td></tr>
+<tr class="separator:a64981e3f514f0914c2edcee5f8a11ea1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf132ad8082513337e4921b1052296f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrenderer_1_1_shader_program.html#aaf132ad8082513337e4921b1052296f1">setUniform</a> (std::string name, std::shared_ptr&lt; <a class="el" href="structrenderer_1_1_texture.html">Texture</a> &gt; texture)</td></tr>
 <tr class="separator:aaf132ad8082513337e4921b1052296f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad0238885302263b47917f0de9dafe4ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrenderer_1_1_shader_program.html#ad0238885302263b47917f0de9dafe4ee">setUniform</a> (float uniform)</td></tr>
@@ -157,7 +161,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="ad0238885302263b47917f0de9dafe4ee" name="ad0238885302263b47917f0de9dafe4ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad0238885302263b47917f0de9dafe4ee">&#9670;&nbsp;</a></span>setUniform() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0238885302263b47917f0de9dafe4ee">&#9670;&nbsp;</a></span>setUniform() <span class="overload">[1/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -176,7 +180,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="ac51c3203efda4fe49ff1a7b604f228da" name="ac51c3203efda4fe49ff1a7b604f228da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac51c3203efda4fe49ff1a7b604f228da">&#9670;&nbsp;</a></span>setUniform() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac51c3203efda4fe49ff1a7b604f228da">&#9670;&nbsp;</a></span>setUniform() <span class="overload">[2/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -204,8 +208,66 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a73957a620a154322eabb22ff99248798" name="a73957a620a154322eabb22ff99248798"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73957a620a154322eabb22ff99248798">&#9670;&nbsp;</a></span>setUniform() <span class="overload">[3/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void renderer::ShaderProgram::setUniform </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">glm::vec3&#160;</td>
+          <td class="paramname"><em>uniform</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Sets the uniform value with the name provided by the string</p>
+
+</div>
+</div>
+<a id="a64981e3f514f0914c2edcee5f8a11ea1" name="a64981e3f514f0914c2edcee5f8a11ea1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64981e3f514f0914c2edcee5f8a11ea1">&#9670;&nbsp;</a></span>setUniform() <span class="overload">[4/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void renderer::ShaderProgram::setUniform </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">glm::vec4&#160;</td>
+          <td class="paramname"><em>uniform</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Sets the uniform value with the name provided by the string</p>
+
+</div>
+</div>
 <a id="aaf132ad8082513337e4921b1052296f1" name="aaf132ad8082513337e4921b1052296f1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaf132ad8082513337e4921b1052296f1">&#9670;&nbsp;</a></span>setUniform() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf132ad8082513337e4921b1052296f1">&#9670;&nbsp;</a></span>setUniform() <span class="overload">[5/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">

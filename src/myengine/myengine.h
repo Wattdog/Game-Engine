@@ -15,6 +15,7 @@
 #include <myengine/Transform.h>
 #include <myengine/TriangleRenderer.h>
 #include <myengine/Trigger.h>
+#include <myengine/Math.h>
 #include <myengine/Model.h>
 #include <myengine/Mouse.h>
 #include <myengine/Sound.h>
