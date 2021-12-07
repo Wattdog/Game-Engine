@@ -22,8 +22,8 @@ namespace myengine
 		std::cout << "Initializing..." << std::endl;
 
 		//texture = std::make_shared<renderer::Texture>("../Assets/Textures/TeapotColourMap.bmp");
-		//texture = std::make_shared<renderer::Texture>("../Assets/Textures/Material.png");
-		texture = std::make_shared<renderer::Texture>("../Assets/Textures/Whiskers_diffuse.png");
+		texture = std::make_shared<renderer::Texture>("../Assets/Textures/Material.png");
+		//texture = std::make_shared<renderer::Texture>("../Assets/Textures/Whiskers_diffuse.png");
 
 		vbo = std::make_shared<renderer::VertexBuffer>();
 		vbo->add(vec2(0.0f, 0.0f));
@@ -34,8 +34,8 @@ namespace myengine
 		vbo->add(vec2(0.0f, 0.0f));
 		
 		//vao = std::make_shared<renderer::VertexArray>("../Assets/Models/teapot/teapot3.obj");
-		//vao = std::make_shared<renderer::VertexArray>("../Assets/Models/monkey/monkey.obj");
-		vao = std::make_shared<renderer::VertexArray>("../Assets/Models/curuthers/curuthers.obj");
+		vao = std::make_shared<renderer::VertexArray>("../Assets/Models/monkey/monkey.obj");
+		//vao = std::make_shared<renderer::VertexArray>("../Assets/Models/curuthers/curuthers.obj");
 
 		vao->getId();
 
@@ -45,6 +45,9 @@ namespace myengine
 		getTransform()->setPosition(vec3(0, 0, -10.0f));
 		//getCamera()->setCamPosition(glm::vec3(0, 0, -3.5f));
 		
+		shaderProgram->setUniform("lightPos", vec3(0, 0, 0));
+		shaderProgram->setUniform("lightColor", vec3(1, 0, 0));
+
 		std::cout << "Displaying..." << std::endl;
 	}
 
