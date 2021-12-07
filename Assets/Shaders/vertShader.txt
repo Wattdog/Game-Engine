@@ -1,6 +1,6 @@
 attribute vec3 in_Position;
 attribute vec3 in_Normal;
-attribute vec4 in_Texcoord;
+attribute vec2 in_Texcoord;
 
 uniform mat4 u_Projection;
 uniform mat4 u_Model;

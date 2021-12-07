@@ -7,7 +7,7 @@ uniform mat4 modelMat;
 uniform mat4 viewMat;
 uniform mat4 projMat;
 
-uniform vec4 worldSpaceLightPos = {1, 0.0, 1, 1};
+uniform vec4 worldSpaceLightPos;
 
 out vec3 eyeSpaceNormalV;
 out vec3 eyeSpaceLightPosV;

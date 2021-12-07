@@ -173,7 +173,7 @@ namespace renderer
 
 		glUseProgram(id);
 		GLint loc = glGetUniformLocation(id, name.c_str());
-		glUniformMatrix4fv(loc, 1, GL_FALSE, glm::value_ptr(uniform));
+		glUniform3f(loc, uniform.x, uniform.y, uniform.z);
 		glUseProgram(0);
 	}
 
@@ -183,7 +183,7 @@ namespace renderer
 
 		glUseProgram(id);
 		GLint loc = glGetUniformLocation(id, name.c_str());
-		glUniformMatrix4fv(loc, 1, GL_FALSE, glm::value_ptr(uniform));
+		glUniform4f(loc, uniform.x, uniform.y, uniform.z, uniform.w);
 		glUseProgram(0);
 	}
 

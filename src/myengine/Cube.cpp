@@ -109,14 +109,14 @@ namespace myengine
 		shaderProgram = std::make_shared<renderer::ShaderProgram>("../Assets/Shaders/cube_vertShader.txt", "../Assets/Shaders/cube_fragShader.txt");
 
 		getTransform()->setPosition(vec3(2.5f, 0.0f, -10.0f));
-		getTransform()->setScale(vec3(0.5f, 0.5f, 0.5f));
+		getTransform()->setScale(vec3(1.0f, 1.0f, 1.0f));
 
-		shaderProgram->setUniform("worldSpaceLightPos", vec4(1, 0.0, 1, 1));
+		shaderProgram->setUniform("worldSpaceLightPos", vec4(1, 10.0, 1, 1));
 	}
 
 	void Cube::onDisplay()
 	{
-		shaderProgram->setUniform("lightColour", vec3(1, 0, 0));
+		shaderProgram->setUniform("lightColor", vec3(1, 0, 0));
 		shaderProgram->setUniform("modelMat", getTransform()->getModel());
 
 		glEnable(GL_CULL_FACE);
