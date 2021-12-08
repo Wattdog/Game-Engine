@@ -111,7 +111,7 @@ namespace myengine
 		getTransform()->setPosition(vec3(2.5f, 0.0f, -10.0f));
 		getTransform()->setScale(vec3(1.0f, 1.0f, 1.0f));
 
-		shaderProgram->setUniform("worldSpaceLightPos", vec4(1, 10.0, 1, 1));
+		shaderProgram->setUniform("worldSpaceLightPos", vec4(1, 0.0, 1, 1));
 	}
 
 	void Cube::onDisplay()
