@@ -24,7 +24,7 @@ namespace renderer
 			void setUniform(std::string name, glm::vec3 uniform);
 			void setUniform(std::string name, glm::vec4 uniform);
 			void setUniform(std::string name, std::shared_ptr<Texture> texture);
-			void setUniform(float uniform);
+			void setUniform(std::string name, float uniform);
 			GLuint getId();
 		private:
 			GLuint id;

@@ -39,20 +39,27 @@ namespace myengine
 
 		vao->getId();
 
-		shaderProgram = std::make_shared<renderer::ShaderProgram>("../Assets/Shaders/vertShader.txt", "../Assets/Shaders/fragShader.txt");
+		shaderProgram = std::make_shared<renderer::ShaderProgram>("../Assets/Shaders/pbrVertShader.txt", "../Assets/Shaders/pbrFragShader.txt");
 
 		//getTransform()->setPosition(glm::vec3(0, 0, -2.5f));
 		getTransform()->setPosition(vec3(0, 0, -10.0f));
 		//getCamera()->setCamPosition(glm::vec3(0, 0, -3.5f));
 		
-		shaderProgram->setUniform("lightPos", vec3(0, 0, 0));
-		shaderProgram->setUniform("lightColor", vec3(1, 0, 0));
-
 		std::cout << "Displaying..." << std::endl;
 	}
 
 	void Model::onDisplay()
 	{
+		shaderProgram->setUniform("lightPosition", vec3(5, 5, 0));
+		shaderProgram->setUniform("lightColor", vec3(1, 1, 1));
+
+		shaderProgram->setUniform("albedo", vec3(0, 1, 0));
+		shaderProgram->setUniform("metallic", 0.0f);
+		shaderProgram->setUniform("roughness", 0.1f);
+		shaderProgram->setUniform("ao", 1.0f);
+
+		shaderProgram->setUniform("camPos", vec3(10, 10, 0));
+
 		shaderProgram->setUniform("u_Texture", texture);
 		
 		shaderProgram->setUniform("u_Model", getTransform()->getModel());

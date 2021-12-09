@@ -198,11 +198,13 @@ namespace renderer
 		glUseProgram(0);
 	}
 
-	void ShaderProgram::setUniform(float uniform)
+	void ShaderProgram::setUniform(std::string name, float uniform)
 	{
 		/// Sets the uniform float value with the name provided by the string
 
 		glUseProgram(id);
+		GLint loc = glGetUniformLocation(id, name.c_str());
+		glUniform1f(loc, uniform);
 		glUseProgram(0);
 	}
 

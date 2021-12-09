@@ -7,6 +7,10 @@ varying vec2 v_Texcoord;
 varying vec3 v_FragPos;
 varying vec3 v_Normal;
 
+uniform vec3 emissiveColor;
+uniform float alpha = 50.0f;
+
+
 void main()
 {
 	vec3 lightPos = vec3(10, 10, 0);
@@ -22,6 +26,8 @@ void main()
 
 	vec3 light = ambient + diffuse;
 	vec4 tex = texture2D(u_Texture, v_Texcoord);
+
+	vec3 texColor = vec3(texture(u_Texture, vec2(v_Texcoord.x,1-v_Texcoord.y)));
 	
 	vec3 viewPos = vec3(inverse(u_View) * vec4(0, 0, 0, 1));
 	vec3 viewDir = normalize(viewPos - v_FragPos);
@@ -30,5 +36,5 @@ void main()
 	float specularStrength = 0.5;
 	vec3 specular = specularStrength * spec * lightColor;
 
-	gl_FragColor = vec4(ambient + diffuse + specular, 1.0) * tex;
+	gl_FragColor = vec4(emissiveColor + texColor * (ambient + diffuse + specular), alpha) * tex;
 }

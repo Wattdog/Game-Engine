@@ -55,7 +55,7 @@ namespace myengine
 
 		vbo->add(vec3(-0.5f, 0.5f, -0.5f));
 		vbo->add(vec3(-0.5f, 0.5f, 0.5f));
-		vbo->add(glm::vec3(0.5f, 0.5f, -0.5f));
+		vbo->add(vec3(0.5f, 0.5f, -0.5f));
 
 		vbo->add(vec3(0.5f, 0.5f, -0.5f));
 		vbo->add(vec3(-0.5f, 0.5f, 0.5f));
@@ -74,7 +74,7 @@ namespace myengine
 
 		normalsVbo->add(vec3(1.0f, 0.0f, 0.0f));
 		normalsVbo->add(vec3(1.0f, 0.0f, 0.0f));
-		normalsVbo->add(glm::vec3(1.0f, 0.0f, 0.0f));
+		normalsVbo->add(vec3(1.0f, 0.0f, 0.0f));
 
 		normalsVbo->add(vec3(1.0f, 0.0f, 0.0f));
 		normalsVbo->add(vec3(1.0f, 0.0f, 0.0f));
