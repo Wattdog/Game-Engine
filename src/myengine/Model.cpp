@@ -50,12 +50,39 @@ namespace myengine
 
 	void Model::onDisplay()
 	{
-		shaderProgram->setUniform("lightPosition", vec3(1, 1, 0));
-		shaderProgram->setUniform("lightColor", vec3(1, 0, 0));
+		vec3 lightPositions[] =
+		{
+			vec3(-10.0f, 10.0f, 10.0f),
+			vec3(10.0f, 10.0f, 10.0f),
+			vec3(-10.0f, -10.0f, 10.0f),
+			vec3(10.0f, -10.0f, 10.0f)
+		};
 
-		shaderProgram->setUniform("albedo", vec3(1, 1, 0));
+		vec3 lightColors[] =
+		{
+			vec3(10, 10, 10),
+			vec3(10, 10, 10),
+			vec3(10, 10, 10),
+			vec3(10, 10, 10)
+		};
+
+
+		// Sets uniform for light positions
+		for (int i = 0; i < sizeof(lightPositions) / sizeof(lightPositions[0]); i++)
+		{
+			shaderProgram->setUniform("lightPositions", lightPositions[i]);
+		}
+
+		// Sets uniform for light colors
+		for (int i = 0; i < sizeof(lightColors) / sizeof(lightColors[0]); i++)
+		{
+			shaderProgram->setUniform("lightColors", lightColors[i]);
+		}
+
+		// Sets uniform for albedo, metallic, roughness and ao value
+		shaderProgram->setUniform("albedo", vec3(0, 0.5, 0));
 		shaderProgram->setUniform("metallic", 0.0f);
-		shaderProgram->setUniform("roughness", 0.1f);
+		shaderProgram->setUniform("roughness", 1.0f);
 		shaderProgram->setUniform("ao", 1.0f);
 
 		shaderProgram->setUniform("camPos", vec3(10, 10, 0));
