@@ -56,12 +56,6 @@ namespace myengine
 		onDisplay();
 	}
 
-	void Component::play()
-	{
-		// Runs the onTick function
-		onPlay();
-	}
-
 	void Component::onTick()
 	{
 		/// Runs the virtual function onTick
@@ -81,11 +75,6 @@ namespace myengine
 		* This will depend on which component has been used 
 		* (model/triangle renderer)
 		*/
-	}
-
-	void Component::onPlay()
-	{
-
 	}
 
 	void Component::onInit()

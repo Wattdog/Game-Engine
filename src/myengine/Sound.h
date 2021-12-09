@@ -13,7 +13,6 @@ namespace myengine
 			void onInitialize();
 			void loadOgg(std::string fileName, std::vector<char> &buffer, ALenum &format, ALsizei &freq);
 		private:
-			void onPlay();
 			ALint bufferId;
 			ALfloat variance;
 			ALfloat vol;

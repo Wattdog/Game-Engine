@@ -222,11 +222,6 @@ namespace myengine
 				entities.at(ei)->display();
 			}
 
-			for (size_t ei = 0; ei < entities.size(); ++ei)
-			{
-				entities.at(ei)->play();
-			}
-
 			glDisable(GL_CULL_FACE);
 
 			glDisable(GL_DEPTH_TEST);

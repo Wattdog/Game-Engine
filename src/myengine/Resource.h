@@ -9,7 +9,7 @@ namespace myengine
 	struct Resource
 	{
 		public:
-			
+			std::string getPath();
 		private:
 			friend struct myengine::Resources;
 			virtual void onInitialize();

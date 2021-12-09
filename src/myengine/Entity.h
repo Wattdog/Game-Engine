@@ -83,6 +83,5 @@ namespace myengine
 			std::weak_ptr<Entity> self;
 			void tick();
 			void display();
-			void play();
 	};
 }

@@ -5,7 +5,9 @@ namespace myengine
 {
 	void Sound::onInitialize()
 	{
+		getPath();
 	}
+
 	void Sound::loadOgg(std::string fileName, std::vector<char>& buffer, ALenum& format, ALsizei& freq)
 	{
 		/**
@@ -42,18 +44,5 @@ namespace myengine
 		memcpy(&buffer.at(0), output, buffer.size());
 
 		free(output);
-	}
-
-	void Sound::onPlay()
-	{
-		ALuint sid = 0;
-		alGenSources(1, &sid);
-
-		//alListener3f(AL_POSITION, 0.0f, 0.0f, 0.0f);
-		//alSource3f(sid, AL_POSITION, 0.0f, 0.0f, 0.0f);
-		//alSourcei(sid, AL_BUFFER, bufferId);
-		//alSourcef(sid, AL_PITCH, variance);
-		//alSourcef(sid, AL_GAIN, vol);
-		alSourcePlay(sid);
 	}
 }
