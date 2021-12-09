@@ -90,7 +90,15 @@ namespace myengine
 			getTransform()->move(vec3(-1.5f, 0, 0) * getEnvironment()->getDeltaTime());
 		}
 
-		getTransform()->rotate(vec3(0.0f,1.0f,0.0f) * 45.0f * getEnvironment()->getDeltaTime());
+		if (getKeyboard()->isKeyDown(SDLK_q))
+		{
+			getTransform()->rotate(vec3(0.0f, -1.0f, 0.0f) * 45.0f * getEnvironment()->getDeltaTime());
+		}
+
+		if (getKeyboard()->isKeyDown(SDLK_e))
+		{
+			getTransform()->rotate(vec3(0.0f, 1.0f, 0.0f) * 45.0f * getEnvironment()->getDeltaTime());
+		}
 	}
 
 }
