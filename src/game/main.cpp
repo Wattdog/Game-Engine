@@ -24,6 +24,8 @@ int main()
    //std::shared_ptr<Entity> entity2 = core->addEntity();
    //std::shared_ptr<Entity> entity3 = core->addEntity();
 
+   std::shared_ptr<Sound> sound = core->getResources()->load<Sound>("horn");
+
    //std::shared_ptr<Component> component = entity->addComponent<EngineStopper>();
    //std::shared_ptr<TriangleRenderer> triangleRenderer = entity->addComponent<TriangleRenderer>();
 

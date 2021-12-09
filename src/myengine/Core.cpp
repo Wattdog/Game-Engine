@@ -3,6 +3,7 @@
 #include "Screen.h"
 #include "Environment.h"
 #include "Keyboard.h"
+#include "Resources.h"
 #include "Transform.h"
 #include "Sound.h"
 #include "SphereCollider.h"
@@ -32,7 +33,7 @@ namespace myengine
 		rtn->screen = std::make_shared<Screen>();
 		rtn->keyboard = std::make_shared<Keyboard>();
 		rtn->environment = std::make_shared<Environment>();
-		rtn->transform = std::make_shared<Transform>();
+		rtn->resources = std::make_shared<Resources>();
 		rtn->sound = std::make_shared<Sound>();
 
 		rtn->screen->setWidth(800);
@@ -152,11 +153,11 @@ namespace myengine
 		return keyboard;
 	}
 
-	std::shared_ptr<Transform> Core::getTransform()
+	std::shared_ptr<Resources> Core::getResources()
 	{
 		/// Returns the transform from the core
 
-		return transform;
+		return resources;
 	}
 
 	void Core::registerCollider(std::shared_ptr<SphereCollider>())

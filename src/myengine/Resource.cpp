@@ -2,5 +2,7 @@
 
 namespace myengine
 {
-
+	void Resource::onInitialize()
+	{
+	}
 }

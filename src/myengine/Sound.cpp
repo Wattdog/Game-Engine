@@ -3,6 +3,9 @@
 
 namespace myengine
 {
+	void Sound::onInitialize()
+	{
+	}
 	void Sound::loadOgg(std::string fileName, std::vector<char>& buffer, ALenum& format, ALsizei& freq)
 	{
 		/**

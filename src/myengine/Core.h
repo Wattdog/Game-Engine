@@ -14,6 +14,7 @@ namespace myengine
 	struct Transform;
 	struct Sound;
 	struct SphereCollider;
+	struct Resources;
 
 	struct Core
 	{
@@ -23,7 +24,7 @@ namespace myengine
 		std::shared_ptr<Environment> getEnvironment();
 		std::shared_ptr<Camera> getCurrentCamera();
 		std::shared_ptr<Keyboard> getKeyboard();
-		std::shared_ptr<Transform> getTransform();
+		std::shared_ptr<Resources> getResources();
 		void registerCollider(std::shared_ptr<SphereCollider>());
 		void unregisterCollider(std::shared_ptr<SphereCollider>());
 		void start();
@@ -35,7 +36,7 @@ namespace myengine
 		std::shared_ptr<Camera> camera;
 		std::shared_ptr<Screen> screen;
 		std::shared_ptr<Keyboard> keyboard;
-		std::shared_ptr<Transform> transform;
+		std::shared_ptr<Resources> resources;
 		std::shared_ptr<Sound> sound;
 		std::weak_ptr<Core> self;
 		SDL_Window* window;

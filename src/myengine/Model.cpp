@@ -50,10 +50,10 @@ namespace myengine
 
 	void Model::onDisplay()
 	{
-		shaderProgram->setUniform("lightPosition", vec3(5, 5, 0));
-		shaderProgram->setUniform("lightColor", vec3(1, 1, 1));
+		shaderProgram->setUniform("lightPosition", vec3(1, 1, 0));
+		shaderProgram->setUniform("lightColor", vec3(1, 0, 0));
 
-		shaderProgram->setUniform("albedo", vec3(0, 1, 0));
+		shaderProgram->setUniform("albedo", vec3(1, 1, 1));
 		shaderProgram->setUniform("metallic", 0.0f);
 		shaderProgram->setUniform("roughness", 0.1f);
 		shaderProgram->setUniform("ao", 1.0f);

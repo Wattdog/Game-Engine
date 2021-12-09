@@ -27,8 +27,8 @@ namespace myengine
 
 				rtn = std::make_shared<T>();
 				rtn->path = _path;
-				//rtn->resources =
-				//rtn->onInitialize();
+				//rtn->resources = self;
+				rtn->onInitialize();
 				resources.push_back(rtn);
 
 				return rtn;
