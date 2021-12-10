@@ -12,9 +12,6 @@ namespace myengine
 		public:
 			~Model();
 			void onInit();
-			void setMesh();
-			void setTexture();
-			void setShader();
 		private:
 			void onDisplay();
 			void onTick();

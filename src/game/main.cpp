@@ -5,6 +5,7 @@
 #include "Enemy.h"
 
 using namespace myengine;
+using namespace renderer;
 
 struct EngineStopper : Component
 {
@@ -22,6 +23,7 @@ int main()
    std::shared_ptr<Core> core = Core::initialize(); 
 
    std::shared_ptr<Entity> entity = core->addEntity();
+   std::shared_ptr<Entity> entity_mr = core->addEntity();
    //std::shared_ptr<Entity> entity2 = core->addEntity();
    //std::shared_ptr<Entity> entity3 = core->addEntity();
 
@@ -37,7 +39,9 @@ int main()
    std::shared_ptr<SoundSource> source = ee->addComponent<SoundSource>();
    source->setClip(sound);
 
-   std::shared_ptr<Model> mr = entity->addComponent<Model>();
+   std::shared_ptr<Model> model = entity->addComponent<Model>();
+
+   //std::shared_ptr<MeshRenderer> mr = entity_mr->addComponent<MeshRenderer>();
    //mr->setMesh(core->getResources()->load<Model>("../Assets/Models/monkey/monkey.obj"));
    //mr->setMesh(core->getResources()->load<Texture>("../Assets/Textures/Material.png"));
    //mr->setMesh(core->getResources()->load<ShaderProgram>("../Assets/Shaders/pbrVertShader.txt", "../Assets/Shaders/pbrFragShader.txt"));

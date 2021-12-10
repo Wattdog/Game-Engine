@@ -12,21 +12,6 @@ namespace myengine
 
 	}
 
-	void Model::setMesh()
-	{
-		
-	}
-	
-	void Model::setTexture()
-	{
-
-	}
-
-	void Model::setShader()
-	{
-
-	}
-
 	void Model::onInit()
 	{
 		/**

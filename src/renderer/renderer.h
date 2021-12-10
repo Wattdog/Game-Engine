@@ -5,5 +5,6 @@
 #include <renderer/VertexArray.h>
 #include <renderer/VertexBuffer.h>
 #include <renderer/Texture.h>
+#include <renderer/MeshRenderer.h>
 
 #endif // !_RENDERER_H_
