@@ -21,10 +21,13 @@ namespace myengine
 
 		std::cout << "Initializing..." << std::endl;
 
+		// Makes the texture a shared pointer
+
 		//texture = std::make_shared<renderer::Texture>("../Assets/Textures/TeapotColourMap.bmp");
 		texture = std::make_shared<renderer::Texture>("../Assets/Textures/Material.png");
 		//texture = std::make_shared<renderer::Texture>("../Assets/Textures/Whiskers_diffuse.png");
 
+		// Adds the texture coordinates to the vbo
 		vbo = std::make_shared<renderer::VertexBuffer>();
 		vbo->add(vec2(0.0f, 0.0f));
 		vbo->add(vec2(1.0f, 0.0f));
@@ -33,13 +36,19 @@ namespace myengine
 		vbo->add(vec2(0.0f, 1.0f));
 		vbo->add(vec2(0.0f, 0.0f));
 		
+		// Makes the vao a shared pointer
+
 		//vao = std::make_shared<renderer::VertexArray>("../Assets/Models/teapot/teapot3.obj");
 		vao = std::make_shared<renderer::VertexArray>("../Assets/Models/monkey/monkey.obj");
 		//vao = std::make_shared<renderer::VertexArray>("../Assets/Models/curuthers/curuthers.obj");
 
+		// Gets vao id
 		vao->getId();
 
+		// Makes the shader program a shared pointer
 		shaderProgram = std::make_shared<renderer::ShaderProgram>("../Assets/Shaders/pbrVertShader.txt", "../Assets/Shaders/pbrFragShader.txt");
+
+		// Sets the position for the model
 
 		//getTransform()->setPosition(glm::vec3(0, 0, -2.5f));
 		getTransform()->setPosition(vec3(0, 0, -10.0f));
@@ -50,6 +59,7 @@ namespace myengine
 
 	void Model::onDisplay()
 	{
+		// Light Positions used for PBR 
 		vec3 lightPositions[] =
 		{
 			vec3(-10.0f, 10.0f, 10.0f),
@@ -58,6 +68,7 @@ namespace myengine
 			vec3(10.0f, -10.0f, 10.0f)
 		};
 
+		// Light Colors used for PBR
 		vec3 lightColors[] =
 		{
 			vec3(20, 20, 20),
@@ -85,18 +96,26 @@ namespace myengine
 		shaderProgram->setUniform("roughness", 0.1f);
 		shaderProgram->setUniform("ao", 1.0f);
 
+		// Sets uniform for camera position
 		shaderProgram->setUniform("camPos", vec3(10, 10, 0));
 
+		// Sets uniform for texture
 		shaderProgram->setUniform("u_Texture", texture);
 		
+		// Sets uniform for model matrix
 		shaderProgram->setUniform("u_Model", getTransform()->getModel());
 		//shaderProgram->setUniform("u_View", getCamera()->getView());
 
+		// Draws model
 		shaderProgram->draw(vao);
 	}
 
 	void Model::onTick()
 	{
+		/*
+		Checks what key has been pressed and 
+		will then move/rotate the model
+		*/
 		if (getKeyboard()->isKeyDown(SDLK_UP) || getKeyboard()->isKeyDown(SDLK_w))
 		{
 			getTransform()->move(vec3(0, 0, -1.5f) * getEnvironment()->getDeltaTime());
