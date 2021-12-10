@@ -16,6 +16,7 @@
 #include <myengine/Trigger.h>
 #include <myengine/Math.h>
 #include <myengine/Model.h>
+#include <myengine/PBR_Model.h>
 #include <myengine/Mouse.h>
 #include <myengine/Sound.h>
 #include <myengine/SoundSource.h>

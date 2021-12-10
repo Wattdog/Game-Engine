@@ -39,7 +39,7 @@ int main()
    std::shared_ptr<SoundSource> source = ee->addComponent<SoundSource>();
    source->setClip(sound);
 
-   std::shared_ptr<Model> model = entity->addComponent<Model>();
+   std::shared_ptr<PBR_Model> model = entity->addComponent<PBR_Model>();
 
    //std::shared_ptr<MeshRenderer> mr = entity_mr->addComponent<MeshRenderer>();
    //mr->setMesh(core->getResources()->load<Model>("../Assets/Models/monkey/monkey.obj"));

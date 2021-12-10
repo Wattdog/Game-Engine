@@ -68,6 +68,7 @@ add_library(myengine
    src/myengine/TriangleRenderer.cpp
    src/myengine/Transform.cpp
    src/myengine/Model.cpp
+   src/myengine/PBR_Model.cpp
    src/myengine/Mouse.cpp
    src/myengine/Cube.cpp
 
@@ -89,6 +90,7 @@ add_library(myengine
    src/myengine/Transform.h
    src/myengine/Trigger.h
    src/myengine/Model.h
+   src/myengine/PBR_Model.h
    src/myengine/Mouse.h
    src/myengine/Cube.h
 )
