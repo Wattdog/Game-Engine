@@ -1,0 +1,21 @@
+#version 410
+
+// Using parts from CodingLabs Article - Physically Based Rendering - Cook-Torrance
+
+uniform mat4 u_View;
+
+uniform vec3 albedo = {1, 1, 1};
+uniform float metallic = 0.0f;
+uniform float roughness = 0.1f
+uniform float ao = 1.0f;
+
+uniform vec3 camPos;
+
+uniform vec3 lightPositions[4];
+uniform vec3 lightColors[4];
+
+in vec2 v_Texcoord;
+in vec3 v_FragPos;
+in vec3 v_Normal;
+
+const float PI = 3.14159265359;
