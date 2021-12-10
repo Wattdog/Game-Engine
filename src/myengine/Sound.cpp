@@ -5,7 +5,17 @@ namespace myengine
 {
 	void Sound::onInitialize()
 	{
-		getPath();
+		std::string path = getPath();
+
+		ALenum format = 0;
+		ALsizei freq = 0;
+		std::vector<char> bufferData;
+
+		loadOgg(path + ".ogg", bufferData, format, freq);
+
+		alGenBuffers(1, &bufferId);
+
+		alBufferData(bufferId, format, &bufferData.at(0), static_cast<ALsizei>(bufferData.size()), freq);
 	}
 
 	void Sound::loadOgg(std::string fileName, std::vector<char>& buffer, ALenum& format, ALsizei& freq)

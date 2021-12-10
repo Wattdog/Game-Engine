@@ -2,6 +2,7 @@
 
 #include <renderer/renderer.h>
 #include <iostream>
+#include <string>
 #include <GL/glew.h>
 
 namespace myengine
@@ -11,6 +12,9 @@ namespace myengine
 		public:
 			~Model();
 			void onInit();
+			void setMesh();
+			void setTexture();
+			void setShader();
 		private:
 			void onDisplay();
 			void onTick();

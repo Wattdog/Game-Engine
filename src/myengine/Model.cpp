@@ -12,6 +12,21 @@ namespace myengine
 
 	}
 
+	void Model::setMesh()
+	{
+		
+	}
+	
+	void Model::setTexture()
+	{
+
+	}
+
+	void Model::setShader()
+	{
+
+	}
+
 	void Model::onInit()
 	{
 		/**
@@ -60,10 +75,10 @@ namespace myengine
 
 		vec3 lightColors[] =
 		{
-			vec3(10, 10, 10),
-			vec3(10, 10, 10),
-			vec3(10, 10, 10),
-			vec3(10, 10, 10)
+			vec3(20, 20, 20),
+			vec3(20, 20, 20),
+			vec3(20, 20, 20),
+			vec3(20, 20, 20)
 		};
 
 
@@ -82,7 +97,7 @@ namespace myengine
 		// Sets uniform for albedo, metallic, roughness and ao value
 		shaderProgram->setUniform("albedo", vec3(0, 0.5, 0));
 		shaderProgram->setUniform("metallic", 0.0f);
-		shaderProgram->setUniform("roughness", 1.0f);
+		shaderProgram->setUniform("roughness", 0.1f);
 		shaderProgram->setUniform("ao", 1.0f);
 
 		shaderProgram->setUniform("camPos", vec3(10, 10, 0));

@@ -7,13 +7,16 @@
 
 namespace myengine
 {
+	struct SoundSource;
+
 	struct Sound : Resource
 	{
 		public:
 			void onInitialize();
 			void loadOgg(std::string fileName, std::vector<char> &buffer, ALenum &format, ALsizei &freq);
 		private:
-			ALint bufferId;
+			friend struct myengine::SoundSource;
+			ALuint bufferId;
 			ALfloat variance;
 			ALfloat vol;
 	};

@@ -1,5 +1,4 @@
-#ifndef _MY_ENGINE_H_
-#define _MY_ENGINE_H_
+#pragma once
 
 #include <myengine/Core.h>
 #include <myengine/Entity.h>
@@ -19,7 +18,6 @@
 #include <myengine/Model.h>
 #include <myengine/Mouse.h>
 #include <myengine/Sound.h>
+#include <myengine/SoundSource.h>
 #include <myengine/Resources.h>
 #include <myengine/Resource.h>
-
-#endif

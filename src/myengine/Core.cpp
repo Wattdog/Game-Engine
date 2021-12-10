@@ -88,18 +88,6 @@ namespace myengine
 			throw std::exception("Failed to make context current");
 		}
 
-		ALenum format = 0;
-		ALsizei freq = 0;
-		std::vector<char> bufferData;
-
-		ALuint id = 0;
-
-		alGenBuffers(1, &id);
-
-		//rtn->sound->loadOgg(path + ".ogg", bufferData, format, freq);
-
-		//alBufferData(id, format, &bufferData.at(0), static_cast<ALsizei>(bufferData.size()), freq);
-
 		glClearColor(1, 0, 0, 1);
 
 		// Sets the running bool variable to true
