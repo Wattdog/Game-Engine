@@ -36,6 +36,7 @@ namespace myengine
 
 		// Makes the shader program a shared pointer
 		shaderProgram = std::make_shared<renderer::ShaderProgram>("../Assets/Shaders/pbrVertShader_LearnOpenGL.txt", "../Assets/Shaders/pbrFragShader_LearnOpenGL.txt");
+		//shaderProgram = std::make_shared<renderer::ShaderProgram>("../Assets/Shaders/pbrVertShader_CodingLabs.txt", "../Assets/Shaders/pbrFragShader_CodingLabs.txt");
 
 		// Sets the position for the model
 
