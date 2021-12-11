@@ -1,6 +1,6 @@
 #version 410
 
-// Using Learn OpeGL's tutorial on PBR (Physically Based rendering)
+// Using Learn OpenGL's tutorial on PBR (Physically Based rendering)
 
 attribute vec3 in_Position;
 attribute vec3 in_Normal;

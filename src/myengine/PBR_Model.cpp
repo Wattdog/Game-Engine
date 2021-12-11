@@ -27,8 +27,8 @@ namespace myengine
 		// Makes the vao a shared pointer
 
 		//vao = std::make_shared<renderer::VertexArray>("../Assets/Models/teapot/teapot3.obj");
-		//vao = std::make_shared<renderer::VertexArray>("../Assets/Models/monkey/monkey.obj");
-		vao = std::make_shared<renderer::VertexArray>("../Assets/Models/Sphere/Sphere.obj");
+		vao = std::make_shared<renderer::VertexArray>("../Assets/Models/monkey/monkey.obj");
+		//vao = std::make_shared<renderer::VertexArray>("../Assets/Models/Sphere/Sphere.obj");
 		//vao = std::make_shared<renderer::VertexArray>("../Assets/Models/curuthers/curuthers.obj");
 
 		// Gets vao id
@@ -60,10 +60,10 @@ namespace myengine
 		// Light Colors used for PBR
 		vec3 lightColors[] =
 		{
-			vec3(20, 20, 20),
-			vec3(20, 20, 20),
-			vec3(20, 20, 20),
-			vec3(20, 20, 20)
+			vec3(10, 10, 10),
+			vec3(10, 10, 10),
+			vec3(10, 10, 10),
+			vec3(10, 10, 10)
 		};
 
 
@@ -122,24 +122,6 @@ namespace myengine
 		if (getKeyboard()->isKeyDown(SDLK_LEFT) || getKeyboard()->isKeyDown(SDLK_a))
 		{
 			getTransform()->move(vec3(-1.5f, 0, 0) * getEnvironment()->getDeltaTime());
-		}
-
-		if (getKeyboard()->isKeyDown(SDLK_t))
-		{
-			toogleShaderOn = true;
-			if (toogleShaderOn == true)
-			{
-				shaderProgram = std::make_shared<renderer::ShaderProgram>("../Assets/Shaders/pbrVertShader_LearnOpenGL.txt", "../Assets/Shaders/pbrFragShader_CodingLabs.txt");
-			}
-		}
-
-		if (getKeyboard()->isKeyDown(SDLK_c))
-		{
-			toogleShaderOn = false;
-			if (toogleShaderOn == false)
-			{
-				shaderProgram = std::make_shared<renderer::ShaderProgram>("../Assets/Shaders/pbrVertShader_LearnOpenGL.txt", "../Assets/Shaders/pbrFragShader_LearnOpenGL.txt");
-			}
 		}
 
 		if (getKeyboard()->isKeyDown(SDLK_q))

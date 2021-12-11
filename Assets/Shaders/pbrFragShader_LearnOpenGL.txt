@@ -75,7 +75,7 @@ void main()
 	for(int i = 0; i < 4; i++)
 	{
 		vec3 L = normalize(lightPositions[i] - v_FragPos);
-		vec3 H = normalize (V + L);
+		vec3 H = normalize(V + L);
 
 		float distance = length(lightPositions[i] - v_FragPos);
 		float attenuation = 1.0;
