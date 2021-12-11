@@ -43,8 +43,8 @@ int main()
 
    //std::shared_ptr<MeshRenderer> mr = entity_mr->addComponent<MeshRenderer>();
    //mr->setMesh(core->getResources()->load<Model>("../Assets/Models/monkey/monkey.obj"));
-   //mr->setMesh(core->getResources()->load<Texture>("../Assets/Textures/Material.png"));
-   //mr->setMesh(core->getResources()->load<ShaderProgram>("../Assets/Shaders/pbrVertShader.txt", "../Assets/Shaders/pbrFragShader.txt"));
+   //mr->setTexture(core->getResources()->load<Texture>("../Assets/Textures/Material.png"));
+   //mr->setShader(core->getResources()->load<ShaderProgram>("../Assets/Shaders/pbrVertShader.txt", "../Assets/Shaders/pbrFragShader.txt"));
 
    //std::shared_ptr<Cube> cube = entity2->addComponent<Cube>();
    //std::shared_ptr<Cube> cube1 = entity3->addComponent<Cube>();

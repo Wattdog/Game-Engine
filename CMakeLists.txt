@@ -35,7 +35,6 @@ add_library(renderer
    src/renderer/VertexArray.cpp
    src/renderer/VertexBuffer.cpp
    src/renderer/Texture.cpp
-   src/renderer/MeshRenderer.cpp
 
    # header files
    src/renderer/renderer.h
@@ -43,7 +42,6 @@ add_library(renderer
    src/renderer/VertexArray.h
    src/renderer/VertexBuffer.h
    src/renderer/Texture.h
-   src/renderer/MeshRenderer.h
    src/renderer/Sampler.h
    src/renderer/bugl2.h
    src/renderer/stb_image.h
@@ -69,6 +67,7 @@ add_library(myengine
    src/myengine/Transform.cpp
    src/myengine/Model.cpp
    src/myengine/PBR_Model.cpp
+   src/myengine/MeshRenderer.cpp
    src/myengine/Mouse.cpp
    src/myengine/Cube.cpp
 
@@ -91,6 +90,7 @@ add_library(myengine
    src/myengine/Trigger.h
    src/myengine/Model.h
    src/myengine/PBR_Model.h
+   src/myengine/MeshRenderer.h
    src/myengine/Mouse.h
    src/myengine/Cube.h
 )
