@@ -1,5 +1,3 @@
-#include <SDL.h>
-
 namespace myengine
 {
 	struct Screen

@@ -76,6 +76,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>src;sdk/Include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -100,6 +101,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>src;sdk/Include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -123,6 +125,50 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\myengine\Camera.cpp" />
+    <ClCompile Include="src\myengine\Component.cpp" />
+    <ClCompile Include="src\myengine\Core.cpp" />
+    <ClCompile Include="src\myengine\Cube.cpp" />
+    <ClCompile Include="src\myengine\Entity.cpp" />
+    <ClCompile Include="src\myengine\Environment.cpp" />
+    <ClCompile Include="src\myengine\Keyboard.cpp" />
+    <ClCompile Include="src\myengine\MeshRenderer.cpp" />
+    <ClCompile Include="src\myengine\Model.cpp" />
+    <ClCompile Include="src\myengine\Mouse.cpp" />
+    <ClCompile Include="src\myengine\myengine.cpp" />
+    <ClCompile Include="src\myengine\PBR_Model.cpp" />
+    <ClCompile Include="src\myengine\Resource.cpp" />
+    <ClCompile Include="src\myengine\Resources.cpp" />
+    <ClCompile Include="src\myengine\Screen.cpp" />
+    <ClCompile Include="src\myengine\Sound.cpp" />
+    <ClCompile Include="src\myengine\SoundSource.cpp" />
+    <ClCompile Include="src\myengine\SphereCollider.cpp" />
+    <ClCompile Include="src\myengine\Transform.cpp" />
+    <ClCompile Include="src\myengine\TriangleRenderer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\myengine\Camera.h" />
+    <ClInclude Include="src\myengine\Component.h" />
+    <ClInclude Include="src\myengine\Core.h" />
+    <ClInclude Include="src\myengine\Cube.h" />
+    <ClInclude Include="src\myengine\Entity.h" />
+    <ClInclude Include="src\myengine\Environment.h" />
+    <ClInclude Include="src\myengine\Keyboard.h" />
+    <ClInclude Include="src\myengine\Math.h" />
+    <ClInclude Include="src\myengine\MeshRenderer.h" />
+    <ClInclude Include="src\myengine\Model.h" />
+    <ClInclude Include="src\myengine\Mouse.h" />
+    <ClInclude Include="src\myengine\myengine.h" />
+    <ClInclude Include="src\myengine\PBR_Model.h" />
+    <ClInclude Include="src\myengine\Resource.h" />
+    <ClInclude Include="src\myengine\Resources.h" />
+    <ClInclude Include="src\myengine\Screen.h" />
+    <ClInclude Include="src\myengine\Sound.h" />
+    <ClInclude Include="src\myengine\SoundSource.h" />
+    <ClInclude Include="src\myengine\SphereCollider.h" />
+    <ClInclude Include="src\myengine\Transform.h" />
+    <ClInclude Include="src\myengine\TriangleRenderer.h" />
+    <ClInclude Include="src\myengine\Trigger.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

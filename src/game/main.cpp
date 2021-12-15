@@ -35,7 +35,7 @@ int main()
    std::shared_ptr<Entity> ee = core->addEntity();
    std::shared_ptr<Enemy> ec = ee->addComponent<Enemy>();
 
-   std::shared_ptr<Sound> sound = core->getResources()->load<Sound>("../Assets/AudioClips/horn");
+   std::shared_ptr<Sound> sound = core->getResources()->load<Sound>("Assets/AudioClips/horn");
    std::shared_ptr<SoundSource> source = ee->addComponent<SoundSource>();
    source->setClip(sound);
 

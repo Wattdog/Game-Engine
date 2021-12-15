@@ -1,5 +1,7 @@
 #include "Environment.h"
 
+#include <SDL2/SDL.h>
+
 namespace myengine
 {
 	Environment::Environment()
