@@ -12,7 +12,7 @@ namespace myengine
 
 	}
 
-	void MeshRenderer::setShader(std::shared_ptr<ShaderProgram> shaderProgram)
+	void MeshRenderer::setShader()
 	{
 		
 	}

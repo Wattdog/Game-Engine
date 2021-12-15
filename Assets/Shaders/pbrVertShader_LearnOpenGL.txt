@@ -16,8 +16,15 @@ out vec3 v_Normal;
 
 void main()
 {
+	// Works out the value for the frag positions
 	v_FragPos = vec3(u_Model * vec4(in_Position, 1.0));
+
+	// Sets the gl_Position
 	gl_Position = u_Projection * u_View * u_Model * vec4(in_Position, 1.0);
+
+	// Sets the texture coordinates
 	v_Texcoord = in_Texcoord;
+
+	// Works out the Normals for the object
 	v_Normal = vec3(u_Model * vec4(in_Normal, 0));
 }

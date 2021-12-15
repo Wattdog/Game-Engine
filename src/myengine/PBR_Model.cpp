@@ -61,10 +61,10 @@ namespace myengine
 		// Light Colors used for PBR
 		vec3 lightColors[] =
 		{
-			vec3(10, 10, 10),
-			vec3(10, 10, 10),
-			vec3(10, 10, 10),
-			vec3(10, 10, 10)
+			vec3(20, 20, 20),
+			vec3(20, 20, 20),
+			vec3(20, 20, 20),
+			vec3(20, 20, 20)
 		};
 
 

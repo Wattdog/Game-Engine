@@ -1,6 +1,7 @@
 #version 410
 
 // Using parts from CodingLabs Article - Physically Based Rendering - Cook-Torrance
+// http://www.codinglabs.net/article_physically_based_rendering_cook_torrance.aspx
 
 uniform mat4 u_View;
 
@@ -22,24 +23,47 @@ out vec4 FragColor;
 
 const float PI = 3.14159265359;
 
+// Works out the light distribution
 float GGX_Distribution(vec3 n, vec3 h, float alpha)
 {
+	// Uses the dot product to calculate the NoH value
+	// using the vector values n & h (NoH is the numerator of the equation)
 	float NoH = dot(n, h);
+
+	// Works out the value of alpha squared
 	float alpha2 = alpha * alpha;
+
+	// Works out the value of NoH squared
 	float NoH2 = NoH * NoH;
+
+	// Calculates the value of the denominator of the equation
 	float den = NoH2 * alpha2 + (1 - NoH2);
+
+	// Returns the value given by the numerator divided by the denominator
 	return (NoH * alpha2) / (PI * den * den);
 }
 
+// Calculates the value for partial geometry 
 float GGX_PartialGeometryTerm(vec3 v, vec3 n, vec3 h, float alpha)
 {
+	// Uses max function and dot product function provided by GLSL
+	// to calculate a value for VoH2
 	float VoH2 = max(dot(v, h), 0.0);
+
+	// Calculates a value for chi
 	float chi = VoH2 / max(dot(v, n), 0.0);
+
+	// Calculates the VoH2 squared
 	VoH2 = VoH2 * VoH2;
+
+	// Calculates the value for tan squared
 	float tan2 = (1 - VoH2) / VoH2;
+
+	// Uses the values calculated in the to return the value for partial geometry
 	return (chi * 2) / (1 / sqrt(1 + alpha * alpha * tan2));
 }
 
+// Calculates the Fresnel effect
 vec3 Fresnel_Schlick(float cosT, vec3 F0)
 {
 	return F0 + (1 - F0) * pow(1 - cosT, 5);
@@ -47,45 +71,79 @@ vec3 Fresnel_Schlick(float cosT, vec3 F0)
 
 void main()
 {
+	// Normalizes the Normals position and frag positions
 	vec3 N = normalize(v_Normal);
 	vec3 V = normalize(camPos - v_FragPos);
 
+	// F0 will be used alongside cosT to calculate 
+	// the Fresnel effect
 	vec3 F0 = vec3(0.04);
+	
+	// Mixes the albedo and metallic value with F0
 	F0 = mix(F0, albedo, metallic);
 
+	// Initalizes the Lo value which will be used to 
+	// calculate the value for pbr
 	vec3 Lo = vec3(0.0);
 
+	// Goes through each of the light positions and colors
+	// to work out how the model should look
 	for (int i = 0; i < 4; i++)
 	{
+		// Normalizes the L value using the lightPositions values
+		// and frag position value
 		vec3 L = normalize(lightPositions[i] - v_FragPos);
+
+		// Normalizes the H value using the value for V and L
 		vec3 H = normalize(V + L);
 
+		// Calculates the distance between the lightPositions and frag positon
 		float distance = length(lightPositions[i] - v_FragPos);
+
+		// Used to work out the radiance value
 		float attenuation = 1.0;
 
+		// Uses lightColors and attenuation to calculate
+		// the radiance value
 		vec3 radiance = lightColors[i] * attenuation;
 
+		// Calculates the values for the light distribution,
+		// partial geometry and fresnel effect
 		float NDF = GGX_Distribution(N, H, roughness);
 		float G = GGX_PartialGeometryTerm(N, V, L, roughness);
 		vec3 F = Fresnel_Schlick(max(dot(H, V), 0.0), F0);
 
+		// Sets kS to the value given by the fresnel effect function
 		vec3 kS = F;
+
+		// Uses the kS value and metallic to calculate
+		// the value for kD
 		vec3 kD = vec3(1.0) - kS;
 		kD *= 1.0 - metallic;
 
+		// Calculates the numerator and denominator using
+		// values which were calculated earlier on in the function
 		vec3 numerator = NDF * G * F;
 		float denominator = 4.0 * max(dot(N, V), 0.0) * max(dot(N, L), 0.0) + 0.0001;
+
+		// Uses the numerator and denominator values to calculate the value for specular
 		vec3 specular = numerator / denominator;
 
+		// Calculates the value for NdotL using the max and dot product
+		// functions provided by GLSL
 		float NdotL = max(dot(N, L), 0.0);
+
+		// Calculates the value for Lo 
 		Lo += (kD * albedo / PI + specular) * radiance * NdotL;
 	}
 
+	// Works out the ambient value & color value
 	vec3 ambient = vec3(0.03) * albedo * ao;
 	vec3 color = ambient + Lo;
 
 	color = color / (color + vec3(1.0));
 	color = pow(color, vec3(1.0/1.2));
 
+	// Sets the model color
 	FragColor = vec4(color, 1.0f);
 }

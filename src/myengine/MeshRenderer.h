@@ -13,7 +13,7 @@ namespace myengine
 		public:
 			void setMesh(std::shared_ptr<Model> model);
 			void setTexture(std::shared_ptr<Texture> texture);
-			void setShader(std::shared_ptr<ShaderProgram> shaderProgram);
+			void setShader();
 		private:
 
 	};
