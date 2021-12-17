@@ -20,6 +20,7 @@
 #include <myengine/MeshRenderer.h>
 #include <myengine/Mouse.h>
 #include <myengine/Sound.h>
+#include <myengine/Shader.h>
 #include <myengine/SoundSource.h>
 #include <myengine/Resources.h>
 #include <myengine/Resource.h>

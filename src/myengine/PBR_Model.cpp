@@ -27,7 +27,7 @@ namespace myengine
 		// Makes the vao a shared pointer
 
 		//vao = std::make_shared<renderer::VertexArray>("../Assets/Models/teapot/teapot3.obj");
-		vao = std::make_shared<renderer::VertexArray>("Assets/Models/monkey/monkey.obj");
+		vao = std::make_shared<renderer::VertexArray>("../Assets/Models/monkey/monkey.obj");
 		//vao = std::make_shared<renderer::VertexArray>("../Assets/Models/Sphere/Sphere.obj");
 		//vao = std::make_shared<renderer::VertexArray>("../Assets/Models/curuthers/curuthers.obj");
 
@@ -35,8 +35,8 @@ namespace myengine
 		vao->getId();
 
 		// Makes the shader program a shared pointer
-		shaderProgram = std::make_shared<renderer::ShaderProgram>("Assets/Shaders/pbrVertShader_LearnOpenGL.txt", "Assets/Shaders/pbrFragShader_LearnOpenGL.txt");
-		//shaderProgram = std::make_shared<renderer::ShaderProgram>("Assets/Shaders/pbrVertShader_CodingLabs.txt", "Assets/Shaders/pbrFragShader_CodingLabs.txt");
+		shaderProgram = std::make_shared<renderer::ShaderProgram>("../Assets/Shaders/pbrVertShader_LearnOpenGL.txt", "../Assets/Shaders/pbrFragShader_LearnOpenGL.txt");
+		//shaderProgram = std::make_shared<renderer::ShaderProgram>("../Assets/Shaders/pbrVertShader_CodingLabs.txt", "../Assets/Shaders/pbrFragShader_CodingLabs.txt");
 
 		// Sets the position for the model
 

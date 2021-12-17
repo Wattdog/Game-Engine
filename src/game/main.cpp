@@ -35,16 +35,17 @@ int main()
    std::shared_ptr<Entity> ee = core->addEntity();
    std::shared_ptr<Enemy> ec = ee->addComponent<Enemy>();
 
-   std::shared_ptr<Sound> sound = core->getResources()->load<Sound>("Assets/AudioClips/horn");
+   std::shared_ptr<Sound> sound = core->getResources()->load<Sound>("../Assets/AudioClips/horn");
    std::shared_ptr<SoundSource> source = ee->addComponent<SoundSource>();
    source->setClip(sound);
 
-   std::shared_ptr<PBR_Model> model = entity->addComponent<PBR_Model>();
+   //std::shared_ptr<PBR_Model> model = entity->addComponent<PBR_Model>();
 
-   //std::shared_ptr<MeshRenderer> mr = entity_mr->addComponent<MeshRenderer>();
-   //mr->setMesh(core->getResources()->load<Model>("../Assets/Models/monkey/monkey.obj"));
-   //mr->setTexture(core->getResources()->load<Texture>("../Assets/Textures/Material.png"));
-   //mr->setShader(core->getResources()->load<ShaderProgram>("../Assets/Shaders/pbrVertShader.txt", "../Assets/Shaders/pbrFragShader.txt"));
+   std::shared_ptr<MeshRenderer> mr = entity_mr->addComponent<MeshRenderer>();
+   mr->setMesh(core->getResources()->load<Model>("Assets/Models/monkey/monkey"));
+   //mr->setTexture(core->getResources()->load<Texture>("Assets/Textures/Material.png"));
+   mr->setShader(core->getResources()->load<Shader>("Assets/Shaders/pbrShader_LearnOpenGL"));
+   mr->getTransform()->setPosition(vec3(0, 0, -10));
 
    //std::shared_ptr<Cube> cube = entity2->addComponent<Cube>();
    //std::shared_ptr<Cube> cube1 = entity3->addComponent<Cube>();

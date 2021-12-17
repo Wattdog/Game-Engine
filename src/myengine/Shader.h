@@ -1,20 +1,17 @@
 #include "Resource.h"
 
 #include <renderer/renderer.h>
-#include <iostream>
-#include <string>
-#include <GL/glew.h>
 
 namespace myengine
 {
 	struct MeshRenderer;
 
-	struct Model : Resource
+	struct Shader : Resource
 	{
 		public:
 			void onInitialize();
 		private:
 			friend struct myengine::MeshRenderer;
-			std::shared_ptr<renderer::VertexArray> vao;
+			std::shared_ptr<renderer::ShaderProgram> shaderProgram;
 	};
 }

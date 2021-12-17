@@ -19,12 +19,18 @@ namespace myengine
 			std::shared_ptr<Keyboard> getKeyboard();
 			std::shared_ptr<Transform> getTransform();
 			std::shared_ptr<Camera> getCamera();
+			template <typename T>
+			std::shared_ptr<T> getComponent()
+			{
+				return getEntity()->getComponent();
+			}
 			virtual void onTick();
 			virtual void onDisplay();
 			virtual void onInit();
 		private:
 			friend struct myengine::Entity;
 			std::weak_ptr<Entity> entity;
+			
 			void tick();
 			void display();
 	};
