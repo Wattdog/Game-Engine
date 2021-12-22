@@ -60,6 +60,7 @@ add_library(myengine
    src/myengine/Resource.cpp
    src/myengine/Resources.cpp
    src/myengine/Screen.cpp
+   src/myengine/Shader.cpp
    src/myengine/Sound.cpp
    src/myengine/SoundSource.cpp
    src/myengine/SphereCollider.cpp
@@ -82,6 +83,7 @@ add_library(myengine
    src/myengine/Resource.h
    src/myengine/Resources.h
    src/myengine/Screen.h
+   src/myengine/Shader.h
    src/myengine/Sound.h
    src/myengine/SoundSource.h
    src/myengine/SphereCollider.h
