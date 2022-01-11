@@ -30,7 +30,7 @@ int main()
    // Adds new entity along with the player component
    std::shared_ptr<Entity> pe = core->addEntity();
    std::shared_ptr<Player> pc = pe->addComponent<Player>();
-
+   
    // Adds new entity along with the enemy component
    std::shared_ptr<Entity> ee = core->addEntity();
    std::shared_ptr<Enemy> ec = ee->addComponent<Enemy>();
@@ -46,10 +46,6 @@ int main()
    //mr->setTexture(core->getResources()->load<Texture>("Assets/Textures/Material.png"));
    mr->setShader(core->getResources()->load<Shader>("Assets/Shaders/pbrShader_LearnOpenGL"));
    mr->getTransform()->setPosition(vec3(0, 0, -10));
-
-   //std::shared_ptr<Cube> cube = entity2->addComponent<Cube>();
-   //std::shared_ptr<Cube> cube1 = entity3->addComponent<Cube>();
-   //entity3->getTransform()->setPosition(vec3(-2.5f, 0.0f, -10.0f));
 
    std::cout << entity->getCore() << std::endl;
    //std::cout << component->getCore() << std::endl;

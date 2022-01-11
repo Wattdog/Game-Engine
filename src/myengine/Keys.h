@@ -1,0 +1,7 @@
+#ifndef MYENGINE_KEYS_H
+#define MYENGINE_KEYS_H
+
+#define MYENGINE_UP SDLK_UP;
+
+#endif // !MYENGINE_KEYS_H
+

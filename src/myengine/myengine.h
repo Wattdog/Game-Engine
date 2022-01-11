@@ -3,7 +3,6 @@
 #include <myengine/Core.h>
 #include <myengine/Entity.h>
 #include <myengine/Component.h>
-#include <myengine/Camera.h>
 #include <myengine/Cube.h>
 #include <myengine/Screen.h>
 #include <myengine/SphereCollider.h>
@@ -11,6 +10,7 @@
 #include <myengine/Resource.h>
 #include <myengine/Resources.h>
 #include <myengine/Keyboard.h>
+#include <myengine/Keys.h>
 #include <myengine/Transform.h>
 #include <myengine/TriangleRenderer.h>
 #include <myengine/Trigger.h>

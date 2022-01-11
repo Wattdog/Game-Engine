@@ -1,4 +1,5 @@
 #include "Component.h"
+#include "Math.h"
 
 #include <glm/glm.hpp>
 #include <glm/ext.hpp>
@@ -9,16 +10,16 @@ namespace myengine
 	{
 		public:
 			Transform();
-			glm::mat4 getModel();
-			void setPosition(glm::vec3 pos);
-			void setScale(glm::vec3 scal);
+			mat4 getModel();
+			void setPosition(vec3 pos);
+			void setScale(vec3 scal);
 			void move(float amount);
-			void move(glm::vec3 amount);
+			void move(vec3 amount);
 			void rotate(float angle);
-			void rotate(glm::vec3 angle);
+			void rotate(vec3 angle);
 		private:
-			glm::vec3 position;
-			glm::vec3 rotation;
-			glm::vec3 scale;
+			vec3 position;
+			vec3 rotation;
+			vec3 scale;
 	};
 }

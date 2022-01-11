@@ -54,7 +54,6 @@ add_library(myengine
    src/myengine/Core.cpp
    src/myengine/Entity.cpp
    src/myengine/Component.cpp
-   src/myengine/Camera.cpp
    src/myengine/Keyboard.cpp
    src/myengine/Environment.cpp
    src/myengine/Resource.cpp
@@ -69,7 +68,6 @@ add_library(myengine
    src/myengine/Model.cpp
    src/myengine/PBR_Model.cpp
    src/myengine/MeshRenderer.cpp
-   src/myengine/Mouse.cpp
    src/myengine/Cube.cpp
 
    # header files
@@ -77,8 +75,8 @@ add_library(myengine
    src/myengine/myengine.h
    src/myengine/Entity.h
    src/myengine/Component.h
-   src/myengine/Camera.h
    src/myengine/Keyboard.h
+   src/myengine/Keys.h
    src/myengine/Environment.h
    src/myengine/Resource.h
    src/myengine/Resources.h
@@ -91,9 +89,9 @@ add_library(myengine
    src/myengine/Transform.h
    src/myengine/Trigger.h
    src/myengine/Model.h
+   src/myengine/Math.h
    src/myengine/PBR_Model.h
    src/myengine/MeshRenderer.h
-   src/myengine/Mouse.h
    src/myengine/Cube.h
 )
 
