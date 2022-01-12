@@ -49,10 +49,20 @@ namespace myengine
 		position += fwd * amount;
 	}
 
-	void Transform::move(glm::vec3 amount)
+	void Transform::move(vec3 amount)
 	{
 		/// Moves the position of the model/triangle using a glm::vec3 value
 
+		mat4 model(1.0f);
+		model = glm::rotate(model, glm::radians(rotation.y), vec3(0, 1, 0));
+		model = glm::rotate(model, glm::radians(rotation.x), vec3(1, 0, 0));
+		model = glm::rotate(model, glm::radians(rotation.z), vec3(0, 0, 1));
+		vec3 fwd = vec3(model * glm::vec4(amount, 1));
+		position += fwd;
+	}
+
+	void Transform::jump(vec3 amount)
+	{
 		mat4 model(1.0f);
 		model = glm::rotate(model, glm::radians(rotation.y), vec3(0, 1, 0));
 		model = glm::rotate(model, glm::radians(rotation.x), vec3(1, 0, 0));

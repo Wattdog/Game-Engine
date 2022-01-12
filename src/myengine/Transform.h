@@ -15,6 +15,7 @@ namespace myengine
 			void setScale(vec3 scal);
 			void move(float amount);
 			void move(vec3 amount);
+			void jump(vec3 amount);
 			void rotate(float angle);
 			void rotate(vec3 angle);
 		private:

@@ -6,13 +6,13 @@ namespace myengine
 {
 	void SphereCollider::onInitialize()
 	{
-		/*getCore()->registerCollider(
-			getEntity()->getComponent<SphereCollider>());*/
+		getCore()->registerCollider(
+			getEntity()->getComponent<SphereCollider>());
 	}
 
 	void SphereCollider::onDestroy()
 	{
-		//getCore()->unregisterCollider(this);
+		getCore()->unregisterCollider(this);
 	}
 
 	bool SphereCollider::isColliding(std::shared_ptr<SphereCollider> _collider)

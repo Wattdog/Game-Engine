@@ -93,8 +93,18 @@ namespace myengine
 			std::shared_ptr<T> getComponent()
 			{
 				/// Returns the component 
+				for (size_t ci = 0; ci < components.size(); ci++)
+				{
+					std::shared_ptr<T> rtn =
+						std::dynamic_pointer_cast<T>(components.at(ci));
 
-				return T;
+					if (rtn)
+					{
+						return rtn;
+					}
+
+					throw std::exception("Failed to obtain specified component");
+				}
 			}
 
 			std::shared_ptr<Core> getCore();

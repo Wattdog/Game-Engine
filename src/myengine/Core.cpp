@@ -120,13 +120,6 @@ namespace myengine
 		return entity;
 	}
 
-	std::shared_ptr<Camera> Core::getCurrentCamera()
-	{
-		/// Returns the camera from the core
-
-		return camera;
-	}
-
 	std::shared_ptr<Environment> Core::getEnvironment()
 	{
 		/// Returns the environment from the core
@@ -148,14 +141,20 @@ namespace myengine
 		return resources;
 	}
 
-	void Core::registerCollider(std::shared_ptr<SphereCollider>())
+	void Core::registerCollider(std::shared_ptr<SphereCollider> col)
 	{
-		
+		colliders.push_back(col);
 	}
 
-	void Core::unregisterCollider(std::shared_ptr<SphereCollider>())
+	void Core::unregisterCollider(SphereCollider* col)
 	{
-
+		for (int i = 0; i < colliders.size(); i++)
+		{
+			if (colliders.at(i).lock().get() == col)
+			{
+				colliders.erase(colliders.begin() + i);
+			}
+		}
 	}
 
 	void Core::start()
