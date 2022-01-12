@@ -10,4 +10,5 @@ struct Player : Component
 		void onTick();
 	private:
 		std::shared_ptr<MeshRenderer> mr;
+		float yMomentum;
 };

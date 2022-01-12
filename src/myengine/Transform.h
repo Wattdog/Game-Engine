@@ -12,10 +12,10 @@ namespace myengine
 			Transform();
 			mat4 getModel();
 			void setPosition(vec3 pos);
+			vec3 getPosition();
 			void setScale(vec3 scal);
 			void move(float amount);
 			void move(vec3 amount);
-			void jump(vec3 amount);
 			void rotate(float angle);
 			void rotate(vec3 angle);
 		private:

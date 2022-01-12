@@ -7,17 +7,20 @@ void Player::onInitialize()
 	//mr->setTexture(core->getResources()->load<Texture>("Assets/Textures/Material.png"));
 	mr->setShader(getCore()->getResources()->load<Shader>("Assets/Shaders/pbrShader_LearnOpenGL"));
 	mr->getTransform()->setPosition(vec3(0, 0, -10));
+	yMomentum = 0.0f;
 }
 
 void Player::onTick()
 {
 	if (getKeyboard()->isKeyDown(SDLK_SPACE))
 	{
-		getTransform()->jump(vec3(0, 2.0f, 0) * getEnvironment()->getDeltaTime());
+		yMomentum = 2.0f;
 	}
 
-	if (getKeyboard()->isKeyUp(SDLK_SPACE))
+	getTransform()->move(vec3(0, yMomentum, 0) * getEnvironment()->getDeltaTime());
+
+	if (getTransform()->getPosition().y > 0.0f)
 	{
-		getTransform()->move(vec3(0, -2.0f, 0) * getEnvironment()->getDeltaTime());
+		yMomentum -= getEnvironment()->getDeltaTime();
 	}
 }
