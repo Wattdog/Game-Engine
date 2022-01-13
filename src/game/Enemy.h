@@ -4,7 +4,11 @@ using namespace myengine;
 
 struct Enemy : Component
 {
-	float m_health;
-
-	void onInit();
+	public:
+		void onInit();
+		void onTick();
+	private:
+		float xPos;
+		float xStartPos;
+		float yStartPos;
 };
