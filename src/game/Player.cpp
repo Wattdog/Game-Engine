@@ -25,4 +25,8 @@ void Player::onTick()
 	{
 		yMomentum -= getEnvironment()->getDeltaTime();
 	}
+	else
+	{
+		getTransform()->setPosition(vec3(0, 0, -10));
+	}
 }
