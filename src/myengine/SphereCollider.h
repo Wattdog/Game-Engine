@@ -12,6 +12,5 @@ namespace myengine
 			void onDestroy();
 			bool isColliding(std::shared_ptr<SphereCollider> _collider);
 		private:
-			float m_radius;
 	};
 }
