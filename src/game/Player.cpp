@@ -16,7 +16,7 @@ void Player::onTick()
 {
 	if (getKeyboard()->isKeyDown(SDLK_SPACE))
 	{
-		yMomentum = 1.5f;
+		yMomentum = 1.25f;
 	}
 
 	getTransform()->move(vec3(0, yMomentum, 0) * getEnvironment()->getDeltaTime());
