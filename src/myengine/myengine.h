@@ -18,7 +18,6 @@
 #include <myengine/Model.h>
 #include <myengine/PBR_Model.h>
 #include <myengine/MeshRenderer.h>
-#include <myengine/Mouse.h>
 #include <myengine/Sound.h>
 #include <myengine/Shader.h>
 #include <myengine/SoundSource.h>
