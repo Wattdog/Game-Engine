@@ -5,6 +5,7 @@
 #include "Keyboard.h"
 #include "Resources.h"
 #include "Transform.h"
+#include "Trigger.h"
 #include "Sound.h"
 #include "SphereCollider.h"
 #include <GL/glew.h>

@@ -12,7 +12,7 @@ namespace myengine
 	struct Sound : Resource
 	{
 		public:
-			void onInitialize();
+			void onInit();
 			void loadOgg(std::string fileName, std::vector<char> &buffer, ALenum &format, ALsizei &freq);
 		private:
 			friend struct myengine::SoundSource;

@@ -6,7 +6,7 @@ using namespace myengine;
 struct Player : Component
 {
 	public:
-		void onInitialize();
+		void onInit();
 		void onTick();
 	private:
 		std::shared_ptr<MeshRenderer> mr;

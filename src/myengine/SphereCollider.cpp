@@ -4,7 +4,7 @@
 
 namespace myengine
 {
-	void SphereCollider::onInitialize()
+	void SphereCollider::onInit()
 	{
 		getCore()->registerCollider(
 			getEntity()->getComponent<SphereCollider>());

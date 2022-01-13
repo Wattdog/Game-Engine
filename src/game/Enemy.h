@@ -6,5 +6,5 @@ struct Enemy : Component
 {
 	float m_health;
 
-	void onInitialize();
+	void onInit();
 };

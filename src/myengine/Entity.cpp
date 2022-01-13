@@ -36,4 +36,12 @@ namespace myengine
 			components.at(ci)->display();
 		}
 	}
+
+	void Entity::colliding(std::shared_ptr<SphereCollider> collider)
+	{
+		for (size_t ci = 0; ci < components.size(); ci++)
+		{
+			components.at(ci)->colliding();
+		}
+	}
 }

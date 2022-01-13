@@ -1,6 +1,6 @@
 #include "Enemy.h"
 
-void Enemy::onInitialize()
+void Enemy::onInit()
 {
 	getEntity()->addComponent<TriangleRenderer>();
 }

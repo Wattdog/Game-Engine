@@ -25,11 +25,13 @@ namespace myengine
 			virtual void onTick();
 			virtual void onDisplay();
 			virtual void onInit();
+			virtual void onColliding();
 		private:
 			friend struct myengine::Entity;
 			std::weak_ptr<Entity> entity;
 			
 			void tick();
 			void display();
+			void colliding();
 	};
 }

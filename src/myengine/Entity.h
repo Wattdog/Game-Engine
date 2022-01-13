@@ -7,6 +7,8 @@ namespace myengine
 	struct Core;
 	struct Transform;
 	struct Camera;
+	struct SphereCollider;
+	struct Trigger;
 
 	struct Entity
 	{
@@ -111,11 +113,13 @@ namespace myengine
 			std::shared_ptr<Transform> getTransform();
 		private:
 			friend struct myengine::Core;
+			friend struct myengine::Trigger;
 			std::vector<std::shared_ptr<Component>> components;
 			std::weak_ptr<Core> core;
 			std::weak_ptr<Transform> transform;
 			std::weak_ptr<Entity> self;
 			void tick();
 			void display();
+			void colliding(std::shared_ptr<SphereCollider> collider);
 	};
 }

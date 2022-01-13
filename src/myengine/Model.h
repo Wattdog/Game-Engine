@@ -12,7 +12,7 @@ namespace myengine
 	struct Model : Resource
 	{
 		public:
-			void onInitialize();
+			void onInit();
 		private:
 			friend struct myengine::MeshRenderer;
 			std::shared_ptr<renderer::VertexArray> vao;

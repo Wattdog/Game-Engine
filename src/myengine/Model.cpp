@@ -2,7 +2,7 @@
 
 namespace myengine
 {
-	void Model::onInitialize()
+	void Model::onInit()
 	{
 		vao = std::make_shared <renderer::VertexArray>("../" + getPath() + ".obj");
 	}

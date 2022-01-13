@@ -8,7 +8,7 @@ namespace myengine
 	struct SphereCollider : Component
 	{
 		public:
-			void onInitialize();
+			void onInit();
 			void onDestroy();
 			bool isColliding(std::shared_ptr<SphereCollider> _collider);
 		private:

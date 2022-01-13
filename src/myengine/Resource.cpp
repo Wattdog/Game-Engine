@@ -7,7 +7,7 @@ namespace myengine
 		return path;
 	}
 
-	void Resource::onInitialize()
+	void Resource::onInit()
 	{
 
 	}

@@ -15,6 +15,7 @@ namespace myengine
 	struct Sound;
 	struct SphereCollider;
 	struct Resources;
+	struct Trigger;
 
 	struct Core
 	{
@@ -29,6 +30,7 @@ namespace myengine
 		void start();
 		void stop();
 	private:
+		friend struct myengine::Trigger;
 		bool running;
 		std::vector<std::shared_ptr<Entity> > entities;
 		std::vector<std::weak_ptr<SphereCollider> > colliders;

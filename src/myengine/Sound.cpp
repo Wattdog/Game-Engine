@@ -3,7 +3,7 @@
 
 namespace myengine
 {
-	void Sound::onInitialize()
+	void Sound::onInit()
 	{
 		std::string path = getPath();
 

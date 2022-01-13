@@ -49,6 +49,11 @@ namespace myengine
 		onDisplay();
 	}
 
+	void Component::colliding()
+	{
+		onColliding();
+	}
+
 	void Component::onTick()
 	{
 		/// Runs the virtual function onTick
@@ -78,5 +83,10 @@ namespace myengine
 		* The function will initialize all the values used
 		* to display a model/triangle
 		*/
+	}
+
+	void Component::onColliding()
+	{
+
 	}
 }
