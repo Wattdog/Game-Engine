@@ -10,5 +10,7 @@ struct Player : Component
 		void onTick();
 	private:
 		std::shared_ptr<MeshRenderer> mr;
+		std::shared_ptr<SphereCollider> playerCol;
+		std::shared_ptr<Trigger> playerTrigger;
 		float yMomentum;
 };

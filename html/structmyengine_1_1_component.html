@@ -79,14 +79,17 @@ Inheritance diagram for myengine::Component:</div>
  <div class="center">
   <img src="structmyengine_1_1_component.png" usemap="#myengine::Component_map" alt=""/>
   <map id="myengine::Component_map" name="myengine::Component_map">
-<area href="struct_engine_stopper.html" alt="EngineStopper" shape="rect" coords="181,56,352,80"/>
-<area href="structmyengine_1_1_camera.html" alt="myengine::Camera" shape="rect" coords="181,112,352,136"/>
-<area href="structmyengine_1_1_cube.html" alt="myengine::Cube" shape="rect" coords="181,168,352,192"/>
-<area href="structmyengine_1_1_model.html" alt="myengine::Model" shape="rect" coords="181,224,352,248"/>
-<area href="structmyengine_1_1_sphere_collider.html" alt="myengine::SphereCollider" shape="rect" coords="181,280,352,304"/>
-<area href="structmyengine_1_1_transform.html" alt="myengine::Transform" shape="rect" coords="181,336,352,360"/>
-<area href="structmyengine_1_1_triangle_renderer.html" alt="myengine::TriangleRenderer" shape="rect" coords="181,392,352,416"/>
-<area href="structmyengine_1_1_trigger.html" alt="myengine::Trigger" shape="rect" coords="181,448,352,472"/>
+<area href="struct_enemy.html" alt="Enemy" shape="rect" coords="181,56,352,80"/>
+<area href="struct_engine_stopper.html" alt="EngineStopper" shape="rect" coords="181,112,352,136"/>
+<area href="struct_player.html" alt="Player" shape="rect" coords="181,168,352,192"/>
+<area href="structmyengine_1_1_cube.html" alt="myengine::Cube" shape="rect" coords="181,224,352,248"/>
+<area href="structmyengine_1_1_mesh_renderer.html" alt="myengine::MeshRenderer" shape="rect" coords="181,280,352,304"/>
+<area href="structmyengine_1_1_p_b_r___model.html" alt="myengine::PBR_Model" shape="rect" coords="181,336,352,360"/>
+<area href="structmyengine_1_1_sound_source.html" alt="myengine::SoundSource" shape="rect" coords="181,392,352,416"/>
+<area href="structmyengine_1_1_sphere_collider.html" alt="myengine::SphereCollider" shape="rect" coords="181,448,352,472"/>
+<area href="structmyengine_1_1_transform.html" alt="myengine::Transform" shape="rect" coords="181,504,352,528"/>
+<area href="structmyengine_1_1_triangle_renderer.html" alt="myengine::TriangleRenderer" shape="rect" coords="181,560,352,584"/>
+<area href="structmyengine_1_1_trigger.html" alt="myengine::Trigger" shape="rect" coords="181,616,352,640"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -102,17 +105,18 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a86618ca85aca087c0efa99970b5e095a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b5712d1253884531aee523c1d277260"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structmyengine_1_1_transform.html">Transform</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_component.html#a2b5712d1253884531aee523c1d277260">getTransform</a> ()</td></tr>
 <tr class="separator:a2b5712d1253884531aee523c1d277260"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c4a94098f91b2602ce73a81d0bc9570"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structmyengine_1_1_camera.html">Camera</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_component.html#a3c4a94098f91b2602ce73a81d0bc9570">getCamera</a> ()</td></tr>
-<tr class="separator:a3c4a94098f91b2602ce73a81d0bc9570"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a781dc22a3baeb23abee95994492b277a"><td class="memTemplParams" colspan="2"><a id="a781dc22a3baeb23abee95994492b277a" name="a781dc22a3baeb23abee95994492b277a"></a>
+template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a781dc22a3baeb23abee95994492b277a"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>getComponent</b> ()</td></tr>
+<tr class="separator:a781dc22a3baeb23abee95994492b277a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aabd0406bbbb7a66b123a54e92727d245"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_component.html#aabd0406bbbb7a66b123a54e92727d245">onTick</a> ()</td></tr>
 <tr class="separator:aabd0406bbbb7a66b123a54e92727d245"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01950f2661cfe671eca0907590276a81"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_component.html#a01950f2661cfe671eca0907590276a81">onDisplay</a> ()</td></tr>
 <tr class="separator:a01950f2661cfe671eca0907590276a81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04003d2573bcdd8b1a204b504e7baee1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_component.html#a04003d2573bcdd8b1a204b504e7baee1">onInit</a> ()</td></tr>
 <tr class="separator:a04003d2573bcdd8b1a204b504e7baee1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d04f278ba7c1baaa374b38e8c881b00"><td class="memItemLeft" align="right" valign="top"><a id="a5d04f278ba7c1baaa374b38e8c881b00" name="a5d04f278ba7c1baaa374b38e8c881b00"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>onPlay</b> ()</td></tr>
-<tr class="separator:a5d04f278ba7c1baaa374b38e8c881b00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa21c1d139b281bbf29cf4fbc7696b82"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_component.html#afa21c1d139b281bbf29cf4fbc7696b82">onTrigger</a> ()</td></tr>
+<tr class="separator:afa21c1d139b281bbf29cf4fbc7696b82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
@@ -121,24 +125,6 @@ struct&#160;</td><td class="memItemRight" valign="bottom"><b>myengine::Entity</b
 <tr class="separator:a6fe843906a90e8087472d461e6bc7783"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a3c4a94098f91b2602ce73a81d0bc9570" name="a3c4a94098f91b2602ce73a81d0bc9570"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3c4a94098f91b2602ce73a81d0bc9570">&#9670;&nbsp;</a></span>getCamera()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::shared_ptr&lt; <a class="el" href="structmyengine_1_1_camera.html">Camera</a> &gt; myengine::Component::getCamera </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p >Returns the camera</p>
-
-</div>
-</div>
 <a id="a2b80c2d91dac8f429f6b6f6305d7c5be" name="a2b80c2d91dac8f429f6b6f6305d7c5be"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2b80c2d91dac8f429f6b6f6305d7c5be">&#9670;&nbsp;</a></span>getCore()</h2>
 
@@ -281,7 +267,7 @@ struct&#160;</td><td class="memItemRight" valign="bottom"><b>myengine::Entity</b
 <p >Runs the virtual function onInit</p>
 <p >The function will initialize all the values used to display a model/triangle</p>
 
-<p>Reimplemented in <a class="el" href="structmyengine_1_1_cube.html#a9a90388a7f7de192a7653273ce04bddf">myengine::Cube</a>, and <a class="el" href="structmyengine_1_1_model.html#aa53e78352dec093f2ad7f98699c3fd3a">myengine::Model</a>.</p>
+<p>Reimplemented in <a class="el" href="structmyengine_1_1_cube.html#a9a90388a7f7de192a7653273ce04bddf">myengine::Cube</a>, <a class="el" href="structmyengine_1_1_p_b_r___model.html#a34028ff946672006129e5d631d573bd8">myengine::PBR_Model</a>, and <a class="el" href="structmyengine_1_1_sphere_collider.html#a5cbd5e488e4d6c12d113170c7763b4d1">myengine::SphereCollider</a>.</p>
 
 </div>
 </div>
@@ -309,6 +295,33 @@ struct&#160;</td><td class="memItemRight" valign="bottom"><b>myengine::Entity</b
 </div><div class="memdoc">
 <p >Runs the virtual function onTick</p>
 <p >The function will run every frame while the program is running</p>
+
+</div>
+</div>
+<a id="afa21c1d139b281bbf29cf4fbc7696b82" name="afa21c1d139b281bbf29cf4fbc7696b82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa21c1d139b281bbf29cf4fbc7696b82">&#9670;&nbsp;</a></span>onTrigger()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myengine::Component::onTrigger </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Runs the virtual function onInit</p>
+<p >The function will trigger when an object collides with another object</p>
 
 </div>
 </div>

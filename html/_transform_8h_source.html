@@ -70,36 +70,38 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;Component.h&quot;</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;glm/glm.hpp&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;glm/ext.hpp&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">namespace </span>myengine</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>{</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="structmyengine_1_1_transform.html">    8</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structmyengine_1_1_transform.html">Transform</a> : <a class="code hl_struct" href="structmyengine_1_1_component.html">Component</a></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    {</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>            <a class="code hl_struct" href="structmyengine_1_1_transform.html">Transform</a>();</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>            glm::mat4 <a class="code hl_function" href="structmyengine_1_1_transform.html#afd0548586537867f862cb31d41566c17">getModel</a>();</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="structmyengine_1_1_transform.html#a220a7b799aa6b17c2249ac6c80a0e95f">setPosition</a>(glm::vec3 pos);</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="structmyengine_1_1_transform.html#a8796a3928da3f3b0f5b2228ccbb28e10">setScale</a>(glm::vec3 scal);</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="structmyengine_1_1_transform.html#a5f6457457a5de295433fa6aab486a477">move</a>(<span class="keywordtype">float</span> amount);</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="structmyengine_1_1_transform.html#a5f6457457a5de295433fa6aab486a477">move</a>(glm::vec3 amount);</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="structmyengine_1_1_transform.html#ab2f9bace72ad2ff5453012556af44e40">rotate</a>(<span class="keywordtype">float</span> angle);</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="structmyengine_1_1_transform.html#ab2f9bace72ad2ff5453012556af44e40">rotate</a>(glm::vec3 angle);</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>            glm::vec3 position;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>            glm::vec3 rotation;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            glm::vec3 scale;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    };</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>}</div>
-<div class="ttc" id="astructmyengine_1_1_component_html"><div class="ttname"><a href="structmyengine_1_1_component.html">myengine::Component</a></div><div class="ttdef"><b>Definition:</b> Component.h:14</div></div>
-<div class="ttc" id="astructmyengine_1_1_transform_html"><div class="ttname"><a href="structmyengine_1_1_transform.html">myengine::Transform</a></div><div class="ttdef"><b>Definition:</b> Transform.h:9</div></div>
-<div class="ttc" id="astructmyengine_1_1_transform_html_a220a7b799aa6b17c2249ac6c80a0e95f"><div class="ttname"><a href="structmyengine_1_1_transform.html#a220a7b799aa6b17c2249ac6c80a0e95f">myengine::Transform::setPosition</a></div><div class="ttdeci">void setPosition(glm::vec3 pos)</div><div class="ttdef"><b>Definition:</b> Transform.cpp:26</div></div>
-<div class="ttc" id="astructmyengine_1_1_transform_html_a5f6457457a5de295433fa6aab486a477"><div class="ttname"><a href="structmyengine_1_1_transform.html#a5f6457457a5de295433fa6aab486a477">myengine::Transform::move</a></div><div class="ttdeci">void move(float amount)</div><div class="ttdef"><b>Definition:</b> Transform.cpp:40</div></div>
-<div class="ttc" id="astructmyengine_1_1_transform_html_a8796a3928da3f3b0f5b2228ccbb28e10"><div class="ttname"><a href="structmyengine_1_1_transform.html#a8796a3928da3f3b0f5b2228ccbb28e10">myengine::Transform::setScale</a></div><div class="ttdeci">void setScale(glm::vec3 scal)</div><div class="ttdef"><b>Definition:</b> Transform.cpp:33</div></div>
-<div class="ttc" id="astructmyengine_1_1_transform_html_ab2f9bace72ad2ff5453012556af44e40"><div class="ttname"><a href="structmyengine_1_1_transform.html#ab2f9bace72ad2ff5453012556af44e40">myengine::Transform::rotate</a></div><div class="ttdeci">void rotate(float angle)</div><div class="ttdef"><b>Definition:</b> Transform.cpp:64</div></div>
-<div class="ttc" id="astructmyengine_1_1_transform_html_afd0548586537867f862cb31d41566c17"><div class="ttname"><a href="structmyengine_1_1_transform.html#afd0548586537867f862cb31d41566c17">myengine::Transform::getModel</a></div><div class="ttdeci">glm::mat4 getModel()</div><div class="ttdef"><b>Definition:</b> Transform.cpp:12</div></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;Math.h&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;glm/glm.hpp&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;glm/ext.hpp&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">namespace </span>myengine</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="structmyengine_1_1_transform.html">    9</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structmyengine_1_1_transform.html">Transform</a> : <a class="code hl_struct" href="structmyengine_1_1_component.html">Component</a></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>            <a class="code hl_struct" href="structmyengine_1_1_transform.html">Transform</a>();</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>            mat4 <a class="code hl_function" href="structmyengine_1_1_transform.html#a39aa8184d5a5d98725a100f28a81afca">getModel</a>();</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="structmyengine_1_1_transform.html#aa1736485cc9daf7d23297fe282fd64c2">setPosition</a>(vec3 pos);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>            vec3 getPosition();</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="structmyengine_1_1_transform.html#aa88c52eb920ea6e0988b2753f5e6c302">setScale</a>(vec3 scal);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="structmyengine_1_1_transform.html#a5f6457457a5de295433fa6aab486a477">move</a>(<span class="keywordtype">float</span> amount);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="structmyengine_1_1_transform.html#a5f6457457a5de295433fa6aab486a477">move</a>(vec3 amount);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="structmyengine_1_1_transform.html#ab2f9bace72ad2ff5453012556af44e40">rotate</a>(<span class="keywordtype">float</span> angle);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="structmyengine_1_1_transform.html#ab2f9bace72ad2ff5453012556af44e40">rotate</a>(vec3 angle);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            vec3 position;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            vec3 rotation;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            vec3 scale;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    };</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
+<div class="ttc" id="astructmyengine_1_1_component_html"><div class="ttname"><a href="structmyengine_1_1_component.html">myengine::Component</a></div><div class="ttdef"><b>Definition:</b> Component.h:13</div></div>
+<div class="ttc" id="astructmyengine_1_1_transform_html"><div class="ttname"><a href="structmyengine_1_1_transform.html">myengine::Transform</a></div><div class="ttdef"><b>Definition:</b> Transform.h:10</div></div>
+<div class="ttc" id="astructmyengine_1_1_transform_html_a39aa8184d5a5d98725a100f28a81afca"><div class="ttname"><a href="structmyengine_1_1_transform.html#a39aa8184d5a5d98725a100f28a81afca">myengine::Transform::getModel</a></div><div class="ttdeci">mat4 getModel()</div><div class="ttdef"><b>Definition:</b> Transform.cpp:12</div></div>
+<div class="ttc" id="astructmyengine_1_1_transform_html_a5f6457457a5de295433fa6aab486a477"><div class="ttname"><a href="structmyengine_1_1_transform.html#a5f6457457a5de295433fa6aab486a477">myengine::Transform::move</a></div><div class="ttdeci">void move(float amount)</div><div class="ttdef"><b>Definition:</b> Transform.cpp:45</div></div>
+<div class="ttc" id="astructmyengine_1_1_transform_html_aa1736485cc9daf7d23297fe282fd64c2"><div class="ttname"><a href="structmyengine_1_1_transform.html#aa1736485cc9daf7d23297fe282fd64c2">myengine::Transform::setPosition</a></div><div class="ttdeci">void setPosition(vec3 pos)</div><div class="ttdef"><b>Definition:</b> Transform.cpp:26</div></div>
+<div class="ttc" id="astructmyengine_1_1_transform_html_aa88c52eb920ea6e0988b2753f5e6c302"><div class="ttname"><a href="structmyengine_1_1_transform.html#aa88c52eb920ea6e0988b2753f5e6c302">myengine::Transform::setScale</a></div><div class="ttdeci">void setScale(vec3 scal)</div><div class="ttdef"><b>Definition:</b> Transform.cpp:38</div></div>
+<div class="ttc" id="astructmyengine_1_1_transform_html_ab2f9bace72ad2ff5453012556af44e40"><div class="ttname"><a href="structmyengine_1_1_transform.html#ab2f9bace72ad2ff5453012556af44e40">myengine::Transform::rotate</a></div><div class="ttdeci">void rotate(float angle)</div><div class="ttdef"><b>Definition:</b> Transform.cpp:69</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

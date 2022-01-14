@@ -104,9 +104,8 @@ namespace myengine
 					{
 						return rtn;
 					}
-
-					throw std::exception("Failed to obtain specified component");
 				}
+				throw std::exception("Failed to obtain specified component");
 			}
 
 			std::shared_ptr<Core> getCore();

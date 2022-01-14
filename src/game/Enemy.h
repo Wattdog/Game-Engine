@@ -7,8 +7,8 @@ struct Enemy : Component
 	public:
 		void onInit();
 		void onTick();
+		void reset();
 	private:
 		float xPos;
 		float xStartPos;
-		float yStartPos;
 };

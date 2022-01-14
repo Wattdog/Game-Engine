@@ -49,9 +49,9 @@ namespace myengine
 		onDisplay();
 	}
 
-	void Component::colliding()
+	void Component::trigger()
 	{
-		onColliding();
+		onTrigger();
 	}
 
 	void Component::onTick()
@@ -85,8 +85,13 @@ namespace myengine
 		*/
 	}
 
-	void Component::onColliding()
+	void Component::onTrigger()
 	{
+		/// Runs the virtual function onInit
 
+		/**
+		* The function will trigger when an object
+		* collides with another object
+		*/
 	}
 }

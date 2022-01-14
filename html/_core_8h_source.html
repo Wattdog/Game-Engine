@@ -71,7 +71,7 @@ $(function() {
 <div class="contents">
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;SDL.h&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;SDL2/SDL.h&gt;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;AL/al.h&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;AL/alc.h&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
@@ -85,44 +85,47 @@ $(function() {
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keyword">struct </span>Transform;</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">struct </span>Sound;</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">struct </span>SphereCollider;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="structmyengine_1_1_core.html">   18</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structmyengine_1_1_core.html">Core</a></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keyword">static</span> std::shared_ptr&lt;Core&gt; <a class="code hl_function" href="structmyengine_1_1_core.html#a60646236bab8f92a381ce2d43806e813">initialize</a>();</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        std::shared_ptr&lt;Entity&gt; <a class="code hl_function" href="structmyengine_1_1_core.html#abf2eea4d6b0d3788761ea11f34c4981d">addEntity</a>();</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        std::shared_ptr&lt;Environment&gt; <a class="code hl_function" href="structmyengine_1_1_core.html#a24c44abbba15cf736ed13c72923863e2">getEnvironment</a>();</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        std::shared_ptr&lt;Camera&gt; <a class="code hl_function" href="structmyengine_1_1_core.html#a88266496a7f582ace76c93bb143de79e">getCurrentCamera</a>();</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        std::shared_ptr&lt;Keyboard&gt; <a class="code hl_function" href="structmyengine_1_1_core.html#a22ca571e0c193c5710a6a4432273131f">getKeyboard</a>();</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        std::shared_ptr&lt;Transform&gt; <a class="code hl_function" href="structmyengine_1_1_core.html#aa1881e30551865956bc2aecbcb2265d7">getTransform</a>();</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keywordtype">void</span> registerCollider(std::shared_ptr&lt;SphereCollider&gt;());</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keywordtype">void</span> unregisterCollider(std::shared_ptr&lt;SphereCollider&gt;());</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="structmyengine_1_1_core.html#ad30b81f4e6ca3cc018e6c529904fdb3f">start</a>();</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="structmyengine_1_1_core.html#a4f1818b9d6fbf66e8c3b246fa1f2d965">stop</a>();</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keywordtype">bool</span> running;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        std::vector&lt;std::shared_ptr&lt;Entity&gt; &gt; entities;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        std::shared_ptr&lt;Environment&gt; environment;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        std::shared_ptr&lt;Camera&gt; camera;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        std::shared_ptr&lt;Screen&gt; screen;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        std::shared_ptr&lt;Keyboard&gt; keyboard;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        std::shared_ptr&lt;Transform&gt; transform;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        std::shared_ptr&lt;Sound&gt; sound;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        std::weak_ptr&lt;Core&gt; <span class="keyword">self</span>;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        SDL_Window* window;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        ALCdevice* device;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        ALCcontext* context;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    };</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>}</div>
-<div class="ttc" id="astructmyengine_1_1_core_html"><div class="ttname"><a href="structmyengine_1_1_core.html">myengine::Core</a></div><div class="ttdef"><b>Definition:</b> Core.h:19</div></div>
-<div class="ttc" id="astructmyengine_1_1_core_html_a22ca571e0c193c5710a6a4432273131f"><div class="ttname"><a href="structmyengine_1_1_core.html#a22ca571e0c193c5710a6a4432273131f">myengine::Core::getKeyboard</a></div><div class="ttdeci">std::shared_ptr&lt; Keyboard &gt; getKeyboard()</div><div class="ttdef"><b>Definition:</b> Core.cpp:148</div></div>
-<div class="ttc" id="astructmyengine_1_1_core_html_a24c44abbba15cf736ed13c72923863e2"><div class="ttname"><a href="structmyengine_1_1_core.html#a24c44abbba15cf736ed13c72923863e2">myengine::Core::getEnvironment</a></div><div class="ttdeci">std::shared_ptr&lt; Environment &gt; getEnvironment()</div><div class="ttdef"><b>Definition:</b> Core.cpp:141</div></div>
-<div class="ttc" id="astructmyengine_1_1_core_html_a4f1818b9d6fbf66e8c3b246fa1f2d965"><div class="ttname"><a href="structmyengine_1_1_core.html#a4f1818b9d6fbf66e8c3b246fa1f2d965">myengine::Core::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdef"><b>Definition:</b> Core.cpp:237</div></div>
-<div class="ttc" id="astructmyengine_1_1_core_html_a60646236bab8f92a381ce2d43806e813"><div class="ttname"><a href="structmyengine_1_1_core.html#a60646236bab8f92a381ce2d43806e813">myengine::Core::initialize</a></div><div class="ttdeci">static std::shared_ptr&lt; Core &gt; initialize()</div><div class="ttdef"><b>Definition:</b> Core.cpp:14</div></div>
-<div class="ttc" id="astructmyengine_1_1_core_html_a88266496a7f582ace76c93bb143de79e"><div class="ttname"><a href="structmyengine_1_1_core.html#a88266496a7f582ace76c93bb143de79e">myengine::Core::getCurrentCamera</a></div><div class="ttdeci">std::shared_ptr&lt; Camera &gt; getCurrentCamera()</div><div class="ttdef"><b>Definition:</b> Core.cpp:134</div></div>
-<div class="ttc" id="astructmyengine_1_1_core_html_aa1881e30551865956bc2aecbcb2265d7"><div class="ttname"><a href="structmyengine_1_1_core.html#aa1881e30551865956bc2aecbcb2265d7">myengine::Core::getTransform</a></div><div class="ttdeci">std::shared_ptr&lt; Transform &gt; getTransform()</div><div class="ttdef"><b>Definition:</b> Core.cpp:155</div></div>
-<div class="ttc" id="astructmyengine_1_1_core_html_abf2eea4d6b0d3788761ea11f34c4981d"><div class="ttname"><a href="structmyengine_1_1_core.html#abf2eea4d6b0d3788761ea11f34c4981d">myengine::Core::addEntity</a></div><div class="ttdeci">std::shared_ptr&lt; Entity &gt; addEntity()</div><div class="ttdef"><b>Definition:</b> Core.cpp:111</div></div>
-<div class="ttc" id="astructmyengine_1_1_core_html_ad30b81f4e6ca3cc018e6c529904fdb3f"><div class="ttname"><a href="structmyengine_1_1_core.html#ad30b81f4e6ca3cc018e6c529904fdb3f">myengine::Core::start</a></div><div class="ttdeci">void start()</div><div class="ttdef"><b>Definition:</b> Core.cpp:172</div></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">struct </span>Resources;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">struct </span>Trigger;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="structmyengine_1_1_core.html">   20</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structmyengine_1_1_core.html">Core</a></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keyword">static</span> std::shared_ptr&lt;Core&gt; <a class="code hl_function" href="structmyengine_1_1_core.html#a60646236bab8f92a381ce2d43806e813">initialize</a>();</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        std::shared_ptr&lt;Entity&gt; <a class="code hl_function" href="structmyengine_1_1_core.html#abf2eea4d6b0d3788761ea11f34c4981d">addEntity</a>();</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        std::shared_ptr&lt;Environment&gt; <a class="code hl_function" href="structmyengine_1_1_core.html#a24c44abbba15cf736ed13c72923863e2">getEnvironment</a>();</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        std::shared_ptr&lt;Keyboard&gt; <a class="code hl_function" href="structmyengine_1_1_core.html#a22ca571e0c193c5710a6a4432273131f">getKeyboard</a>();</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        std::shared_ptr&lt;Resources&gt; <a class="code hl_function" href="structmyengine_1_1_core.html#a82f9fc96dd0d9cb9fd29c0aa7cf83c45">getResources</a>();</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keywordtype">void</span> registerCollider(std::shared_ptr&lt;SphereCollider&gt; col);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keywordtype">void</span> unregisterCollider(<a class="code hl_struct" href="structmyengine_1_1_sphere_collider.html">SphereCollider</a>* col);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="structmyengine_1_1_core.html#ad30b81f4e6ca3cc018e6c529904fdb3f">start</a>();</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="structmyengine_1_1_core.html#a4f1818b9d6fbf66e8c3b246fa1f2d965">stop</a>();</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keyword">friend</span> <span class="keyword">struct </span><a class="code hl_struct" href="structmyengine_1_1_trigger.html">myengine::Trigger</a>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordtype">bool</span> running;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        std::vector&lt;std::shared_ptr&lt;Entity&gt; &gt; entities;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        std::vector&lt;std::weak_ptr&lt;SphereCollider&gt; &gt; colliders;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        std::shared_ptr&lt;Environment&gt; environment;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        std::shared_ptr&lt;Screen&gt; screen;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        std::shared_ptr&lt;Keyboard&gt; keyboard;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        std::shared_ptr&lt;Resources&gt; resources;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        std::shared_ptr&lt;Sound&gt; sound;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        std::weak_ptr&lt;Core&gt; <span class="keyword">self</span>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        SDL_Window* window;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        ALCdevice* device;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        ALCcontext* context;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    };</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>}</div>
+<div class="ttc" id="astructmyengine_1_1_core_html"><div class="ttname"><a href="structmyengine_1_1_core.html">myengine::Core</a></div><div class="ttdef"><b>Definition:</b> Core.h:21</div></div>
+<div class="ttc" id="astructmyengine_1_1_core_html_a22ca571e0c193c5710a6a4432273131f"><div class="ttname"><a href="structmyengine_1_1_core.html#a22ca571e0c193c5710a6a4432273131f">myengine::Core::getKeyboard</a></div><div class="ttdeci">std::shared_ptr&lt; Keyboard &gt; getKeyboard()</div><div class="ttdef"><b>Definition:</b> Core.cpp:131</div></div>
+<div class="ttc" id="astructmyengine_1_1_core_html_a24c44abbba15cf736ed13c72923863e2"><div class="ttname"><a href="structmyengine_1_1_core.html#a24c44abbba15cf736ed13c72923863e2">myengine::Core::getEnvironment</a></div><div class="ttdeci">std::shared_ptr&lt; Environment &gt; getEnvironment()</div><div class="ttdef"><b>Definition:</b> Core.cpp:124</div></div>
+<div class="ttc" id="astructmyengine_1_1_core_html_a4f1818b9d6fbf66e8c3b246fa1f2d965"><div class="ttname"><a href="structmyengine_1_1_core.html#a4f1818b9d6fbf66e8c3b246fa1f2d965">myengine::Core::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdef"><b>Definition:</b> Core.cpp:221</div></div>
+<div class="ttc" id="astructmyengine_1_1_core_html_a60646236bab8f92a381ce2d43806e813"><div class="ttname"><a href="structmyengine_1_1_core.html#a60646236bab8f92a381ce2d43806e813">myengine::Core::initialize</a></div><div class="ttdeci">static std::shared_ptr&lt; Core &gt; initialize()</div><div class="ttdef"><b>Definition:</b> Core.cpp:16</div></div>
+<div class="ttc" id="astructmyengine_1_1_core_html_a82f9fc96dd0d9cb9fd29c0aa7cf83c45"><div class="ttname"><a href="structmyengine_1_1_core.html#a82f9fc96dd0d9cb9fd29c0aa7cf83c45">myengine::Core::getResources</a></div><div class="ttdeci">std::shared_ptr&lt; Resources &gt; getResources()</div><div class="ttdef"><b>Definition:</b> Core.cpp:138</div></div>
+<div class="ttc" id="astructmyengine_1_1_core_html_abf2eea4d6b0d3788761ea11f34c4981d"><div class="ttname"><a href="structmyengine_1_1_core.html#abf2eea4d6b0d3788761ea11f34c4981d">myengine::Core::addEntity</a></div><div class="ttdeci">std::shared_ptr&lt; Entity &gt; addEntity()</div><div class="ttdef"><b>Definition:</b> Core.cpp:101</div></div>
+<div class="ttc" id="astructmyengine_1_1_core_html_ad30b81f4e6ca3cc018e6c529904fdb3f"><div class="ttname"><a href="structmyengine_1_1_core.html#ad30b81f4e6ca3cc018e6c529904fdb3f">myengine::Core::start</a></div><div class="ttdeci">void start()</div><div class="ttdef"><b>Definition:</b> Core.cpp:161</div></div>
+<div class="ttc" id="astructmyengine_1_1_sphere_collider_html"><div class="ttname"><a href="structmyengine_1_1_sphere_collider.html">myengine::SphereCollider</a></div><div class="ttdef"><b>Definition:</b> SphereCollider.h:9</div></div>
+<div class="ttc" id="astructmyengine_1_1_trigger_html"><div class="ttname"><a href="structmyengine_1_1_trigger.html">myengine::Trigger</a></div><div class="ttdef"><b>Definition:</b> Trigger.h:13</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

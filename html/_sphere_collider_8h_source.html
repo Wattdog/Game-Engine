@@ -79,15 +79,20 @@ $(function() {
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="structmyengine_1_1_sphere_collider.html">    8</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structmyengine_1_1_sphere_collider.html">SphereCollider</a> : <a class="code hl_struct" href="structmyengine_1_1_component.html">Component</a></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    {</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>            <span class="keywordtype">void</span> onInitialize();</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>            <span class="keywordtype">void</span> onDestroy();</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>            <span class="keywordtype">bool</span> isColliding(std::shared_ptr&lt;SphereCollider&gt; _collider);</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>            <span class="keywordtype">float</span> m_radius;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    };</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>}</div>
-<div class="ttc" id="astructmyengine_1_1_component_html"><div class="ttname"><a href="structmyengine_1_1_component.html">myengine::Component</a></div><div class="ttdef"><b>Definition:</b> Component.h:14</div></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="structmyengine_1_1_sphere_collider.html#a5cbd5e488e4d6c12d113170c7763b4d1">onInit</a>();</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="structmyengine_1_1_sphere_collider.html#ae647b0a4bd6a92a219f8cc5ccab831c6">onDestroy</a>();</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>            <span class="keywordtype">bool</span> <a class="code hl_function" href="structmyengine_1_1_sphere_collider.html#a8a8bbeb44d45609cd5572685b3b82cdd">isColliding</a>(std::shared_ptr&lt;SphereCollider&gt; _collider);</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="structmyengine_1_1_sphere_collider.html#a17119aa3f825c89531b50094acf3fab4">setRadius</a>(<span class="keywordtype">float</span> rad);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>            <span class="keywordtype">float</span> radius;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    };</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>}</div>
+<div class="ttc" id="astructmyengine_1_1_component_html"><div class="ttname"><a href="structmyengine_1_1_component.html">myengine::Component</a></div><div class="ttdef"><b>Definition:</b> Component.h:13</div></div>
 <div class="ttc" id="astructmyengine_1_1_sphere_collider_html"><div class="ttname"><a href="structmyengine_1_1_sphere_collider.html">myengine::SphereCollider</a></div><div class="ttdef"><b>Definition:</b> SphereCollider.h:9</div></div>
+<div class="ttc" id="astructmyengine_1_1_sphere_collider_html_a17119aa3f825c89531b50094acf3fab4"><div class="ttname"><a href="structmyengine_1_1_sphere_collider.html#a17119aa3f825c89531b50094acf3fab4">myengine::SphereCollider::setRadius</a></div><div class="ttdeci">void setRadius(float rad)</div><div class="ttdef"><b>Definition:</b> SphereCollider.cpp:41</div></div>
+<div class="ttc" id="astructmyengine_1_1_sphere_collider_html_a5cbd5e488e4d6c12d113170c7763b4d1"><div class="ttname"><a href="structmyengine_1_1_sphere_collider.html#a5cbd5e488e4d6c12d113170c7763b4d1">myengine::SphereCollider::onInit</a></div><div class="ttdeci">void onInit()</div><div class="ttdef"><b>Definition:</b> SphereCollider.cpp:10</div></div>
+<div class="ttc" id="astructmyengine_1_1_sphere_collider_html_a8a8bbeb44d45609cd5572685b3b82cdd"><div class="ttname"><a href="structmyengine_1_1_sphere_collider.html#a8a8bbeb44d45609cd5572685b3b82cdd">myengine::SphereCollider::isColliding</a></div><div class="ttdeci">bool isColliding(std::shared_ptr&lt; SphereCollider &gt; _collider)</div><div class="ttdef"><b>Definition:</b> SphereCollider.cpp:24</div></div>
+<div class="ttc" id="astructmyengine_1_1_sphere_collider_html_ae647b0a4bd6a92a219f8cc5ccab831c6"><div class="ttname"><a href="structmyengine_1_1_sphere_collider.html#ae647b0a4bd6a92a219f8cc5ccab831c6">myengine::SphereCollider::onDestroy</a></div><div class="ttdeci">void onDestroy()</div><div class="ttdef"><b>Definition:</b> SphereCollider.cpp:18</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

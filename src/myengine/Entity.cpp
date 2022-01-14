@@ -41,7 +41,7 @@ namespace myengine
 	{
 		for (size_t ci = 0; ci < components.size(); ci++)
 		{
-			components.at(ci)->colliding();
+			components.at(ci)->trigger();
 		}
 	}
 }
