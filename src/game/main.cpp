@@ -3,6 +3,7 @@
 
 #include "Player.h"
 #include "Enemy.h"
+#include "Score.h"
 
 using namespace myengine;
 using namespace renderer;
@@ -34,6 +35,9 @@ int main()
    // Adds new entity along with the enemy component
    std::shared_ptr<Entity> ee = core->addEntity();
    std::shared_ptr<Enemy> ec = ee->addComponent<Enemy>();
+
+   std::shared_ptr<Entity> se = core->addEntity();
+   std::shared_ptr<Score> sc = se->addComponent<Score>();
 
    //std::shared_ptr<Sound> sound = core->getResources()->load<Sound>("../Assets/AudioClips/horn");
    //std::shared_ptr<SoundSource> source = ee->addComponent<SoundSource>();

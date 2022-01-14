@@ -8,7 +8,6 @@ struct Player : Component
 	public:
 		void onInit();
 		void onTick();
-		void onTrigger();
 	private:
 		std::shared_ptr<MeshRenderer> mr;
 		std::shared_ptr<SphereCollider> playerCol;

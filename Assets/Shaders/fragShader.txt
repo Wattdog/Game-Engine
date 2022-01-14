@@ -36,5 +36,5 @@ void main()
 	float specularStrength = 0.5;
 	vec3 specular = specularStrength * spec * lightColor;
 
-	gl_FragColor = vec4(emissiveColor + texColor * (ambient + diffuse + specular), alpha) * tex;
+	gl_FragColor = vec4(emissiveColor * (ambient + diffuse + specular), alpha);
 }

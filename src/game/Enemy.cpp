@@ -29,6 +29,11 @@ void Enemy::onTick()
 	}
 }
 
+void Enemy::onTrigger()
+{
+	std::cout << "collider" << std::endl;
+}
+
 void Enemy::reset()
 {
 	// Resets enemies position and xPos
