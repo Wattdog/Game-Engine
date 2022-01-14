@@ -3,7 +3,6 @@
 #include "Entity.h"
 #include "Math.h"
 #include "Transform.h"
-#include <iostream>
 
 namespace myengine
 {
@@ -32,7 +31,6 @@ namespace myengine
 		/// it will return true otherwise it will return false
 		if (dis < rad)
 		{
-			std::cout << "collider" << std::endl;
 			return true;
 		}
 		return false;

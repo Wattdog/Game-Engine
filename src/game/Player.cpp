@@ -38,3 +38,8 @@ void Player::onTick()
 		getTransform()->setPosition(vec3(0, 0, -10));
 	}
 }
+
+void Player::onTrigger()
+{
+	std::cout << "collider" << std::endl;
+}
