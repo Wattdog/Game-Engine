@@ -12,6 +12,8 @@ void Enemy::onInit()
 	mr->getTransform()->setPosition(vec3(xStartPos, 0, -10));
 	mr->getTransform()->setScale(vec3(0.25f, 0.25f, 0.25f));
 	xPos = 0.0f;
+	std::shared_ptr<Sound> sound = getCore()->getResources()->load<Sound>("../Assets/AudioClips/horn");
+	std::shared_ptr<SoundSource> source = getEntity()->addComponent<SoundSource>();
 }
 
 void Enemy::onTick()

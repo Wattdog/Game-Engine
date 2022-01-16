@@ -11,6 +11,7 @@ namespace myengine
 
 	struct Trigger : Component
 	{
-		void onTick();
+		public:
+			void onTick();
 	};
 }

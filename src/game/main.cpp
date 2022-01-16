@@ -36,12 +36,13 @@ int main()
    std::shared_ptr<Entity> ee = core->addEntity();
    std::shared_ptr<Enemy> ec = ee->addComponent<Enemy>();
 
+   // Adds new entity along with the score component
    std::shared_ptr<Entity> se = core->addEntity();
    std::shared_ptr<Score> sc = se->addComponent<Score>();
 
-   //std::shared_ptr<Sound> sound = core->getResources()->load<Sound>("../Assets/AudioClips/horn");
-   //std::shared_ptr<SoundSource> source = ee->addComponent<SoundSource>();
-   //source->setClip(sound);
+   std::shared_ptr<Sound> sound = core->getResources()->load<Sound>("../Assets/AudioClips/Fail Sound Effect");
+   std::shared_ptr<SoundSource> source = ee->addComponent<SoundSource>();
+   source->setClip(sound);
 
    std::cout << entity->getCore() << std::endl;
    //std::cout << component->getCore() << std::endl;

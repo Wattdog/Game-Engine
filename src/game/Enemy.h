@@ -10,6 +10,8 @@ struct Enemy : Component
 		void onTrigger();
 		void reset();
 	private:
+		std::shared_ptr<Sound> sound;
+		std::shared_ptr<SoundSource> source;
 		float xPos;
 		float xStartPos;
 };

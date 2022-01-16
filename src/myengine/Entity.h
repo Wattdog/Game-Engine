@@ -6,7 +6,6 @@ namespace myengine
 	struct Component;
 	struct Core;
 	struct Transform;
-	struct Camera;
 	struct SphereCollider;
 	struct Trigger;
 
